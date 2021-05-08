@@ -2,6 +2,7 @@
 
 #var guild necromancer
 #var solo 1
+#var mask 0
 
 /* HP Bar */
 #act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[w(\d+)%\|p(\w+)\|v(\w+)\|r(\d+)\%\]}} {
@@ -74,14 +75,13 @@
 }
 
 #alias {corpsetrig} {
-	#if {$solo == 1} {
-		#if {$mask == 1}  {
-			#delay {3}	{
-				qtrance preserve remains/wrap>2;
-				get gold;
-				cga
-			}
-		} else {
+	#if {$solo} {
+		#if {$mask}  {		
+			qtrance preserve remains/wrap>2;
+			get gold;
+			cga
+		} 
+		else {
 			preserve remains;
 			wrap;
 			get gold;
@@ -92,7 +92,7 @@
 	}
 }
 
-#act {dealt the killing blow to} {corpsetrig}
+#act {Stormer dealt the killing blow} {#if {$mask} { #delay {3} {corpsetrig}} {corpsetrig}}
 
 /* Preserve all */
 #var preserving 0
