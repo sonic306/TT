@@ -44,7 +44,7 @@
 #alias {switchto} {
         #zap;
         #if {"%0" == ""} {
-                connect inix
+                connect stormer
         } {
                 connect %0
         };
@@ -71,5 +71,10 @@
                 }
         };
         $ses_name;
-        #textin .tt/.pass
+        #if {$world == "stormer"} {
+                #textin .tt/.pass
+        }
+        elseif {$world == "stormer3s} {
+                #textin .tt/.pass3s
+        }
 }
