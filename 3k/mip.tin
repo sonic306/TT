@@ -57,10 +57,10 @@
 }
 
 #var clockon 0
-#var IdleLimit 900
+#var IdleLimit 3600
 #TICKER {idle} {
 	#math {idle} {$idle + 1};
-	#if {$idle > 900 && "$draw[alert]" == "on"} {
+	#if {$idle > 3600 && "$draw[alert]" == "on"} {
 		#draw tile $split[top]+1 1 -$split[bottom]-2 $alert[width] {<BF00>}
 	}; #elseif {$idle > 840 && "$draw[alert]" == "on"} {
 		#draw tile $split[top]+1 1 -$split[bottom]-2 $alert[width] {<BFF0>}
