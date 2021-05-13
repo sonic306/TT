@@ -4,4 +4,4 @@ deploy:
   script: 
   - scp . sonic306@34.82.232.25:/home/sonic306/testdeploy
   on:
-    branch: stormermain
+    branch: main
