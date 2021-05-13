@@ -1,15 +1,12 @@
 language: generic
-
-env:
-  global:
-    secure: KgitomrnV+FisFd1WNxCJcU8uHmhZNQKncwmDycGTeXSE8h+ZwmbODSUkpO/Q6yv0LfEaRBR25gaCOj7fIo+xNEA1hKwGHRsKy/E/Op7mjA9xe47eviQ/Hex1Ou68IZCPtrtplLZ+OGayhme7/oxaRMOYSsx5IfupZesL801nMYC9XzlyDu7hbwp5+FX1Cm17syA4b1Sua4YYVfD7qa+2fLfIYHivV44RwBH0b+dNz50FeP236klOpq8b1a1/Z72SNOn8fL3oLB4Yx0X/rr9IYe+GPMnjI07hd8RZvqIMpcd4aUP+OFv5rPMGXMsmwHYiFWMoLTrY4txLpy9sCbAhxMv4TVpDBoJ2HmL0OG/ZfuHThSACQ17MCrJ+bO+8aH/Yr1so1sH4aSkRbA/KuPZiy1x1cPQDCwvl5pV8tzXKZ5UOOdCDXOlNsb6EyUb135gyfNKquPfbR8X9NWRFrJd6wzk0GvYLxNHRI6vGwrMmk17TBac/M6X8S3Ki3PWiTl9gyuo/ui6v7S0XOmbmxdhh7M44FqAJr5YqQny6GioGeivVI6Kk3LJNDF0+QzH/IjrIavu78XoLvm4S1eaUGPxRrMhfW3DUWdyJjqXNshNjknVTnnWkbLED9Bz5PowMcLW5hLsYZsmBXPiItdpb0UXY7u100/OS5A+BwbF87YxvHY=
 addons:
   ssh_known_hosts: 34.82.232.25
-before_install:
-  - openssl aes-256-cbc -k "$super_secret_password" -in deploy_rsa.enc -out deploy_rsa -d
 deploy:
   provider: script
   script:
   - scp . sonic306@34.82.232.25:/home/sonic306/testdeploy
   on:
     branch: main
+before_install:
+- openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
