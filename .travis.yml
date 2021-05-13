@@ -1,15 +1,12 @@
 language: generic
 addons:
   ssh_known_hosts: 34.82.232.25
-
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv
   -in deploy_rsa.enc -out deploy_rsa -d
-
 deploy:
   provider: script
   script:
   - scp . sonic306@34.82.232.25:/home/sonic306/testdeploy
   on:
     branch: main
-
