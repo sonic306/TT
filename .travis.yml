@@ -1,5 +1,5 @@
 language: generic
-
+provider: script
 deploy:
   script: 
   - scp . sonic306@34.82.232.25:/home/sonic306/testdeploy
