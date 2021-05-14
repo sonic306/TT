@@ -1,9 +1,15 @@
 name: first-github-action
-on: [push]
+on: 
+  push:
+    branches:
+      - main
+
 jobs:
   deploy-to-vm:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -14,4 +20,5 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
       - name: Deploy to VM
+        uses: sonic306/checkout@main
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/ttnew
