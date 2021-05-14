@@ -23,9 +23,8 @@ jobs:
         run: rsync -avz ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/${{ secrets.SSH_USER }}/.tt
 
       - name: Discord Notification
-        env: 
-          DISCORD_WEBHOOK: $ {{ secrets.DISCORD_WEBHOOK }}
-        uses: Ilshidur/action-discord@master
+      - uses: sarisia/actions-status-discord@v1
+        if: always()
         with:
-          args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
     
