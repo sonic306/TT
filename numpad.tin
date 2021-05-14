@@ -11,11 +11,11 @@
 #macro {\eOw} {nw}
 #macro {\eOx} {n}
 #macro {\eOy} {ne}
-#macro {\e0p} {d}
-#macro {\e0n} {u}
+#NOP #macro {\e0p} {d}
+#NOP #macro {\e0n} {u}
 
 /* Alternate up/down using - for up and + for down */
-#NOP #macro {\eOS} {u}
-#NOP #macro {\eOl} {d}
+#macro {\eOS} {u}
+#macro {\eOl} {d}
 
 #class {numpad} {close}

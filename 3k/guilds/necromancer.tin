@@ -1,56 +1,49 @@
 #class {necromancer} {open}
 
 #var guild necromancer
+#var mask 0
+#var solo 1
+#var coffinmax 27
+#var followermax 21
+#var smugglemax 20
+#var currentsmuggle 0
 
 /* HP Bar */
-#act {{HP\[(\d+)/(\d+)\] SP\[(\d+)\(?(\d+)?\)?/(\d+)\] NP\[(\d+)/(\d+)\|(\d+)c\] E\[([\w\~\-\d\%\s\,\']+):?(\w+)?\]}} {
-	#var {my[hp][current]}		{%2};
-	#var {my[hp][max]}		{%3};
-	#var {my[sp][current]}		{%4};
-	#var {my[sp][fuse][current]}	{%5};
-	#var {my[sp][max]}		{%6};
-	#var {my[gp1][current]}		{%7};
-	#var {my[gp1][max]}		{%8};
-	#var {corpses[inventory]}	{%9};
-	#var {ehealth}			{%11};
-}
-
-#act {{Status\[w([\d]*)\%\|p(\w+)\|v(\w+)\|r(\d+)\%\] Cr\[(\d+)\%\]}} {
-	#var {my[worth]}	{%2};
-	#var {my[prot]}	{%3};
-	#var {my[gxp]}	{%6};
-	#if {$my[worth] < 125} {
-		con
+#act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[w(\d+)%\|p(\w+)\|v(\w+)\|r(\d+)\%\]}} {
+	#var {my[hpbar][hp]}				{%2};
+	#var {my[hpbar][sp]}				{%3};
+	#var {my[hpbar][spfuse]}			{%4};
+	#var {my[hpbar][np]}				{%5};
+	#var {my[hpbar][inv_corpses]}		{%6};
+	#var {my[hpbar][ehealth]}			{%7};
+	#var {my[hpbar][followerhp]}		{%9};
+	#var {my[hpbar][follower_corpses]}	{%10};
+	#var {my[hpbar][coffin_corpses]}	{%11};
+	#var {my[hpbar][worth]}				{%12};
+	#var {my[hpbar][protection_status]} {%13};
+	#var {my[hpbar][veil_status]}	    {%14};
+	#var {my[hpbar][power_reset]}	    {%15};
+	
+	#if {$my[hpbar][worth] < 125} {
+		con 100
 	};
-	#if {"$my[prot]" == "OFF"} {
+	#if {"$my[hpbar][protection_status]" == "OFF"} {
 		prot
 	};
 }
 
+#act {{TG\[(\d+)\|(\d+)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
+	#var {my[hbbar][teleports]}  	      {%2};
+	#var {my[hbbar][glamores]}	  		  {%3};
+	#var {my[hbbar][glamores_burn]}	  	  {%4};
+	#var {my[hbbar][GXP]} 	  			  {%5};
+	#var {my[hbbar][powers][dream]} 	  {%6};
+	#var {my[hbbar][powers][corrode]} 	  {%7};
+	#var {my[hbbar][powers][light]} 	  {%8};
+	#var {my[hbbar][powers][protection]}  {%9};	
+}
+
 #alias {update_status} {
-	#NOP Use SPFUSE;
-	#if {"$my[sp][fuse][current]" == ""} {#var my[sp][fuse][current] 0};
-	#if {$my[sp][max] - $my[sp][current] > $my[sp][fuse][current] &&
-	     $my[sp][fuse][current] > 0} {
-		#delay {spfuse} {#send !spfuse $my[sp][fuse][current]} {0.5};
-	};
-	#NOP Use dream;
-	#math {my[hp][open]} {$my[hp][max] - $my[hp][current]};
-	#if {$my[hp][open] < 0} {#var my[hp][open] 0};
-	#math {my[sp][open]} {$my[sp][max] - $my[sp][current] + $my[sp][fuse][max] - $my[sp][fuse][current]};
-	#if {$my[sp][open] < 0} {#var my[sp][open] 0};
-	#if {($my[hp][open] + $my[sp][open]) > 500} {
-		#delay {dream} {#send !dream zzzz} {0.5}
-	};
-	#if {$my[gp1][current] < $my[gp1][max]*.8 && $corpses[inventory] > 0} {
-		#if {$my[sp][fuse][current] > 0} {
-			spfuse $my[sp][fuse][current]
-		};
-		#delay {absorb} {#send !absorb} {0.5}
-	};
-	#if {$my[hp][current] < 400 && $corpses[inventory] > 0} {
-		ab2
-	};
 	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
 		#format {sb1_cooler} {%+2s} {$corpses[cooler]};
 		#var {sb1_cooler} { CL:<130>$sb1_cooler<088>}
@@ -84,10 +77,18 @@
 }
 
 #alias {corpsetrig} {
-	pp
+	#if {$solo} {
+		corpseme;		
+	} 
+	{
+		look;
+	}
 }
 
-#act {dealt the killing blow to} {corpsetrig}
+#act {Stormer dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
+
+#act {{You attack (.*)}} {psibleed;corrode;call}
+#act {{(.*) attacking you!}} {psibleed;corrode;call}
 
 /* Preserve all */
 #var preserving 0
@@ -126,6 +127,65 @@
 			mpp
 		}
 	}
+}
+
+
+#alias corpseme {
+	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask} {
+		qtrance preserve remains/wrap>2;get gold;cga
+	}
+	{
+		#if {$my[hpbar][coffin_corpses] < $coffinmax} {
+			qtrance preserve remains/wrap;get gold;cga
+		}
+	};
+	#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax && $mask} {
+		qtrance preserve remains/=get corpse>2;get gold;cga
+	}
+	{
+		#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax} {
+			qtrance preserve remains/=get corpse;get gold;cga
+		}
+	};
+	#if {$my[hpbar][follower_corpses] > 0 && $my[hpbar][coffin_corpses] < $coffinmax && $mask} {
+		qtrance preserve remains/wrap>2;get gold;cga
+	}
+	{
+		#if {$my[hpbar][follower_corpses] > 0 && $my[hpbar][coffin_corpses] < $coffinmax} {
+			qtrance ~=give corpse/wrap;get gold;cga
+		}
+	};
+	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask && $currentsmuggle < $smugglemax} {
+		qtrance preserve remains/smuggle corpse>2;get gold;cga
+	}
+	{
+		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle < $smugglemax} {
+			qtrance preserve remains/smuggle corpse;get gold;cga
+		}
+	};
+	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask} {
+		qtrance preserve remains/get corpse>2;get gold;cga
+	}
+	{
+		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax} {
+			qtrance preserve remains/get corpse;get gold;cga
+		}		
+	}
+}
+
+#alias dca {
+	retrieve;
+	n;
+	open chest;
+	get all from chest;
+	s;
+	donate all;
+	close chest;
+	deliver
+}
+
+#act {{You are currently smuggling (\d+)/20 items}} {
+	#var currentsmuggle %2
 }
 
 #class {necromancer} {close}

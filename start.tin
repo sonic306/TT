@@ -3,7 +3,7 @@
 #read .tt/aliases.tin
 #read .tt/events.tin
 #read .tt/graph.tin
-#NOP #read .tt/numpad.tin
+
 
 #alias {load3k} {
 	#read .tt/ticklist.tin;
@@ -21,7 +21,8 @@
 	#read .tt/3k/mip.tin;
 	#read .tt/3k/miphp.tin;
 	#read .tt/3k/trigs.tin;
-	#read .tt/3k/draw.tin
+	#read .tt/3k/draw.tin;
+	#read .tt/numpad.tin
 }
 #if {"$world" != ""} {
 	#regex {$world} {AW} {} {load3k}
