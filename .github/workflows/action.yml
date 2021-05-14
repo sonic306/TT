@@ -8,7 +8,7 @@ jobs:
         uses: shimataro/ssh-key-action@v2
         with:
           Key: ${{ secrets.MY_RSA_KEY }}
-          known_host: 'Just a placeholder for real host'
+          known_hosts: 'Just a placeholder for real host'
       - name: Adding Known Hosts
         run: ssh-keyscan -H $ {{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy to VM
