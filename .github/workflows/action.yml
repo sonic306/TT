@@ -1,9 +1,8 @@
-name: first-github-action
+name: Deploy Tintin 3k To VM
 on: 
   push:
     branches:
       - main
-
 jobs:
   deploy-to-vm:
     runs-on: ubuntu-latest

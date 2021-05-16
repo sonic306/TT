@@ -152,7 +152,7 @@
 	}
 	{
 		#if {$my[hpbar][follower_corpses] > 0 && $my[hpbar][coffin_corpses] < $coffinmax} {
-			qtrance ~=give corpse/wrap;get gold;cga
+			qtrance =give corpse/wrap;get gold;cga
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask && $currentsmuggle < $smugglemax} {
