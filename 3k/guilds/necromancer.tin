@@ -30,6 +30,10 @@
 	#if {"$my[hpbar][protection_status]" == "OFF"} {
 		prot
 	};
+
+	#if {$my[hpbar][inv_corpses] == 0 && $my[hpbar][coffin_corpses] > 2} {
+		qtrance unwrap/get corpse>2
+	}
 }
 
 #act {{TG\[(\d+)\|(\d+)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
@@ -79,13 +83,15 @@
 #alias {corpsetrig} {
 	#if {$solo} {
 		corpseme;		
+		#var idle 0
 	} 
 	{
 		look;
+		#var idle 0
 	}
 }
 
-#act {Stormer dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
+#act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
 
 #act {{You attack (.*)}} {psibleed;corrode;call}
 #act {{(.*) attacking you!}} {psibleed;corrode;call}
@@ -145,14 +151,6 @@
 	{
 		#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax} {
 			qtrance preserve remains/=get corpse;get gold;cga
-		}
-	};
-	#if {$my[hpbar][follower_corpses] > 0 && $my[hpbar][coffin_corpses] < $coffinmax && $mask} {
-		qtrance preserve remains/wrap>2;get gold;cga
-	}
-	{
-		#if {$my[hpbar][follower_corpses] > 0 && $my[hpbar][coffin_corpses] < $coffinmax} {
-			qtrance =give corpse/wrap;get gold;cga
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask && $currentsmuggle < $smugglemax} {
