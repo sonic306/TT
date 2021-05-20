@@ -172,8 +172,8 @@
 }
 
 #alias dca {
-	retrieve;
 	n;
+	retrieve;
 	open chest;
 	get all from chest;
 	s;
