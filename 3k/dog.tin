@@ -1,7 +1,7 @@
 #class {dog} {open}
 
 #var dog[corpse] no
-#var dog[name] Kerensky
+#var dog[name] Bolt
 
 #act {{^$dog[name] :: HP: (\d+)/(\d+)  Happy: ([\d\-]+)\%  Hungry: ([\d\-]+)\%  Level: (\d+)/(\d+)\%}} {
 	#var {dog[hp]}	{%2};
