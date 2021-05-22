@@ -613,7 +613,7 @@
 	#NOP Duplicate 'from' soul;
 	#REGEX {%0} {~you~} {#var mipgag 1};
 
-	#NO Dog Gaging;
+	#NOP Dog Gaging;
 	#REGEX {%0} {Brown Bay Schleswiger} {#var mipgag 1};
 
 	#NOP Add cases for tells/emotes to gag from monitor, such as mob emotes;
