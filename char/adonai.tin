@@ -1,7 +1,0 @@
-#class {adonai} {open}
-
-/* Read in files */
-#NOP Primary Guild Files
-#read .tt/3k/guilds/priest.tin
-
-#class {adonai} {close}

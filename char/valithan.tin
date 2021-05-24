@@ -1,7 +1,0 @@
-#class {valithan} open
-
-/* Read in files */
-#NOP Primary Guild File
-#read .tt/3k/guilds/jedi.tin
-
-#class {valithan} close

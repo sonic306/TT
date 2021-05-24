@@ -1,7 +1,0 @@
-#class {plasma} {open}
-
-/* Read in files */
-#NOP Primary Guild Files
-#read .tt/3k/guilds/necromancer.tin
-
-#class {plasma} {close}

@@ -1,7 +1,0 @@
-#class {lycanth} {open}
-
-/* Read in files */
-#NOP Primary Guild Files
-#read .tt/3k/guilds/changeling.tin
-
-#class {lycanth} {close}
