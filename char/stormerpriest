@@ -1,0 +1,7 @@
+#class {stormer} {open}
+
+/* Read in files */
+#NOP Primary Guild Files
+#read .tt/3k/guilds/priest.tin
+
+#class {stormer} {close}
