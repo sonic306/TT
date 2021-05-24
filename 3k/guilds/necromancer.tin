@@ -93,9 +93,9 @@
 
 #act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
 
-#NOP #act {{You attack (.*)}} {psibleed;corrode;call}
-#NOP #act {{(.*) attacking you!}} {psibleed;corrode;call}
-#act {{A field of superheated steam seeps into the room at your command}} {psibleed;corrode;call}
+#act {{You attack (.*)}} {psibleed;corrode;call}
+#act {{(.*) attacking you!}} {psibleed;corrode;call}
+#NOP #act {{A field of superheated steam seeps into the room at your command}} {psibleed;corrode;call}
 
 /* Preserve all */
 #var preserving 0
@@ -136,6 +136,7 @@
 	}
 }
 
+#act {Receiving room} {mapgo tp}
 
 #alias corpseme {
 	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask} {
