@@ -332,7 +332,7 @@
 	#var mapping on;
 }
 #alias {mapoff}{
-	#send !brief on yes;
+	#send !brief on no;
 	#map flag static on;
 	#unvar mapstatic;
 	#unvar mapping;
