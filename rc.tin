@@ -66,7 +66,7 @@
                         #var {mud} {AW}
                 } {
                         #regex {%0} {stormer} {
-                                #ses {stormer} {3k.org} {3000};
+                                #ses {stormerjedi} {3k.org} {3000};
 			        #var {ses_name} {stormer};
 			        #var {mud} {3k}
                         }
