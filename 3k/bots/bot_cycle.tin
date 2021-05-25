@@ -25,7 +25,7 @@
 }
 
 #alias {nextarea} {
-	brief yes no;
+	brief on no;
 	#if {$cycle < &{botcycle[]}} {
 		#math cycle {$cycle+1}
 	} {
