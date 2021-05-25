@@ -43,7 +43,7 @@
 /* Character Switching */
 #alias {switchto} {
         #zap;
-        #if {"%0" == ""} {
+        #if {"%0" == "" || "%0" == "stormerjedi" || "%0" == "stormerknight" || "%0" == "stormerpriest" || "%0" == "stormer" } {
                 connect stormer
         } {
                 connect %0
