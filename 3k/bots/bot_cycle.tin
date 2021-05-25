@@ -17,7 +17,7 @@
 }
 
 #alias {thisarea} {
-	brief yes no;
+	brief yes off;
 	#list {botcycle} {get} {$cycle} {currentarea};
 	go $currentarea;
 	#delay {1} {- $currentarea};
@@ -25,7 +25,7 @@
 }
 
 #alias {nextarea} {
-	brief yes no;
+	brief yes off;
 	#if {$cycle < &{botcycle[]}} {
 		#math cycle {$cycle+1}
 	} {
