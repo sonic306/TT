@@ -66,22 +66,22 @@
                         #var {mud} {AW}
                 } {
                         #regex {%0} {stormer{%w}} {
-                                #if {"%1" == "jedi"} {
+                                #if {"&1" == "jedi"} {
                                         #ses {stormerjedi} {3k.org} {3000};
                                         #var {ses_name} {stormer};
 			                #var {mud} {3k}
                                 };
-                                #if {"%1" == "priest"} {
+                                #if {"&1" == "priest"} {
                                         #ses {stormerpriest} {3k.org} {3000};
                                         #var {ses_name} {stormer};
 			                #var {mud} {3k}
                                 };
-                                #if {"%1" == "knight"} {
+                                #if {"&1" == "knight"} {
                                         #ses {stormerknight} {3k.org} {3000};
                                         #var {ses_name} {stormer};
 			                #var {mud} {3k}
                                 };
-                                #if {"%1" == ""} {
+                                #if {"&1" == ""} {
                                         #ses {stormer} {3k.org} {3000};
                                         #var {ses_name} {stormer};
 			                #var {mud} {3k}
