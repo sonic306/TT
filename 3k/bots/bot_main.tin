@@ -20,8 +20,7 @@ prompt >$nl$
 #alias {.pause} {
 	#class {xbot} {kill};
 	#var stepping 0;
-	#alias {_check_mob} {.pause};
-	mapon
+	#alias {_check_mob} {.pause}
 }
 
 #alias {.stop} {
@@ -32,8 +31,7 @@ prompt >$nl$
 	#alias {xx} {#nop};
 	#alias {_check_mob} {#nop};
 	#var stepping 0;
-	#var halt 1;
-	mapon
+	#var halt 1
 }
 
 #alias {.resume} {
@@ -41,8 +39,7 @@ prompt >$nl$
 	#path load $bots[path];
 	#path goto $bots[position];
 	#var halt 0;
-	#delay {2} {.bot};
-	mapoff
+	#delay {2} {.bot}
 }
 
 #alias {.single} {
