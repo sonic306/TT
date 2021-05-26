@@ -92,10 +92,11 @@
 }
 
 #act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
+#act {{The psibleed upon (\w+) has dissipated.}} {psibleed}
 
-#act {{You attack (.*)}} {psibleed;corrode;call}
-#act {{(.*) attacking you!}} {psibleed;corrode;call}
-#NOP #act {{A field of superheated steam seeps into the room at your command}} {psibleed;corrode;call}
+#NOP #act {{You attack (.*)}} {psibleed;corrode;call}
+#NOP #act {{(.*) attacking you!}} {psibleed;corrode;call}
+#act {{A field of superheated steam seeps into the room at your command}} {psibleed;corrode;call}
 
 /* Preserve all */
 #var preserving 0
