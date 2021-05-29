@@ -14,8 +14,10 @@
 	#var my[mode]		%10;
 	#var my[charge]		%12;
 	#var my[gxp][current]	%14;
-	#echo {HPBAR};
+	#NOP #echo {HPBAR};
 	update_status
+
+	#if {$my[gp1][current] < 20 || $my[gp2][current] > 80} {.stop}
 }
 
 #alias {update_status} {
@@ -54,6 +56,9 @@
 	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 }
 
+
+#act {^You are fully rejuvenated and thus exit your trance$} {med}
+
 #alias corpsetrig {
 	focus absorb energy;
 	get coins;
@@ -65,5 +70,8 @@
 #alias rcost {focus check /rcost}
 #alias guide {focus mode /guide}
 #alias wdraw {draw lightsaber}
+#alias hb {focus hibernation trance}
+#alias abt {focus abilities /trainable}
+#alias med {focus meditation}
 
 #class {jedi} close
