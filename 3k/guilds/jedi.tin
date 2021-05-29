@@ -64,5 +64,6 @@
 #alias gs {focus guild score}
 #alias rcost {focus check /rcost}
 #alias guide {focus mode /guide}
+#alias wdraw {draw lightsaber}
 
 #class {jedi} close
