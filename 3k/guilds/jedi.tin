@@ -55,10 +55,14 @@
 }
 
 #alias corpsetrig {
-	wrap;
-	slab;
 	focus absorb energy;
-	get coins
+	get coins;
+	get all
 }
+
+#alias lstats {focus login stats}
+#alias gs {focus guild score}
+#alias rcost {focus check /rcost}
+#alias guide {focus mode /guide}
 
 #class {jedi} close
