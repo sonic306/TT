@@ -60,7 +60,7 @@
 #alias corpsetrig {
 	focus absorb energy;
 	get coins;
-	get all
+	get all;
 	#if {$my[gp1][current] < 20 || $my[gp2][current] > 80} {.stop}
 }
 
