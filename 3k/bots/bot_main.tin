@@ -18,7 +18,6 @@ prompt >$nl$
 
 
 #alias {.pause} {
-	brief off yes;
 	#class {xbot} {kill};
 	#var stepping 0;
 	#alias {_check_mob} {.pause}
@@ -37,7 +36,6 @@ prompt >$nl$
 }
 
 #alias {.resume} {
-	brief on no;
 	#map run $bots[vnum];
 	#path load $bots[path];
 	#path goto $bots[position];
