@@ -55,7 +55,7 @@
 }
 
 
-#act {^You are fully rejuvenated and thus exit your trance$} {med}
+#act {You are fully rejuvenated and thus exit your trance} {med}
 
 #alias corpsetrig {
 	focus absorb energy;

@@ -1,0 +1,29 @@
+#class {bot} {open}
+
+#var {no_loop} {0}
+#var {no_home} {0}
+#var {hardmode} {1}
+#var {vacuum} {1}
+
+#var {botpath} {s;s;s;s;e;s;e;s;e;s;s;w;w;w;n;w;n;w;n;n;w;n;n;n;n;e;n;n;e;n;e;n;e;e;w;w;s;w;s;w;s;s;w;s;w;w;s;w;s;w;w;s;n;e;e;s;e;s;e;e;e;n;w;e;w;n;n;s;s;s;e;s;s;w;s;w;s;w;w;w;w;s;s;e;w;w;e;s;n;n;n;e;e;e;e;s;e;e;s;s;w;e;e;w;s;n;n;n;w;w;s;w;s;w;e;e;w;s;w;e;e;w;s;w;e;e;w;s;n;n;n;n;e;n;n;n;e;n;e;n;e;s;e;s;e;e;e;s;s;n;n;e;e;e;s;s;s;e;w;n;n;n;e;e;n;e;n;e;n;n;n;n;e;n;n;n;w;n;w;n;w;e;s;e;s;e;s;s;s;w;s;s;s;s;w;s;w;s;w;w;s;s;s;e;d;w;w;e;s;s;e;e;n;n;e;n;e;s;e;s;w;s;w;s;w;sw;s;s;s;s;s;s;sw;sw;se;s;s;s;se;se;se;se;se;sw;w;w;sw;se;s;w;nw;nw;se;w;w;w;w;se;nw;s;n;n;s;ne;sw;nw;se;w;e;sw;ne;e;e;e;e;sw;ne;se;w;e;e;sw;w;w;w;sw;s;nw;se;se;nw;s;n;sw;nw;se;w;e;s;n;se;e;w;se;nw;nw;s;se;sw;ne;se;nw;nw;sw;ne;se;se;sw;sw;ne;se;s;n;nw;ne;e;se;nw;ne;w;e;e;w;nw;se;n;s;ne;sw;e;e;n;s;e;w;ne;sw;w;w;sw;w;nw;nw;n;ne;se;e;e;e;e;e;se;s;e;w;se;sw;w;w;ne;sw;n;s;nw;se;se;nw;w;e;sw;ne;s;n;e;e;ne;s;se;se;e;se;nw;e;w;ne;ne;sw;sw;e;e;ne;n;n;nw;se;e;nw;se;w;s;s;se;sw;ne;nw;ne;sw;sw;w;w;w;nw;ne;e;w;se;nw;sw;nw;n;se;ne;sw;nw;ne;e;se;e;s;n;nw;se;w;nw;ne;e;w;se;se;nw;w;sw;w;sw;nw;e;ne;e;nw;e;w;w;w;se;nw;ne;sw;e;e;ne;w;nw;w;s;n;ne;n;s;se;e;se;ne;se;ne;se;nw;ne;se;s;sw;w;w;w;n;s;w;e;se;e;se;ne;e;nw;sw;ne;se;w;se;sw;se;s;w;n;s;e;se;nw;sw;ne;se;s;n;ne;se;e;e;se;nw;w;w;nw;e;n;ne;sw;s;w;sw;nw;n;nw;ne;s;se;e;ne;ne;se;sw;e;se;s;n;se;nw;e;w;nw;w;ne;e;se;n;s;nw;w;nw;ne;s;n;se;nw;e;w;ne;sw;nw;se;w;e;n;n;s;ne;sw;s;nw;n;ne;e;w;nw;ne;n;n;n;ne;nw;ne;nw;ne;nw;ne;n;n;n;n;nw;se;s;s;s;s;sw;se;sw;se;sw;se;sw;s;s;s;sw;se;e;se;nw;w;sw;s;se;e;ne;sw;se;nw;e;ne;s;n;sw;w;w;sw;sw;sw;w;nw;n;se;e;ne;nw;e;w;ne;sw;n;s;se;sw;w;nw;e;w;nw;sw;e;w;nw;w;nw;e;e;e;ne;se;se;nw;ne;e;e;n;e;nw;n;s;se;w;s;w;w;sw;nw;n;ne;e;s;n;sw;ne;se;nw;ne;sw;nw;se;n;s;e;w;w;sw;nw;sw;sw;nw;ne;sw;sw;nw;ne;e;sw;ne;n;s;w;sw;w;nw;ne;se;nw;sw;n;ne;se;e;w;ne;sw;nw;ne;e;e;w;se;se;ne;s;s;sw;ne;n;n;se;nw;nw;se;ne;ne;e;e;s;n;sw;ne;se;nw;e;w;ne;sw;n;s;nw;se;w;w;sw;sw;sw;nw;nw;ne;n;n;s;s;nw;se;ne;ne;sw;sw;nw;nw;se;se;ne;n;n;ne;sw;s;s;sw;nw;n;ne;sw;s;se;sw;w;sw;sw;s;sw;s;sw;w;w;w;w;w;nw;n;ne;e;e;e;sw;w;w;e;s;n;sw;ne;e;ne;ne;e;ne;n;sw;ne;w;e;se;nw;ne;s;n;se;nw;sw;s;sw;w;se;sw;s;n;sw;w;ne;ne;sw;sw;e;ne;ne;s;s;n;n;nw;e;ne;n;ne;n;nw;nw;nw;nw;nw;n;n;n;nw;ne;ne;n;n;n;n;n;n;ne;e;n;e;n;e;n;w;n;w;s;w;w;w;w;w;s;w;w;s;w;s;w;w;e;e;n;n;e;n;n;e;e;n;n;w;w;s;n;w;w;s;s;s;s;e;w;w;w;s;s;n;w;s;n;n;w;w;n;n;e;e;e;s;n;n;e;w;n;w;w;s;s;w;w;w;w;s;n;e;e;e;s;s;w;s;n;e;n;n;w;w;n;n;e;e;w;n;n;n;e;e;s;s;n;e;e;s;n;e;e;s;n;w;n;w;n;w;w;s;w;w;n;w;w;e;e;n;n;e;e;e;s;n;n;w;e;n;n;n;n;ne;nw;n;n;n;ne;nw;n;n;n;ne;ne;n;n;n;nw;nw;n;n;n;nw;ne;n;n;n;n;n;n;n;n;n;nw;n;n;n;n;ne;n;n;n;n;nw;ne;ne;nw;nw;n;n;n;n;ne;n;n;n;n;nw;n;n;n;nw;nw;nw;n;n;nw;nw;se;w;w;w;ne;n;ne;s;n;n;se;s;s;se;se;se;se;e;se;e;se;se;nw;nw;w;se;nw;nw;w;nw;nw;nw;nw;n;n;nw;s;sw;n;n;nw;e;e;e;ne;ne;ne;ne;e;se;s;sw;w;nw;ne;e;s;w;e;n;w;sw;se;e;ne;n;nw;w;sw;sw;sw;sw;se;e;e;e;e;e;ne;e;ne;ne;ne;ne;e;e;e;e;se;s;s;sw;sw;w;w;w;nw;n;ne;ne;e;e;se;s;sw;w;nw;ne;se;w;e;nw;sw;se;e;ne;n;nw;w;w;sw;sw;s;se;e;e;e;ne;ne;n;n;nw;w;w;w;w;sw;sw;sw;sw;w;sw;w;w;w;w;w;se;se;se;se;se;nw;nw;nw;nw;nw;s;se;se;se;nw;nw;nw;s;se;se;se;e;se;e;e;se;e;e;e;e;e;e;e;e;ne;ne;ne;n;nw;nw;w;w;w;sw;sw;sw;se;se;e;e;e;ne;ne;n;nw;w;w;w;sw;sw;se;e;e;e;ne;n;w;w;w;e;e;e;s;sw;w;w;w;nw;ne;ne;e;e;e;se;s;sw;sw;w;w;w;nw;nw;ne;ne;ne;e;e;e;se;se;s;sw;sw;sw;w;w;w;w;w;w;w;w;nw;w;se;se;nw;nw;w;se;se;se;nw;nw;nw;nw;w;se;se;nw;nw;nw;nw;nw;s;se;se;se;nw;nw;nw;n;n;n;nw;w;w;w;nw;nw;n;ne;e;se;sw;nw;e;w;se;ne;nw;w;sw;s;se;se;sw;s;s;s;n;nw;nw;sw;s;se;ne;nw;s;n;se;sw;nw;n;ne;se;se;s;se;sw;w;n;e;w;s;e;ne;e;e;e;se;s;s;se;se;se;s;s;s;se;s;s;s;s;sw;s;s;s;s;se;se;sw;sw;se;s;s;s;s;sw;s;s;s;s;se;ne;ne;e;e;se;nw;w;w;sw;sw;s;s;s;s;s;s;s;s;s;sw;se;s;s;s;se;se;s;s;s;sw;sw;s;s;s;se;sw;s;s;s;se;sw;s;s;s;s;s;s;s;e;s;s;e;e;s;s;e;e;e;e;s;s;s;s;s;n;n;e;e;n;n;e;e;s;s;e;n;e;n;e;e;n;w;w;e;s;e;e;n;n;w;w;e;n;s;s;s;s;n;e;n;e;e;n;s;w;n;n;n;w;s;w;s;w;e;n;e;n;e;s;s;s;w;w;e;e;s;s;w;s;w;w;w;w;w;n;w;w;n;n;w;w;n;n;s;s;e;e;e;e;s;s;s;e;e;e;u;w;n;n;n;w;w;w;n;n;w;n;w;n;w;n;n;n;n;e;n;e;n;e;n;n;s;s;e;e;e;s;e;s;e;s;s;s;s;w;s;w;s;w;w;w;w;n;w;n;w;n;n;n;n;e;n;e;n;e;n;n;e;e;e;e;w;w;w;w;w;w;w;s;w;s;w;s;s;w;s;w;w;s;w;s;w;w;s;d;e;e;s;s;s;s;w;s;s;w;s;e;w;n;e;n;n;e;n;n;n;n;w;w;u;n;e;e;n;e;n;e;e;n;e;n;n;e;n;e;n;e;e;e;e;e;e;e;e;nw;w;w;sw;sw;nw;n;n;n;n;ne;n;n;n;n;nw;ne;ne;nw;nw;n;n;n;n;ne;n;n;n;n;nw;n;n;n;nw;nw;nw;n;n;nw;nw;n;nw;n;nw;e;e;e;se;s;s;se;se;se;e;se;e;e;se;e;e;e;e;e;e;e;e;ne;ne;ne;n;nw;nw;w;w;w;sw;sw;sw;se;se;e;e;e;ne;ne;n;nw;w;w;w;sw;sw;se;e;e;e;ne;n;w;w;w;sw;e;e;}
+
+#act {^=M= {Ant Guard|Ant nurse|Ant Warrior|Arachnid beast|Arachnid soldier|Arachnid Warrior|Guardian Ant|Man-ant|Man-Spider|Spider beast|Spider creature|Warrior ant}} {
+	#switch {"%1"} {
+        #case {"Ant Guard"}	             {#var mobname ant};
+        #case {"Ant nurse"}		         {#var mobname ant};
+        #case {"Ant Warrior"}		     {#var mobname ant};
+        #case {"Arachnid beast"}		 {#var mobname spider};
+        #case {"Arachnid soldier"}	     {#var mobname spider};
+        #case {"Arachnid Warrior"}		 {#var mobname spider};
+        #case {"Guardian Ant"}		     {#var mobname ant};
+        #case {"Man-Spider"}		     {#var mobname spider};
+        #case {"Man-ant"}	             {#var mobname ant};
+        #case {"Spider beast"}		     {#var mobname spider};
+        #case {"Spider creature"}		 {#var mobname spider};
+        #case {"Warrior ant"}		     {#var mobname ant}
+
+	};
+	_check_mob
+}
+
+#class {bot} {close}
