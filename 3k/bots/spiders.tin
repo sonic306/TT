@@ -9,18 +9,18 @@
 
 #act {^=M= {Ant guard|Ant nurse|Ant warrior|Arachnid beast|Arachnid soldier|Arachnid warrior|Guardian ant|Man-ant|Man-spider|Spider beast|Spider creature|Warrior ant}} {
 	#switch {"%1"} {
-        #case {"Ant Guard"}	             {#var mobname ant};
-        #case {"Ant nurse"}		         {#var mobname ant};
-        #case {"Ant Warrior"}		     {#var mobname ant};
-        #case {"Arachnid beast"}		 {#var mobname spider};
-        #case {"Arachnid soldier"}	     {#var mobname spider};
-        #case {"Arachnid warrior"}		 {#var mobname spider};
-        #case {"Guardian Ant"}		     {#var mobname ant};
-        #case {"Man-Spider"}		     {#var mobname spider};
-        #case {"Man-ant"}	             {#var mobname ant};
-        #case {"Spider beast"}		     {#var mobname spider};
-        #case {"Spider creature"}		 {#var mobname spider};
-        #case {"Warrior ant"}		     {#var mobname ant}
+                #case {"Ant Guard"}	             {#var mobname ant};
+                #case {"Ant nurse"}		     {#var mobname ant};
+                #case {"Ant Warrior"}		     {#var mobname ant};
+                #case {"Arachnid beast"}             {#var mobname spider};
+                #case {"Arachnid soldier"}	     {#var mobname spider};
+                #case {"Arachnid warrior"}           {#var mobname spider};
+                #case {"Guardian Ant"}		     {#var mobname ant};
+                #case {"Man-Spider"}		     {#var mobname spider};
+                #case {"Man-ant"}	             {#var mobname ant};
+                #case {"Spider beast"}		     {#var mobname spider};
+                #case {"Spider creature"}	     {#var mobname spider};
+                #case {"Warrior ant"}		     {#var mobname ant}
 
 	};
 	_check_mob
