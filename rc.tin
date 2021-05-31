@@ -44,7 +44,7 @@
 #alias {switchto} {
         #zap;
         #if {"%0" == ""} {
-                connect inix
+                connect stormer
         } {
                 connect %0
         };
@@ -57,25 +57,17 @@
                 #math {ses_len} {$ses_len-2};
                 #format {ses_name} {%.${ses_len}s} {%0};
                 #var {mud} {3s}
-        } {
-                #regex {%0} {AW} {
-                        #ses {%0} {aardwolf.org} {23};
-                        #format {ses_len} {%L} {%0};
-                        #math {ses_len} {$ses_len-2};
-                        #format {ses_name} {%.${ses_len}s} {%0};
-                        #var {mud} {AW}
-                } {
-			#ses {%0} {3k.org} {3000};
-			#var {ses_name} {%0};
-			#var {mud} {3k}
-		}
+        } 
+        {
+                #ses {%0} {3k.org} {3000};
+                #var {ses_name} {%0};
+                #var {mud} {3k}
         };
         $ses_name;
         #if {$world == "stormer"} {
                 #textin .tt/.pass
         };
         {
-        #if $world == "stormer3s"} {
                 #textin .tt/.pass3s
         }
 }
