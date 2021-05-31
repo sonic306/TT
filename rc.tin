@@ -43,8 +43,8 @@
 /* Character Switching */
 #alias {switchto} {
         #zap;
-        #if {"%0" == "" || "%0" == "stormerjedi" || "%0" == "stormerknight" || "%0" == "stormerpriest" || "%0" == "stormer" } {
-                connect stormer
+        #if {"%0" == ""} {
+                connect inix
         } {
                 connect %0
         };
@@ -65,33 +65,16 @@
                         #format {ses_name} {%.${ses_len}s} {%0};
                         #var {mud} {AW}
                 } {
-                        #regex {%0} {jedi} {
-                                #ses {stormerjedi} {3k.org} {3000};
-			        #var {ses_name} {stormer};
-			        #var {mud} {3k}
-                        };
-                        #regex {%0} {priest} {
-                                #ses {stormerpriest} {3k.org} {3000};
-			        #var {ses_name} {stormer};
-			        #var {mud} {3k}
-                        };
-                        #regex {%0} {knight} {
-                                #ses {stormerknight} {3k.org} {3000};
-			        #var {ses_name} {stormer};
-			        #var {mud} {3k}
-                        };
-                        #regex {%0} {nec} {
-                                #ses {stormernec} {3k.org} {3000};
-			        #var {ses_name} {stormer};
-			        #var {mud} {3k}
-                        }
+			#ses {%0} {3k.org} {3000};
+			#var {ses_name} {%0};
+			#var {mud} {3k}
 		}
         };
         $ses_name;
         #if {$world == "stormer"} {
                 #textin .tt/.pass
         }
-        elseif {$world == "stormer3s} {
+        elseif {$world == "stormer3s"} {
                 #textin .tt/.pass3s
         }
 }
