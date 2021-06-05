@@ -110,7 +110,7 @@
 							#SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
 							#SEND !cast prismatic sphere;
 							#DELAY {15} {
-								#SEND !cast greater contingency as mantle#400#cast mantle;
+								#SEND !cast greater contingency as mantle#200#cast mantle;
 								#SEND !cast mantle;
 								#DELAY {15} {
 									#SEND !cast greater contingency as protection from evil#cast protection from evil;
