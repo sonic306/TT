@@ -88,7 +88,7 @@
 };
 
 #alias setcont {
-		#SEND !cast perform as cast mind warp;
+		#SEND !cast perform as cast clenched fist;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
 		#SEND !cast find familiar;
