@@ -6,20 +6,20 @@
 #NOP As I learned more about TT++ I realized I could have put the normal regular expression in double curly brackets instead of curling each capture. Not refactoring.;
 #act {{^HP: (\d+)/(\d+) SP: (\d+)/(\d+)/(\d+)%/(\d+)% Sat: (\d+) Cnc: (\d+) G/MI: (\d+)/(\d+)/(\d+)% ER: (\d+)/(\d+)% G2N: (\d+)%}} {
 	#var {sptracker[spPrevious]}	{$sptracker[spCurrent]}; 
-	#var {magebar[hp][current]}	{%1};
-	#var {magebar[hp][max]}		{%2};
-	#var {magebar[sp][current]}	{%3};
-	#var {magebar[sp][max]}		{%4};
-	#var {magebar[mc]}		    {%5};
-	#var {magebar[gem]}		    {%6};
-	#var {magebar[sat]}		    {%7};
-	#var {magebar[conc]}		{%8};
-	#var {magebar[gol]}		    {%9};
-	#var {magebar[imm]}		    {%10};
-	#var {magebar[magreset]}	{%11};
-	#var {magebar[er]}		    {%12};
-	#var {magebar[screset]}		{%13};
-	#var {magebar[g2n]}		    {%14};
+	#var {magebar[hp][current]}	{%2};
+	#var {magebar[hp][max]}		{%3};
+	#var {magebar[sp][current]}	{%4};
+	#var {magebar[sp][max]}		{%5};
+	#var {magebar[mc]}		    {%6};
+	#var {magebar[gem]}		    {%7};
+	#var {magebar[sat]}		    {%8};
+	#var {magebar[conc]}		{%9};
+	#var {magebar[gol]}		    {%10};
+	#var {magebar[imm]}		    {%11};
+	#var {magebar[magreset]}	{%12};
+	#var {magebar[er]}		    {%13};
+	#var {magebar[screset]}		{%14};
+	#var {magebar[g2n]}		    {%15};
 	#var {sptracker[spCurrent]}	{$magebar[sp][current]};
 	
 	#IF {$sptracker[on]} {
