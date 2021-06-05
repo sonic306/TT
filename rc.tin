@@ -84,13 +84,12 @@
                 #var {mud} {3k}
         };
         $ses_name;
-        #if {$world == "stormer"} {
+        #if {"$world" == "stormer"} {
                 #textin .tt/.pass
         };
-        #if {$world == "stormer3s"} {
+        #elseif {"$world" == "stormer3s"} {
                 #textin .tt/.pass3s
         };
-        #if {$world == "mikefury"} {
+        #elseif {"$world" == "mikefury"} {
                 #textin .tt/.passmike
-        };
-}
+        };}
