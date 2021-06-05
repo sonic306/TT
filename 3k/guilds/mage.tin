@@ -87,6 +87,24 @@
 	};
 };
 
+#act {dealt the killing blow} {
+    corpsetrig;
+}
+
+#alias corpsetrig {
+    #SEND !cast corpse blast;
+    #SEND !get gold;
+}
+
+#alias tel {
+    cast telekinesis as $* from box;
+};
+
+#alias bc {
+    box check;
+};
+
+
 #alias setcont {
 		#SEND !cast perform as cast clenched fist;
 		#SEND !cast activate combat;
@@ -97,34 +115,34 @@
 		#DELAY {1} {
 			#SEND !cast greater contingency as shield#cast magnificent shield;
 			#SEND !cast magnificent shield;
-			#DELAY {15} {
+			#DELAY {5} {
 				#SEND !cast greater contingency as stoneskin#cast stoneskin;
 				#SEND !cast stoneskin;
-				#DELAY {15} {
+				#DELAY {5} {
 					#SEND !cast greater contingency as armor#cast armor;
 					#SEND !cast armor;
-					#DELAY {15} {
+					#DELAY {5} {
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;
-						#DELAY {15} {
+						#DELAY {5} {
                             #SEND !cast greater contingency as minor globe#cast minor globe;
 						    #SEND !cast minor globe;
-						    #DELAY {15} {
+						    #DELAY {5} {
                                 #SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
                                 #SEND !cast prismatic sphere;
-                                #DELAY {15} {
+                                #DELAY {5} {
                                     #SEND !cast greater contingency as mantle#200#cast mantle;
                                     #SEND !cast mantle;
-                                    #DELAY {15} {
+                                    #DELAY {5} {
                                         #SEND !cast greater contingency as protection from evil#cast protection from evil;
                                         #SEND !cast protection from evil;
-                                        #DELAY {15} {
+                                        #DELAY {5} {
                                             #SEND !cast contingency as hp#100#cast secure shelter;
-                                            #DELAY {15} {
+                                            #DELAY {5} {
                                                 #SEND !cast contingency as sp#50#cast secure shelter;
-                                                #DELAY {15} {
+                                                #DELAY {5} {
                                                     #SEND !cast mindblank;
-                                                    #DELAY {15} {
+                                                    #DELAY {5} {
                                                         #SEND !cast giant strength mikefury;
                                                     };
                                                 };
