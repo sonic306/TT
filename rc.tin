@@ -80,7 +80,7 @@
         };
         #regex {%0} {mikefury} {
                 #ses {mikefury} {3k.org} {3000};
-                #var {ses_name} {mikeyfury};
+                #var {ses_name} {mikefury};
                 #var {mud} {3k}
         };
         $ses_name;
