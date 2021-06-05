@@ -2,4 +2,70 @@
 
 #var guild mage
 
+#NOP   HP: 2529/1261 SP: 7877/11675/94%/60% Sat: 79 Cnc: 0 G/MI: 3/1/21% ER: 0/81% G2N: 39%;
+#NOP As I learned more about TT++ I realized I could have put the normal regular expression in double curly brackets instead of curling each capture. Not refactoring.;
+#act {{^HP: {\d+}/{\d+} SP: {\d+}/{\d+}/{\d+}%/{\d+}% Sat: {\d+} Cnc: {\d+} G/MI: {\d+}/{\d+}/{\d+}% ER: {\d+}/{\d+}% G2N: {\d+}%}} {
+	#var {sptracker[spPrevious]}	{$sptracker[spCurrent]}; 
+	#var {magebar[hp][current]}	{%1};
+	#var {magebar[hp][max]}		{%2};
+	#var {magebar[sp][current]}	{%3};
+	#var {magebar[sp][max]}		{%4};
+	#var {magebar[mc]}		    {%5};
+	#var {magebar[gem]}		    {%6};
+	#var {magebar[sat]}		    {%7};
+	#var {magebar[conc]}		{%8};
+	#var {magebar[gol]}		    {%9};
+	#var {magebar[imm]}		    {%10};
+	#var {magebar[magreset]}	{%11};
+	#var {magebar[er]}		    {%12};
+	#var {magebar[screset]}		{%13};
+	#var {magebar[g2n]}		    {%14};
+	#var {sptracker[spCurrent]}	{$magebar[sp][current]};
+	
+	#IF {$sptracker[on]} {
+		calculateBaseSpRegen;
+	};
+
+	#NOP About to reset. Don't let mystic immersion go to waste homie;
+	#if {${magebar[magreset]} > 94 && ${magebar[imm]} > 0} {
+		#SEND !cast mystic immersion;
+	};
+
+	#NOP If sat is this high, then you're out of corpses. Secure shelter like a lil bitch;
+	#if {${magebar[sat]} > 93} {
+		#SEND !cast secure shelter;
+	};
+
+	#NOP Enage mystic immersion;
+	#if {${magebar[sp][current]} < 4000 && ${magebar[imm]} > 0} {
+		#SHOWME !cast mystic immersion;
+		#SEND !cast mystic immersion;
+	};
+	
+	#NOP About to reset. Don't let explosive releases go to waste meow;
+	#if {${magebar[sat]} > 85 && ${magebar[er]} > 0} {
+		#SHOWME !cast explosive release;
+		#SEND !cast explosive release;
+	};
+	
+	#NOP Mystic immersions depleted if sp drops this low. Leverage eternal heal to minimize downtime;
+	#NOP hasHeal is set in eternal.tin;
+	#if {${magebar[sp][current]} < 3600 && !${resting} && ${hasHeal}} {
+		#SHOWME !(heal guru;
+		#SEND !(heal guru;
+	};
+
+	#NOP Immersions gone. (heal gone. Dire situation);
+	#if {${magebar[sp][current]} < 1700  && ${magebar[sat]} < 85} {
+		#SHOWME !hmheal, !cast spell tap;
+		#SEND !hmheal;
+		#SEND !cast spell tap;
+	};
+};
+
+#NOP  PROT: [ A MS SS M PS MG PE MB <P> ST] COF:30/30 *!!! Mon(Rip):eme;
+#act {{^ PROT:.*COF:(\d+)\/(\d+)}} {
+	#var {magebar[cof][current]}	{%2};
+	#var {magebar[cof][max]}	    {%3};
+};
 #class {mage} {close}
