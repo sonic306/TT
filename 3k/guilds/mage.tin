@@ -1,5 +1,5 @@
-#class {open} {mage}
+#class {mage} {open}
 
 #var guild mage
 
-#class {close} {mage}
+#class {mage} {close}
