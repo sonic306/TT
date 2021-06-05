@@ -82,7 +82,7 @@
                 #ses {mikefury} {3k.org} {3000};
                 #var {ses_name} {mikeyfury};
                 #var {mud} {3k}
-
+        };
         $ses_name;
         #if {$world == "stormer"} {
                 #textin .tt/.pass
