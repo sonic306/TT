@@ -116,13 +116,13 @@
 									#SEND !cast greater contingency as protection from evil#cast protection from evil;
 									#SEND !cast protection from evil;
 									#DELAY {15} {
-										#SEND !cast contingency as hp#900#cast secure shelter;
+										#SEND !cast contingency as hp#100#cast secure shelter;
 										#DELAY {15} {
-											#SEND !cast contingency as sp#1000#cast secure shelter;
+											#SEND !cast contingency as sp#50#cast secure shelter;
 											#DELAY {15} {
 												#SEND !cast mindblank;
 												#DELAY {15} {
-													#SEND !cast giant strength guru;
+													#SEND !cast giant strength mikefury;
 												};
 											};
 										};
