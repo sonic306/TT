@@ -68,4 +68,73 @@
 	#var {magebar[cof][current]}	{%2};
 	#var {magebar[cof][max]}	    {%3};
 };
+
+#alias rest {
+	#VAR {resting} {1};
+	#SEND !hp;
+	#if {${magebar[sp][current]} < ${magebar[sp][max]} || ${magebar[sat]} > 40} {
+		#SHOWME Recovering...;
+		#DELAY {5} {
+			rest;
+		};
+	}
+	{
+		#VAR {resting} {0};
+		#showme Resuming from deep rest...;
+		#if {!$singlestep} {
+			.bot;
+		};
+	};
+};
+
+#alias setcont {
+		#SEND !cast perform as cast mind warp;
+		#SEND !cast activate combat;
+		#SEND !study spellbook;
+		#SEND !cast find familiar;
+		#SEND !cast deeppockets;
+		#SEND !cast light;
+		#DELAY {1} {
+			#SEND !cast greater contingency as shield#cast magnificent shield;
+			#SEND !cast magnificent shield;
+			#DELAY {15} {
+				#SEND !cast greater contingency as stoneskin#cast stoneskin;
+				#SEND !cast stoneskin;
+				#DELAY {15} {
+					#SEND !cast greater contingency as armor#cast armor;
+					#SEND !cast armor;
+					#DELAY {15} {
+						#SEND !cast greater contingency as major globe#cast major globe;
+						#SEND !cast major globe;
+						#DELAY {15} {
+							#SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
+							#SEND !cast prismatic sphere;
+							#DELAY {15} {
+								#SEND !cast greater contingency as mantle#400#cast mantle;
+								#SEND !cast mantle;
+								#DELAY {15} {
+									#SEND !cast greater contingency as protection from evil#cast protection from evil;
+									#SEND !cast protection from evil;
+									#DELAY {15} {
+										#SEND !cast contingency as hp#900#cast secure shelter;
+										#DELAY {15} {
+											#SEND !cast contingency as sp#1000#cast secure shelter;
+											#DELAY {15} {
+												#SEND !cast mindblank;
+												#DELAY {15} {
+													#SEND !cast giant strength guru;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+
+
 #class {mage} {close}
