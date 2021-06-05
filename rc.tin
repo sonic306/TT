@@ -86,7 +86,7 @@
         $ses_name;
         #if {$world == "stormer"} {
                 #textin .tt/.pass
-        }
+        };
         #if {$world == "stormer3s"} {
                 #textin .tt/.pass3s
         };
