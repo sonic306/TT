@@ -37,7 +37,7 @@
 	};
 
 	#NOP Enage mystic immersion;
-	#if {${magebar[sp][current]} < 4000 && ${magebar[imm]} > 0} {
+	#if {${magebar[sp][current]} < 200 && ${magebar[imm]} > 0} {
 		#SHOWME !cast mystic immersion;
 		#SEND !cast mystic immersion;
 	};
@@ -50,13 +50,13 @@
 	
 	#NOP Mystic immersions depleted if sp drops this low. Leverage eternal heal to minimize downtime;
 	#NOP hasHeal is set in eternal.tin;
-	#if {${magebar[sp][current]} < 3600 && !${resting} && ${hasHeal}} {
+	#if {${magebar[sp][current]} < 200 && !${resting} && ${hasHeal}} {
 		#SHOWME !(heal guru;
 		#SEND !(heal guru;
 	};
 
 	#NOP Immersions gone. (heal gone. Dire situation);
-	#if {${magebar[sp][current]} < 1700  && ${magebar[sat]} < 85} {
+	#if {${magebar[sp][current]} < 200  && ${magebar[sat]} < 85} {
 		#SHOWME !hmheal, !cast spell tap;
 		#SEND !hmheal;
 		#SEND !cast spell tap;
