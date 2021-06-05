@@ -51,8 +51,8 @@
 	#NOP Mystic immersions depleted if sp drops this low. Leverage eternal heal to minimize downtime;
 	#NOP hasHeal is set in eternal.tin;
 	#if {${magebar[sp][current]} < 200 && !${resting} && ${hasHeal}} {
-		#SHOWME !(heal guru;
-		#SEND !(heal guru;
+		#SHOWME !(heal mikefury;
+		#SEND !(heal mikefury;
 	};
 
 	#NOP Immersions gone. (heal gone. Dire situation);
