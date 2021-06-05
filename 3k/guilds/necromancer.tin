@@ -3,7 +3,7 @@
 #var guild necromancer
 #var mask 0
 #var solo 1
-#var coffinmax 27
+#var coffinmax 29
 #var followermax 21
 #var smugglemax 20
 #var currentsmuggle 0

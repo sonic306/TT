@@ -1,0 +1,7 @@
+#class {mikefury} {open}
+
+/* Read in files */
+#NOP Primary Guild File
+#read .tt/3k/guilds/mage.tin
+
+#class {mikefury} {close}

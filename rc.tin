@@ -57,7 +57,7 @@
                 #math {ses_len} {$ses_len-2};
                 #format {ses_name} {%.${ses_len}s} {%0};
                 #var {mud} {3s}
-        }; 
+        };
         #regex {%0} {jedi} {
                 #ses {stormerjedi} {3k.org} {3000};
                 #var {ses_name} {stormer};
@@ -82,7 +82,10 @@
         #if {$world == "stormer"} {
                 #textin .tt/.pass
         }
-        {
+        #if {$world == "stormer3s"} {
                 #textin .tt/.pass3s
+        };
+        #if {$world == "mikefury"} {
+                #textin .tt/.passmike
         };
 }

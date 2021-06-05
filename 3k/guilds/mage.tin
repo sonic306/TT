@@ -1,0 +1,5 @@
+#class {open} {mage}
+
+#var guild mage
+
+#class {close} {mage}
