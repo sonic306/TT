@@ -97,11 +97,11 @@
 }
 
 #alias tel {
-    cast telekinesis as $* from box;
+    cast telekinesis as %1 from box;
 };
 
 #alias bc {
-    box check;
+    cast box check;
 };
 
 
