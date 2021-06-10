@@ -31,10 +31,6 @@
 	#if {"$my[hpbar][protection_status]" == "OFF"} {
 		prot
 	};
-
-	#if {$my[hpbar][inv_corpses] == 0 && $my[hpbar][coffin_corpses] > 2} {
-		qtrance unwrap/get corpse>2
-	}
 }
 
 #act {{TG\[(\d+)\|(\d+)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
@@ -43,9 +39,23 @@
 	#var {my[hbbar][glamores_burn]}	  	  {%4};
 	#var {my[hbbar][GXP]} 	  			  {%5};
 	#var {my[hbbar][powers][dream]} 	  {%6};
-	#var {my[hbbar][powers][corrode]} 	  {%7};
-	#var {my[hbbar][powers][light]} 	  {%8};
-	#var {my[hbbar][powers][protection]}  {%9};	
+	#var {my[hbbar][powers][psibleed]} 	  {%7};
+	#var {my[hbbar][powers][corrode]} 	  {%8};
+	#var {my[hbbar][powers][light]} 	  {%9};
+	#var {my[hbbar][powers][protection]}  {%10};	
+
+	#if {$my[hpbar][powers][dream] < 15 } {
+		#if {$bot == 1}{
+			.stop;
+			#echo {Stopping Bot, Low Dream Count}
+		}
+	};
+	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode != 0} {
+		#var canCorrode 0;
+	}
+	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi != 0} {
+		#var canPsi 0;
+	};
 }
 
 #alias {update_status} {
@@ -93,14 +103,29 @@
 }
 
 #act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
-#act {{The psibleed upon (\w+) has dissipated.}} {psibleed}
 
-#NOP #act {{You attack (.*)}} {psibleed;corrode;call}
-#NOP #act {{(.*) attacking you!}} {psibleed;corrode;call}
-#act {{A field of superheated steam seeps into the room at your command}} {psibleed;corrode;call}
+#act {{The psibleed upon (\w+) has dissipated.}} {
+	#if {$canPsi == 1} {
+		psibleed
+	}	
+}
+
+#act {{A field of superheated steam seeps into the room at your command}} {
+	#if {$canCorrode == 1} {
+		corrode;
+	};
+	#if {$canPsi == 1} {
+		psibleed;
+	};	
+	call
+}
 
 /* Preserve all */
 #var preserving 0
+
+#alias {studyup} {
+	#NOP Studyall powers;
+}
 
 #alias {mpp} {
 	#var preserving 1;
