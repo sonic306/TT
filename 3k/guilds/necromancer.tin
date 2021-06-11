@@ -27,8 +27,8 @@
 	#if {$my[hpbar][worth] < 125} {
 		con 100
 	};
-	#if {$my[hpbar][sp] < 200 } {dream 5};
-	#if {"$my[hpbar][protection_status]" == "OFF"} {
+	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 5};
+	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
 	};
 }
