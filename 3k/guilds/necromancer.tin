@@ -33,7 +33,7 @@
 	};
 }
 
-#act {{TG\[(\d+)\|(\d+)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
+#act {{TG\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
 	#var {my[hpbar][teleports]}  	      {%2};
 	#var {my[hpbar][glamores]}	  		  {%3};
 	#var {my[hpbar][glamores_burn]}	  	  {%4};
@@ -45,14 +45,14 @@
 	#var {my[hpbar][powers][protection]}  {%10};	
 
 	#if {$my[hpbar][powers][dream] < 15 } {
-		#if {$bot == 1}{
+		#if {$bot == 1} {
 			.stop;
-			#echo {Stopping Bot, Low Dream Count}
+			#var bot 0;
 		}
 	};
 	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode != 0} {
 		#var canCorrode 0;
-	}
+	};
 	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi != 0} {
 		#var canPsi 0;
 	};
