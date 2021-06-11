@@ -46,8 +46,7 @@
 
 	#if {$my[hpbar][powers][dream] < 15 } {
 		#if {$bot == 1} {
-			.stop;
-			#var bot 0;
+			killbot;
 		}
 	};
 	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode != 0} {
