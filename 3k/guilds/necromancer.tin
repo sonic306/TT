@@ -34,15 +34,15 @@
 }
 
 #act {{TG\[(\d+)\|(\d+)\]\s\w+\[(\d+)\%\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
-	#var {my[hbbar][teleports]}  	      {%2};
-	#var {my[hbbar][glamores]}	  		  {%3};
-	#var {my[hbbar][glamores_burn]}	  	  {%4};
-	#var {my[hbbar][GXP]} 	  			  {%5};
-	#var {my[hbbar][powers][dream]} 	  {%6};
-	#var {my[hbbar][powers][psibleed]} 	  {%7};
-	#var {my[hbbar][powers][corrode]} 	  {%8};
-	#var {my[hbbar][powers][light]} 	  {%9};
-	#var {my[hbbar][powers][protection]}  {%10};	
+	#var {my[hpbar][teleports]}  	      {%2};
+	#var {my[hpbar][glamores]}	  		  {%3};
+	#var {my[hpbar][glamores_burn]}	  	  {%4};
+	#var {my[hpbar][GXP]} 	  			  {%5};
+	#var {my[hpbar][powers][dream]} 	  {%6};
+	#var {my[hpbar][powers][psibleed]} 	  {%7};
+	#var {my[hpbar][powers][corrode]} 	  {%8};
+	#var {my[hpbar][powers][light]} 	  {%9};
+	#var {my[hpbar][powers][protection]}  {%10};	
 
 	#if {$my[hpbar][powers][dream] < 15 } {
 		#if {$bot == 1}{
@@ -124,7 +124,42 @@
 #var preserving 0
 
 #alias {studyup} {
-	#NOP Studyall powers;
+	#var maxDream 500;
+	#var maxCorrode 30;
+	#var maxProtection 10;
+	#var maxCreateLight 10;
+	#var maxPsibleed 140;
+
+	#while {$my[hpbar][powers][dream] <= $maxDream} {
+		#math sum $maxDream - $my[hpbar][powers][dream];
+		#if {sum >= 100} {
+			study dream 100;
+		}
+		{
+			study dream $sum;
+		}
+	};
+	#while {$my[hpbar][powers][psibleed] <= $maxPsibleed} {
+		#math sum $maxPsibleed - $my[hpbar][powers][psibleed];
+		#if {sum >= 100} {
+			study psibleed 100;
+		}
+		{
+			study dream $sum;
+		}
+	};
+	#while {$my[hpbar][powers][protection] <= $maxProtection} {
+		#math sum $maxProtection - $my[hpbar][powers][protection];
+		study protection $sum
+	};
+	#while {$my[hpbar][powers][corrode] <= $maxCorrode} {
+		#math sum $maxCorrode - $my[hpbar][powers][corrode];
+		study dream $sum;
+	};
+	#while {$my[hpbar][powers][light] <= $maxCreateLight} {
+		#math sum $maxCreateLight - $my[hpbar][powers][light];
+		study create light $sum;
+	};
 }
 
 #alias {mpp} {
