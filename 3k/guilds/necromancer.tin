@@ -181,7 +181,7 @@
 		#delay 2
 	};
 
-	#var canPsi 1
+	#var canPsi 1;
 	#var canCorrode 1
 }
 
