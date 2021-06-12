@@ -132,42 +132,57 @@
 	#var maxPsibleed 140;
 
 	#while {$my[hpbar][powers][dream] <= $maxDream} {
-		#math sum $maxDream - $my[hpbar][powers][dream];
+		#var sum 0;
+		#math {sum} {$maxDream - $my[hpbar][powers][dream]};
 		#if {$sum >= 100} {
-			study dream 100;
-			hp;
+			#send !study dream 100;
+			#send !hp;
+			#delay 2
 		}
 		{
 			study dream $sum;
 			hp;
+			#delay 2
 		}
 	};
-	#while {$my[hpbar][powers][psibleed] <= $maxPsibleed} {
-		#math sum $maxPsibleed - $my[hpbar][powers][psibleed];
+	#while {$my[hpbar][powers][psibleed] < $maxPsibleed} {
+		#var sum 0;
+		#math {sum} {$maxPsibleed - $my[hpbar][powers][psibleed]};
 		#if {$sum >= 100} {
-			study psibleed 100;
-			hp;
+			#send !study psibleed 100;
+			#send !hp;
+			#delay 2
 		}
 		{
-			study psibleed $sum;
-			hp;
+			#send !study psibleed $sum;
+			#send !hp;
+			#delay 2
 		}
 	};
-	#while {$my[hpbar][powers][protection] <= $maxProtection} {
-		#math sum $maxProtection - $my[hpbar][powers][protection];
-		study protection $sum;
-		hp;
+	#while {$my[hpbar][powers][protection] < $maxProtection} {
+		#var sum 0;
+		#math {sum} {$maxProtection - $my[hpbar][powers][protection]};
+		#send !study protection $sum;
+		#send !hp;
+		#delay 2
 	};
-	#while {$my[hpbar][powers][corrode] <= $maxCorrode} {
-		#math sum $maxCorrode - $my[hpbar][powers][corrode];
-		study corrode $sum;
-		hp;
+	#while {$my[hpbar][powers][corrode] < $maxCorrode} {
+		#var sum 0;
+		#math {sum} {$maxCorrode - $my[hpbar][powers][corrode]};
+		#send !study corrode $sum;
+		#send !hp;
+		#delay 2
 	};
-	#while {$my[hpbar][powers][light] <= $maxCreateLight} {
-		#math sum $maxCreateLight - $my[hpbar][powers][light];
-		study create light $sum;
-		hp;
+	#while {$my[hpbar][powers][light] < $maxCreateLight} {
+		#var sum 0;
+		#math {sum} {$maxCreateLight - $my[hpbar][powers][light]};
+		#send !study create light $sum;
+		#send !hp;
+		#delay 2
 	};
+
+	#var canPsi 1
+	#var canCorrode 1
 }
 
 #alias {mpp} {
