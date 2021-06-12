@@ -51,10 +51,10 @@
 			killbot;
 		}
 	};
-	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode != 0} {
+	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode == 1} {
 		#var canCorrode 0;
 	};
-	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi != 0} {
+	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi == 1} {
 		#var canPsi 0;
 	};
 }
@@ -111,7 +111,7 @@
 	}	
 }
 
-#act {{A field of superheated steam seeps into the room at your command}} {
+#act {{A field of superheated steam seeps into the room at your command|you attack|attacking you}} {
 	#if {$canCorrode == 1} {
 		corrode;
 	};
