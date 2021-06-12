@@ -7,6 +7,8 @@
 #var followermax 21
 #var smugglemax 20
 #var currentsmuggle 0
+#var canPsi 1
+#var canCorrode 1
 
 /* HP Bar */
 #act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[w(\d+)%\|p(\w+)\|v(\w+)\|r(\d+)\%\]}} {
