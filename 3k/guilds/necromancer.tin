@@ -111,7 +111,7 @@
 	}	
 }
 
-#act {{A field of superheated steam seeps into the room at your command|you attack|attacking you}} {
+#act {{A field of superheated steam seeps into the room at your command|you attack|attacking you|(\w+) attacks (\w+)}} {
 	#if {$canCorrode == 1} {
 		corrode;
 	};
