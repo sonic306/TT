@@ -16,3 +16,10 @@
 #act {^Type 'accept' if you wish to be monitored.$} {
 	#send !accept
 }
+
+/* General Triggers */
+#actg {^It is too dark.$} {
+	#if {$my[hpbar][powers][light] > 0} {
+		#send !create light;
+	}
+}
