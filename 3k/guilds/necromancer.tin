@@ -54,8 +54,14 @@
 	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode == 1} {
 		#var canCorrode 0;
 	};
+	#if {$my[hpbar][powers][corrode] > 0 && $canCorrode == 0} {
+		#var canCorrode 1;
+	};
 	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi == 1} {
 		#var canPsi 0;
+	};
+	#if {$my[hpbar][powers][psibleed] > 0 && $canPsi == 0} {
+		#var canPsi 1;
 	};
 }
 
