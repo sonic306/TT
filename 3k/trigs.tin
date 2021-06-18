@@ -18,7 +18,7 @@
 }
 
 /* General Triggers */
-#actg {^It is too dark.$} {
+#act {^It is too dark.$} {
 	#if {$my[hpbar][powers][light] > 0} {
 		#send !create light;
 	}
