@@ -2,6 +2,7 @@
 
 /* Read in files */
 #NOP Primary Guild Files
-#read .tt/3k/guilds/necromancer.tin
+#read .tt/3k/guilds/necromancer.tin;
+#read .tt/3k/InvokePrime.tin
 
 #class {stormer} {close}

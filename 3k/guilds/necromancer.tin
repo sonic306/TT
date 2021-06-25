@@ -285,4 +285,8 @@
 	#var currentsmuggle %2
 }
 
+#alias pyre {
+	qtrance unwrap biggest/funeral pyre>2
+}
+
 #class {necromancer} {close}
