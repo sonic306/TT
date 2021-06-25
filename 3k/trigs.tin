@@ -1,5 +1,7 @@
 #class {trigs} {open}
 
+#var light 0
+
 /* Cove of the Three (Lost Soul) */
 #act {^an angelic temptress standing before you.$} {
 	#send !present raqna's gem;
@@ -19,7 +21,8 @@
 
 /* General Triggers */
 #act {^It is too dark.$} {
-	#if {$my[hpbar][powers][light] > 0} {
+	#if {$my[hpbar][powers][light] > 0 && light == 0} {
+		#var light 1;
 		#send !create light;
 		#send !look;
 	}
