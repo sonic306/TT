@@ -233,7 +233,7 @@
 	}
 }
 
-#act {{^=M=(.*) attacking you!.$}} {
+#act {{^=M= (.*) attacking you!.$}} {
 	#var {my[room][contents][npc]} {%2}
 }
 
