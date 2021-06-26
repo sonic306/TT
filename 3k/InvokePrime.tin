@@ -1,5 +1,3 @@
-#class {invokePrime} {open}
-
 #NOP #VAR {_invokePrime[practice]}
 {
     {A bore is a person who opens his mouth and puts his feats in it.}{}
@@ -156,9 +154,9 @@ Seething wi-h venom-us anger, the d-ath's head how-s at Zombie.
     #NOP /* Add mob name into match variables */;
     #FOREACH {*_invokePrime[live][]} {_invokePrime[template]}
     {
-        #FOREACH {$room[contents][npc]} {_invokePrime[index]}
+        #FOREACH {$my[room][contents][npc]} {_invokePrime[index]}
         {
-            #FORMAT {_invokePrime[format]} {$_invokePrime[template]} {$room[contents][npc][$_invokePrime[index]][id]};
+            #FORMAT {_invokePrime[format]} {$_invokePrime[template]} {$my[room][contents][npc][$_invokePrime[index]][id]};
             #VAR {_invokePrime[ref][$_invokePrime[format]]} {};
         };
     };
@@ -190,5 +188,3 @@ Seething wi-h venom-us anger, the d-ath's head how-s at Zombie.
         #ECHO {||$_invokePrime[quote]||};
     };
 };
-
-#class {invokePrime} {close}
