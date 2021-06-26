@@ -1,0 +1,40 @@
+#class {gear} {open}
+
+/*
+Wielded:      The Soul Drinker Blade
+Held:         A wand of illumination
+Head:         Helmet of the Spirit {radiant}
+Around neck:  none
+Heavy body:   CMC-660 Heavy Combat Suit -(Specialized)-
+Light body:   Shimmering cloak of Aylin
+Hands:        Dermal Gloves of the Cryohydra
+Feet:         Boots of the Spirit {radiant}
+Shield:       none
+*/
+
+#act {{^Wilded:\s+(.+)}} {
+   #var {my[gear][wilded]} {%2}
+}
+#act {{^Held:\s+(.+)}} {
+    #var {my[gear][held]} {%2}
+}
+#act {{^Around Neck:\s+(.+)}} {
+    #var {my[gear][neck]} {%2}
+}
+#act {{^Heavy Body:\s+(.+)}} {
+    #var {my[gear][armour]} {%2}
+}
+#act {{^Light Body:\s+(.+)}} {
+    #var {my[gear][cloak]} {%2}
+}
+#act {{^Hands:\s+(.+)}} {
+    #var {my[gear][gloves]} {%2}
+}
+#act {{^Feet:\s+(.+)}} {
+    #var {my[gear][boots]} {%2}
+}
+#act {{^Shield:\s+(.+)}} {
+    #var {my[gear][shield]} {%2}
+}
+
+#class {gear} {close}

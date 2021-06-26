@@ -12,8 +12,6 @@
 /* Rohm Giddor (temper) */
 #act {^Leufarr whispers: The watchword is: %w} {#var {watchword} {%1}}
 
-#class {trigs} {close}
-
 /* Priest Guardian */
 #act {^Type 'accept' if you wish to be monitored.$} {
 	#send !accept
@@ -21,8 +19,16 @@
 
 /* General Triggers */
 #act {^It is too dark.$} {
+	#send !lumen;
 	#if {$my[hpbar][powers][light] > 0 && light == 0} {
 		#var light 1;
 		#send !create light;
 	}
 }
+
+#act {^You can see again.$} {
+	#if {$bot == 1} {
+		.bot
+	}
+}
+#class {trigs} {close}
