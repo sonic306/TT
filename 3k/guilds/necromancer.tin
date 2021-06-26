@@ -234,11 +234,11 @@
 }
 
 #act {{(.*) attacking you!.}} {
-	#var {room[contents][npc]} {%1}
+	#var {room[contents][npc]} {%2}
 }
 
 #act {{you attack (.*)}} {
-	#var {room[contents][npc]} {%1}
+	#var {room[contents][npc]} {%2}
 }
 
 #act {Receiving room} {mapgo tp}

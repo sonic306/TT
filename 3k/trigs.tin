@@ -19,7 +19,10 @@
 
 /* General Triggers */
 #act {^It is too dark.$} {
-	#send !lumen;
+	#if {"$my[gear][held]" == "A wand of illumination"} {
+		#send !lumen
+	}
+
 	#if {$my[hpbar][powers][light] > 0 && light == 0} {
 		#var light 1;
 		#send !create light;
