@@ -22,11 +22,15 @@
 	#if {"$my[gear][held]" == "A wand of illumination"} {
 		#send !lumen
 	};
-	
+
 	#if {$my[hpbar][powers][light] > 0 && light == 0} {
 		#var light 1;
 		#send !create light;
 	}
+}
+
+#act {^The torch goes dark.$} {
+	#send !lumen
 }
 
 #act {^You can see again.$} {
