@@ -233,14 +233,6 @@
 	}
 }
 
-#act {{(.*) attacking you!.}} {
-	#var {my[room][contents][npc]} {%2}
-}
-
-#act {{you attack (.*)}} {
-	#var {my[room][contents][npc]} {%2}
-}
-
 #act {Receiving room} {mapgo tp}
 
 #alias corpseme {
