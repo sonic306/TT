@@ -24,6 +24,5 @@
 	#if {$my[hpbar][powers][light] > 0 && light == 0} {
 		#var light 1;
 		#send !create light;
-		#send !look;
 	}
 }
