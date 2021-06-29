@@ -29,7 +29,7 @@
 	#if {$my[hpbar][worth] < 125} {
 		con 100
 	};
-	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 5};
+	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 6};
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
 	};
@@ -109,7 +109,7 @@
 	}
 }
 
-#act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
+#act {stormer dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
 
 #act {{The psibleed upon (.*) has dissipated}} {
 	#if {$canPsi == 1} {
