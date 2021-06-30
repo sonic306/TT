@@ -35,16 +35,15 @@
 	};
 }
 
-#act {{TG\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]\s\w+\[(.*)]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
+#act {{TG\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
 	#var {my[hpbar][teleports]}  	      {%2};
 	#var {my[hpbar][glamores]}	  		  {%3};
 	#var {my[hpbar][glamores_burn]}	  	  {%4};
-	#var {my[hpbar][GXP]} 	  			  {%5};
-	#var {my[hpbar][powers][dream]} 	  {%6};
-	#var {my[hpbar][powers][psibleed]} 	  {%7};
-	#var {my[hpbar][powers][corrode]} 	  {%8};
-	#var {my[hpbar][powers][light]} 	  {%9};
-	#var {my[hpbar][powers][protection]}  {%10};	
+	#var {my[hpbar][powers][dream]} 	  {%5};
+	#var {my[hpbar][powers][psibleed]} 	  {%6};
+	#var {my[hpbar][powers][corrode]} 	  {%7};
+	#var {my[hpbar][powers][light]} 	  {%8};
+	#var {my[hpbar][powers][protection]}  {%9};	
 
 	#if {$my[hpbar][powers][dream] < 15 } {
 		#if {$bot == 1} {
