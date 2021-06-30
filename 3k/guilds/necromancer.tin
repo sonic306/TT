@@ -39,7 +39,7 @@
 	#var {my[hpbar][worth]}               {%7};
 	#var {my[hpbar][protection_status]}   {%8};
 	#var {my[hpbar][veil_status]}         {%9};
-	#var {my[hpbar][power_reset]}         {%10};}
+	#var {my[hpbar][power_reset]}         {%10};
 
 	#if {$my[hpbar][worth] < 125} {
 		con 100
