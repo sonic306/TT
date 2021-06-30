@@ -1,19 +1,19 @@
 #class {tierTracker} {open}
 
-#var message 0
+#var my[message] 0
 
 #act {{The path before you is a long and hard one|The path before you is a long one, barely have you begin your quest|A long road remains before you in the quest for ascension|A portion complete, your quest still awaits|More remains of your path than what you have seen thus far|The end of your journey is not yet in sight|The road before you is long, but shorter than that behind you|The end draws near, you sense this in your soul|Your goal draws closer than you realize|There remains but only a few steps in your quest}} {
     #switch {"%1"} {
-        #case {"The path before you is a long and hard one"}                                     {#var message 1};
-        #case {"The path before you is a long one, barely have you begin your quest"}            {#var message 2};
-        #case {"A long road remains before you in the quest for ascension"}                      {#var message 3};
-        #case {"A portion complete, your quest still awaits"}                                    {#var message 4};
-        #case {"More remains of your path than what you have seen thus far"}                     {#var message 5};
-        #case {"The end of your journey is not yet in sight"}                                    {#var message 6};
-        #case {"The road before you is long, but shorter than that behind you"}                  {#var message 7};
-        #case {"The end draws near, you sense this in your soul"}                                {#var message 8};
-        #case {"Your goal draws closer than you realize"}                                        {#var message 9};
-        #case {"There remains but only a few steps in your quest"}                               {#var message 10}
+        #case {"The path before you is a long and hard one"}                                     {#var my[message] 1};
+        #case {"The path before you is a long one, barely have you begin your quest"}            {#var my[message] 2};
+        #case {"A long road remains before you in the quest for ascension"}                      {#var my[message] 3};
+        #case {"A portion complete, your quest still awaits"}                                    {#var my[message] 4};
+        #case {"More remains of your path than what you have seen thus far"}                     {#var my[message] 5};
+        #case {"The end of your journey is not yet in sight"}                                    {#var my[message] 6};
+        #case {"The road before you is long, but shorter than that behind you"}                  {#var my[message] 7};
+        #case {"The end draws near, you sense this in your soul"}                                {#var my[message] 8};
+        #case {"Your goal draws closer than you realize"}                                        {#var my[message] 9};
+        #case {"There remains but only a few steps in your quest"}                               {#var my[message] 10}
     }
 }
 
