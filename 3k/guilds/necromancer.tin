@@ -111,7 +111,7 @@
 	}
 }
 
-#act {stormer dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
+#act {Stormer dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}}
 
 #act {{The psibleed upon (.*) has dissipated}} {
 	#if {$canPsi == 1} {
