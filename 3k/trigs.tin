@@ -38,4 +38,11 @@
 		.bot
 	}
 }
+
+#act {^3Kingdoms welcomes you back from linkdeath.$} {
+	#send !i;
+	#send !eq;
+	#send mywho;
+}
+
 #class {trigs} {close}

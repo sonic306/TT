@@ -1,7 +1,7 @@
 #class {necromancer} {open}
 
 #read .tt/3k/gear.tin;
-#read .tt/3k/TierTracker.tin
+#read .tt/3k/TierTracker.tin;
 
 #var guild necromancer
 #var mask 0
