@@ -30,7 +30,7 @@
 		
 }
 
-#act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+\%)\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
+#act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+)\%\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
 	#var {my[hpbar][powers][dream]} 	  {%2};
 	#var {my[hpbar][powers][psibleed]} 	  {%3};
 	#var {my[hpbar][powers][corrode]} 	  {%4};
