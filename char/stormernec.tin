@@ -3,7 +3,5 @@
 /* Read in files */
 #NOP Primary Guild Files
 #read .tt/3k/guilds/necromancer.tin;
-#read .tt/3k/gear.tin;
-#read .tt/3k/TierTracker.tin
 
 #class {stormer} {close}
