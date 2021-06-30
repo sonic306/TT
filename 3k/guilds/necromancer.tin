@@ -27,9 +27,7 @@
 	#var {my[hpbar][teleports]}  	    {%12};
 	#var {my[hpbar][glamores]}	  		{%13};
 	#var {my[hpbar][glamores_burn]}	  	{%14};
-	
-	
-	
+		
 }
 
 #act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+\%)\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
