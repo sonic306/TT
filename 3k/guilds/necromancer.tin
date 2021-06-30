@@ -14,7 +14,7 @@
 #var canCorrode 1
 
 /* HP Bar */
-#act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[w(\d+)%\|p(\w+)\|v(\w+)\|r(\d+)\%\]}} {
+#act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]}} {
 	#var {my[hpbar][hp]}				{%2};
 	#var {my[hpbar][sp]}				{%3};
 	#var {my[hpbar][spfuse]}			{%4};
@@ -24,11 +24,25 @@
 	#var {my[hpbar][followerhp]}		{%9};
 	#var {my[hpbar][follower_corpses]}	{%10};
 	#var {my[hpbar][coffin_corpses]}	{%11};
-	#var {my[hpbar][worth]}				{%12};
-	#var {my[hpbar][protection_status]} {%13};
-	#var {my[hpbar][veil_status]}	    {%14};
-	#var {my[hpbar][power_reset]}	    {%15};
+	#var {my[hpbar][teleports]}  	    {%12};
+	#var {my[hpbar][glamores]}	  		{%13};
+	#var {my[hpbar][glamores_burn]}	  	{%14};
 	
+	
+	
+}
+
+#act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+\%)\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
+	#var {my[hpbar][powers][dream]} 	  {%2};
+	#var {my[hpbar][powers][psibleed]} 	  {%3};
+	#var {my[hpbar][powers][corrode]} 	  {%4};
+	#var {my[hpbar][powers][light]} 	  {%5};
+	#var {my[hpbar][powers][protection]}  {%6};
+	#var {my[hpbar][worth]}               {%7};
+	#var {my[hpbar][protection_status]}   {%8};
+	#var {my[hpbar][veil_status]}         {%9};
+	#var {my[hpbar][power_reset]}         {%10};}
+
 	#if {$my[hpbar][worth] < 125} {
 		con 100
 	};
@@ -36,18 +50,7 @@
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
 	};
-}
-
-#act {{TG\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]\s\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]}} {
-	#var {my[hpbar][teleports]}  	      {%2};
-	#var {my[hpbar][glamores]}	  		  {%3};
-	#var {my[hpbar][glamores_burn]}	  	  {%4};
-	#var {my[hpbar][powers][dream]} 	  {%5};
-	#var {my[hpbar][powers][psibleed]} 	  {%6};
-	#var {my[hpbar][powers][corrode]} 	  {%7};
-	#var {my[hpbar][powers][light]} 	  {%8};
-	#var {my[hpbar][powers][protection]}  {%9};	
-
+	
 	#if {$my[hpbar][powers][dream] < 15 } {
 		#if {$bot == 1} {
 			killbot;
@@ -159,7 +162,6 @@
 		#var preserve_done 1
 	}
 }
-
 #act {You recover your senses} {
 	#if {$preserving} {
 		#if {$preserve_np} {
