@@ -2,12 +2,13 @@
 
 #read .tt/3k/gear.tin;
 #read .tt/3k/TierTracker.tin;
+#read .tt/3k/InvokePrime.tin;
 
 #var guild necromancer
 #var mask 0
 #var solo 1
 #var coffinmax 29
-#var followermax 25
+#var followermax 30
 #var smugglemax 20
 #var currentsmuggle 0
 #var canPsi 1

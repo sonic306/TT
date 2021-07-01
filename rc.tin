@@ -59,7 +59,7 @@
                 #var {mud} {3s}
         };
         #regex {%0} {jedi} {
-                #ses {stormernec} {3k.org} {3000};
+                #ses {stormerjedi} {3k.org} {3000};
                 #var {ses_name} {stormer};
                 #var {mud} {3k}
         };
