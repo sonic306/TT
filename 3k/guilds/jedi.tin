@@ -11,7 +11,7 @@
 	#var {my[hpbar][concentration][current]}	{%6};
 	#var {my[hpbar][force][current]}			{%7};
 	#var {my[hpbar][dissipate][cnt]}			{%8};
-	#var {my[hpbar][nrgStore]}				{%8};
+	#var {my[hpbar][nrgStore]}				{%9};
 	#var {my[hpbar][mode]}		    		{%10};
 	#var {my[hpbar][charge]}					{%11};
 	#var {my[hpbar][gxp][current]}			{%12};
