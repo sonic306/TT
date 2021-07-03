@@ -14,7 +14,7 @@
 	#var my[charge]			{%10};
 	#var my[gxp][current]	{%11};
 	update_status
-}
+};
 
 #alias {update_status} {
 	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
@@ -50,10 +50,9 @@
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6};
 	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%   G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
 	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
-}
+};
 
-
-#act {Stormer dealt the killing blow} {corpsetrig}};
+#act {Stormer dealt the killing blow} {corpsetrig};
 
 #act {You are fully rejuvenated and thus exit your trance} {med;..};
 
