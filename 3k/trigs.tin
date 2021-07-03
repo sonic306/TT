@@ -40,4 +40,17 @@
 	#send mywho;
 }
 
+#act {^Your talisman grows warm.$} {
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+	hold talisman;
+}
+
 #class {trigs} {close}

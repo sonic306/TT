@@ -2,19 +2,17 @@
 
 #var guild jedi
 
-#NOP  W:[%w][%s%d%%] G:[%s{[\d\.]+}%%]
-#act {^HP:[%d/%d] SP:[%d/%d] C:[%s{[\d\.]+}%%] F:[%s{[\d\.]+}%%] D:[%d] W:[%w][%s{[\d\.]+}%%] G:[%s{[\d\.]+}%%]} {
-	#var my[hp][current]	%1;
-	#var my[hp][max]	%2;
-	#var my[sp][current]	%3;
-	#var my[sp][max]	%4;
-	#var my[gp1][current]	%6;
-	#var my[gp2][current]	%8;
-	#var my[dissipate][cnt]	%9;
-	#var my[mode]		%10;
-	#var my[charge]		%12;
-	#var my[gxp][current]	%14;
-	#NOP #echo {HPBAR};
+#act {^HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s(\d+)\%\|\s\w+} {
+	#var my[hp][current]	{%2};
+	#var my[hp][max]	    {%3};
+	#var my[sp][current]	{%4};
+	#var my[sp][max]	    {%5};
+	#var my[gp1][current]	{%6};
+	#var my[gp2][current]	{%7};
+	#var my[dissipate][cnt]	{%8};
+	#var my[mode]		    {%9};
+	#var my[charge]			{%10};
+	#var my[gxp][current]	{%11};
 	update_status
 }
 
@@ -43,7 +41,6 @@
 	#format {sp_max}	{%+4s} {<128>$my[sp][max]<088>};
 	#format {gp1}		{%d}   {$my[gp1][current]};
 	#format {gp1}		{%+3s} {@colscale{$gp1;$my[gp1][max]}};
-	#format {gp2}		{%+6s} {$my[gp2][current]};
 	#format {gp2}		{%+3s} {@colscale{$my[gp2][current];$my[gp2][max]}};
 	#format {gxp}		{%+6s} {@colscale{$my[gxp][current];100}};
 	#format {ehealth}	{%+6s} {@colscale{$enemy[hp];100}};
@@ -51,10 +48,12 @@
 	#format {corpses_cof}	{%+2s} {<138>$corpses[coffin]<088>};
 	#format {corpses_fz}	{%+2s} {<138>$corpses[freezer]<088>};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6};
-	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\% F:   $gp2\%   G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
+	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%   G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
 	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 }
 
+
+#act {Stormer dealt the killing blow} {corpsetrig}}
 
 #act {You are fully rejuvenated and thus exit your trance} {med;..}
 
