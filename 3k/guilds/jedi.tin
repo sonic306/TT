@@ -1,4 +1,4 @@
-#class {jedi} open
+#class {jedi} {open}
 
 #var guild jedi
 
@@ -77,4 +77,4 @@
 #alias abt {focus abilities /trainable};
 #alias med {focus meditation};
 
-#class {jedi} close
+#class {jedi} {close}
