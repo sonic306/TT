@@ -3,16 +3,16 @@
 #var guild jedi
 
 #act {^HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s(\d+)\%\|\s\w+} {
-	#var my[hp][current]	{%2};
-	#var my[hp][max]	    {%3};
-	#var my[sp][current]	{%4};
-	#var my[sp][max]	    {%5};
-	#var my[gp1][current]	{%6};
-	#var my[gp2][current]	{%7};
-	#var my[dissipate][cnt]	{%8};
-	#var my[mode]		    {%9};
-	#var my[charge]			{%10};
-	#var my[gxp][current]	{%11};
+	#var my[hpbar][hp][current]		{%2};
+	#var my[hpbar][hp][max]	    	{%3};
+	#var my[hpbar][sp][current]		{%4};
+	#var my[hpbar][sp][max]	    	{%5};
+	#var my[hpbar][gp1][current]	{%6};
+	#var my[hpbar][gp2][current]	{%7};
+	#var my[hpbar][dissipate][cnt]	{%8};
+	#var my[hpbar][mode]		    {%9};
+	#var my[hpbar][charge]			{%10};
+	#var my[hpbar][gxp][current]	{%11};
 	update_status
 };
 
@@ -48,13 +48,15 @@
 	#format {corpses_cof}	{%+2s} {<138>$corpses[coffin]<088>};
 	#format {corpses_fz}	{%+2s} {<138>$corpses[freezer]<088>};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6};
-	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%   G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
+	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%    G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
 	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 };
 
 #act {Stormer dealt the killing blow} {corpsetrig};
 
 #act {You are fully rejuvenated and thus exit your trance} {med;..};
+
+#act {You draw your weapon from the sheath in your belt} {guide};
 
 #act {Your lightsaber has run out of charge} {
 	get cell from pack;
