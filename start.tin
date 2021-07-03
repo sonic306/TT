@@ -24,7 +24,8 @@
 	#read .tt/3k/miphp.tin;
 	#read .tt/3k/trigs.tin;
 	#read .tt/3k/draw.tin;
-	#read .tt/numpad.tin
+	#read .tt/numpad.tin;
+	#read .tt/3k/bots/minebot.tin
 }
 #if {"$world" != ""} {
 	#regex {$world} {AW} {
