@@ -2,17 +2,20 @@
 
 #var guild jedi
 
-#act {^HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s(\d+)\%\|\s\w+} {
-	#var my[hpbar][hp][current]		{%2};
-	#var my[hpbar][hp][max]	    	{%3};
-	#var my[hpbar][sp][current]		{%4};
-	#var my[hpbar][sp][max]	    	{%5};
-	#var my[hpbar][gp1][current]	{%6};
-	#var my[hpbar][gp2][current]	{%7};
-	#var my[hpbar][dissipate][cnt]	{%8};
-	#var my[hpbar][mode]		    {%9};
-	#var my[hpbar][charge]			{%10};
-	#var my[hpbar][gxp][current]	{%11};
+#NOP #hp/#mhp | SP:#sp/#msp | C:#c | F:#f | D: #dn | NRG: #ng | -#sm- | #%c | #gxp | #es  
+#act {^HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|\s(\d+)\%} {
+	#var my[hpbar][hp][current]				{%2};
+	#var my[hpbar][hp][max]	    			{%3};
+	#var my[hpbar][sp][current]				{%4};
+	#var my[hpbar][sp][max]	    			{%5};
+	#var my[hpbar][concentration][current]	{%6};
+	#var my[hpbar][force][current]			{%7};
+	#var my[hpbar][dissipate][cnt]			{%8};
+	#var my[hpbar][nrgStore]				{%8};
+	#var my[hpbar][mode]		    		{%10};
+	#var my[hpbar][charge]					{%11};
+	#var my[hpbar][gxp][current]			{%12};
+	#var my[hpbar][enemy][current]			{%13};
 	update_status
 };
 
@@ -54,7 +57,7 @@
 
 #act {Stormer dealt the killing blow} {corpsetrig};
 
-#act {You are fully rejuvenated and thus exit your trance} {med;..};
+#act {You are fully rejuvenated and thus exit your trance} {med};
 
 #act {You draw your weapon from the sheath in your belt} {guide};
 
