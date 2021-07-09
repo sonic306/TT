@@ -75,7 +75,7 @@
 #alias {miner} {
         #class {miner} {open};
         #act {{\=S\=}} {_check_mine} {5};
-        #act {{(A|You have found a deposit of) \w+ ore( deposit.|!)}} {
+        #act {{(A|You have found a deposit of \w+ ore( deposit.|!)}} {
                 #regex {%%1} {{A \w+ ore deposit.}} {#unact {^>$}};
                 #regex {%%1} {copper} {#if {$mine[copper]} {mine} {#path walk}};
                 #regex {%%1} {bronze} {#if {$mine[bronze]} {mine} {#path walk}};
