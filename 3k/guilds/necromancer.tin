@@ -31,13 +31,13 @@
 
 	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] > 20}	 {
 		qtrance unwrap/get corpse/abosrb>20
-	}
+	};
 
 	#if {$my[hpbar][coffin_corpses] < 20 && $currentsmuggle == $smugglemax && $my[hpbar][inv_corpses] < 5} {
 		smuggle remove all;
 		wrap all;
 		#var currentsmuggle 0
-	}
+	};
 }
 
 #act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+)\%\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
@@ -109,7 +109,7 @@
 	#format {corpses[coffin]}	{%+2s} {$$my[hpbar][coffin_corpses]};
 	#format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
 	#format {corpses[follower]} {%+2s} {my[hpbar][follower_corpses]};
-	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4} FC:<138>${corpses[follower]}<088>} {-4};
+	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4} FC:<138>${corpses[follower]}<088> {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$corpses[coffin]<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
@@ -188,11 +188,11 @@
 
 #act {{^=M= (.*) attacking you!.$}} {
 	#var {my[room][contents][npc]} {%2}
-}
+};
 
 #act {{^You attack (.*).$}} {
 	#var {my[room][contents][npc]} {%2}
-}
+};
 
 #act {Receiving room} {mapgo tp}
 
@@ -240,14 +240,14 @@
 	donate all;
 	close chest;
 	deliver
-}
+};
 
 #act {{You are currently smuggling (\d+)/20 items}} {
 	#var currentsmuggle %2
-}
+};
 
 #alias pyre {
 	qtrance unwrap biggest/funeral pyre>2
-}
+};
 
 #class {necromancer} {close}
