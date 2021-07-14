@@ -30,14 +30,14 @@
 	#var {my[hpbar][glamores_burn]}	  	{%14};
 
 	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] > 20}	 {
-		qtrance unwrap/get corpse/abosrb>20
-	}
+		qtrance unwrap/get corpse/absorb>20
+	};
 
 	#if {$my[hpbar][coffin_corpses] < 20 && $currentsmuggle == $smugglemax && $my[hpbar][inv_corpses] < 5} {
 		smuggle remove all;
 		wrap all;
 		#var currentsmuggle 0
-	}
+	};
 }
 
 #act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+)\%\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
