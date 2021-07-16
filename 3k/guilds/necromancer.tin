@@ -256,27 +256,6 @@
 	#var currentsmuggle 0
 }
 
-#alias studyup {
-	#math maxDream 533;
-	#math cnt 0;
-
-	#while {$cnt < 5} {
-		hp;
-		#math {currentDream} {$maxDream - $my[hpbar][powers][dream]};
-		#if {$currentDream > 100 && $maxDream >= $my[hpbar][powers][dream]} {
-			#show $currentDream;
-			study dream 1;
-			delay 5
-		};
-		#elseif {$currentDream < 100 && $maxDream >= $my[hpbar][powers][dream]} {
-			#show $currentDream;
-			study dream 1;
-			delay 5
-		};
-		#math cnt $cnt +1;
-	}
-}
-
 #NOP Stormer has quit the party.
 
 #class {necromancer} {close}
