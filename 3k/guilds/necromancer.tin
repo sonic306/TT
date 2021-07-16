@@ -263,16 +263,13 @@
 	#while {$cnt < 5} {
 		#math cnt $cnt +1;
 		hp;
-		#math {currentDream} {$maxDream - $my[hpbar][powers][dream]};
-		hp;
-		#show $currentDream;
 		#delay {3} {
+			#math {currentDream} {$maxDream - $my[hpbar][powers][dream]};
+			#show $currentDream;
 			#if {$currentDream > 100 && $maxDream >= $my[hpbar][powers][dream]} {
-			study dream 100;
-				hp;
+				study dream 100;
 			} {
 				study dream $currentDream;
-				hp;
 			}
 		}
 	}
