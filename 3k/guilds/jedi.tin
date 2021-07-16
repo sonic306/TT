@@ -11,12 +11,12 @@
 	#var {my[hpbar][concentration][current]}	{%6};
 	#var {my[hpbar][force][current]}			{%7};
 	#var {my[hpbar][dissipate][cnt]}			{%8};
-	#var {my[hpbar][nrgStore]}				{%9};
-	#var {my[hpbar][mode]}		    		{%10};
+	#var {my[hpbar][nrgStore]}					{%9};
+	#var {my[hpbar][mode]}		    			{%10};
 	#var {my[hpbar][charge]}					{%11};
-	#var {my[hpbar][gxp][current]}			{%12};
+	#var {my[hpbar][gxp][current]}				{%12};
 	#var {my[hpbar][enemy][current]}			{%13};
-	update_status
+	#NOP update_status
 }
 
 #alias {update_status} {
