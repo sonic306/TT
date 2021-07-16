@@ -255,7 +255,23 @@
 }
 
 #alias studyup {
+	#math maxDream 480;
 	#math cnt 0;
+	hp;
+
+	#while{$my[hpbar][powers][dream] <= $maxDream || $cnt < 5 } {
+		#math cnt $cnt + 1;
+		hp;
+		#delay {2} {
+			#math currentDream $maxDream - $$my[hpbar][powers][dream];
+			#if {$currentDream > 100} {
+				study dream 100
+			} {
+				study dream $currentDream
+			}
+		}
+	}
+
 
 }
 
