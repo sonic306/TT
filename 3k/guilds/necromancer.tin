@@ -195,6 +195,8 @@
 
 #act {Receiving room} {mapgo tp}
 
+#act {Your coffin flashes as its capacity expands!} {i}
+
 #alias corpseme {
 	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask} {
 		qtrance preserve remains/wrap>2;get gold;cga
@@ -259,7 +261,7 @@
 	#math cnt 0;
 	hp;
 
-	#while{$my[hpbar][powers][dream] <= $maxDream || $cnt < 5 } {
+	#while {$my[hpbar][powers][dream] <= $maxDream || $cnt < 5 } {
 		#math cnt $cnt + 1;
 		hp;
 		#delay {2} {
