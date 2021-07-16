@@ -258,9 +258,11 @@
 
 #alias studyup {
 	#math maxDream 480;
+	#math cnt 0;
 	hp;
 
-	#loop 1 5 {
+	#while {$cnt < 5} {
+		#math cnt $cnt +1;
 		hp;
 		#math currentDream $maxDream - $my[hpbar][powers][dream];
 		#show $currentDream;
