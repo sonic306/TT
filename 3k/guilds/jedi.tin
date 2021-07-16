@@ -3,7 +3,7 @@
 #var guild jedi
 
 #NOP #hp/#mhp | SP:#sp/#msp | C:#c | F:#f | D: #dn | NRG: #ng | -#sm- | #%c | #gxp | #es  
-#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
+#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s?([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
 	#var {my[hpbar][hp][current]}				{%2};
 	#var {my[hpbar][hp][max]}	    			{%3};
 	#var {my[hpbar][sp][current]}				{%4};
