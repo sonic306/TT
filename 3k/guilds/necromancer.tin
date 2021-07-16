@@ -266,12 +266,14 @@
 		#math {currentDream} {$maxDream - $my[hpbar][powers][dream]};
 		hp;
 		#show $currentDream;
-		#if {$currentDream > 100 && $maxDream >= $my[hpbar][powers][dream]} {
+		#delay {3} {
+			#if {$currentDream > 100 && $maxDream >= $my[hpbar][powers][dream]} {
 			study dream 100;
-			hp;
-		} {
-			study dream $currentDream;
-			hp;
+				hp;
+			} {
+				study dream $currentDream;
+				hp;
+			}
 		}
 	}
 }
