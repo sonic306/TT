@@ -13,6 +13,10 @@
 #gag HSN
 #gag Memory
 
+#NOP Jedi
+
+#gag HP:
+
 #NOP Priests
 #gag { screams in agony!$}
 #gag { soul to a foray of crippling mind subversion!$}
