@@ -257,7 +257,7 @@
 }
 
 #alias studyup {
-	#math maxDream 480;
+	#math maxDream 533;
 	#math cnt 0;
 
 	#while {$cnt < 5} {
