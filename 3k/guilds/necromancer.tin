@@ -29,7 +29,7 @@
 	#var {my[hpbar][glamores]}	  		{%13};
 	#var {my[hpbar][glamores_burn]}	  	{%14};
 
-	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] > 20}	 {
+	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] >= 20}	 {
 		qtrance unwrap/get corpse/absorb>20
 	};
 
@@ -111,6 +111,7 @@
 	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
+	#showme {$mip[gline][1]  $mip[gline][2]} {-5}
 }
 
 #alias {corpsetrig} {
@@ -248,5 +249,19 @@
 #alias pyre {
 	qtrance unwrap biggest/funeral pyre>2
 }
+
+#alias sra {
+	smuggle remove all;
+	#var currentsmuggle 0
+}
+
+#alias studyup {
+	#math cnt 0;
+
+}
+
+Stormer has quit the party.
+
+
 
 #class {necromancer} {close}
