@@ -266,7 +266,7 @@
 		#math {currentDream} {$$maxDream - $$my[hpbar][powers][dream]};
 		hp
 		#show $currentDream;
-		#if {$currentDream > 100 && $maxDream <= $$my[hpbar][powers][dream]} {
+		#if {$currentDream > 100 && $maxDream >= $$my[hpbar][powers][dream]} {
 			study dream 100;
 			hp;
 		} {
