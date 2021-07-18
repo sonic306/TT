@@ -270,7 +270,6 @@
             };
 		}
 	} {2};
-	#send !glance;
 	#foreach {$_temp[follower]} {name} {
 		#regex {$name} {blat} {
 			#echo {Giveing Stormer a Corpse!!!}
