@@ -34,9 +34,8 @@
 	};
 
 	#if {$my[hpbar][coffin_corpses] < 20 && $currentsmuggle == $smugglemax && $my[hpbar][inv_corpses] < 5} {
-		smuggle remove all;
-		wrap all;
-		#var currentsmuggle 0
+		sra;
+		wrap all
 	};
 }
 
@@ -254,6 +253,31 @@
 #alias sra {
 	smuggle remove all;
 	#var currentsmuggle 0
+}
+
+#alias movecorpses {
+	#var _temp[follower] {};
+	#act {^%s%*$} {
+		#if {%%2 != ""} {
+			#if {"$_temp[follower]" == ""}
+            {
+                #VAR {_temp[follower]} {%%2};
+            };
+            #ELSE
+            {
+                #VAR {_temp[follower]} {$_temp[follower] %%2};
+            };
+		}
+	}
+
+	#foreach {$_temp[follower]} {name} {
+		#regex {$name} {blat} {
+			=give corpse
+		}
+	}
+
+	glance;
+	#delay {2} {#unact {^%s%*$}}
 }
 
 #NOP Stormer has quit the party.
