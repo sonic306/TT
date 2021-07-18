@@ -257,7 +257,7 @@
 
 #alias movecorpses {
 	#var _temp[follower] {};
-	glance;
+	#send !glance;
 	#act {^%s%*$} {
 		#if {%%2 != ""} {
 			#if {"$_temp[follower]" == ""}
@@ -270,6 +270,7 @@
             };
 		}
 	} {2}
+	#send !glance;
 	#foreach {$_temp[follower]} {name} {
 		#regex {$name} {blat} {
 			=give corpse
