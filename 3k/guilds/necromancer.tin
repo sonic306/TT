@@ -259,7 +259,7 @@
 	#var _temp[follower] {};
 	#send !glance;
 	#act {^%s%*$} {
-		#if {%%2 != ""} {
+		#if {"%%2" != ""} {
 			#if {"$_temp[follower]" == ""}
             {
                 #VAR {_temp[follower][item]} {%%2};
