@@ -268,7 +268,7 @@
                 #VAR {_temp[follower]} {$_temp[follower] %%2};
             };
 		}
-	}
+	} {2}
 
 	#foreach {$_temp[follower]} {name} {
 		#regex {$name} {blat} {
@@ -277,8 +277,8 @@
 	}
 
 	glance;
-	#delay {2} {#unact {^%s%*$}}
-}
+	#delay {3} {#unact {^%s%*$}}
+} {2}
 
 #NOP Stormer has quit the party.
 
