@@ -271,7 +271,7 @@
 		}
 	} {2}
 	#send !glance;
-	#foreach {$_temp[follower]} {name} {
+	#foreach {$_temp[follower][item]} {name} {
 		#regex {$name} {blat} {
 			=give corpse
 		}
