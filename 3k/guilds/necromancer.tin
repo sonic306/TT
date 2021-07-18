@@ -269,14 +269,12 @@
             };
 		}
 	} {2}
-
+	glance;
 	#foreach {$_temp[follower]} {name} {
 		#regex {$name} {blat} {
 			=give corpse
 		}
 	}
-
-	glance;
 	#delay {3} {#unact {^%s%*$}}
 } {2}
 
