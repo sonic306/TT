@@ -29,11 +29,11 @@
 	#var {my[hpbar][glamores]}	  		{%13};
 	#var {my[hpbar][glamores_burn]}	  	{%14};
 
-	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] >= 20}	 {
-		qtrance unwrap/get corpse/absorb>20
+	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] >= 10}	 {
+		qtrance unwrap/get corpse/absorb>10
 	};
 
-	#if {$my[hpbar][coffin_corpses] < 20 && $currentsmuggle == $smugglemax && $my[hpbar][inv_corpses] < 5} {
+	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
 		sra;
 		wrap all
 	};
