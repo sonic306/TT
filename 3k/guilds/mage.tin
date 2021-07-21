@@ -92,7 +92,8 @@
 }
 
 #alias corpsetrig {
-    #SEND !cast corpse blast;
+    #SEND !cast spell tap;
+	#send !wrap all;
     #SEND !get gold;
 }
 
