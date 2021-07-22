@@ -95,6 +95,10 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
+	#if {$my[sp] < 500} {
+		.stop;
+		rest;
+	}
 }
 
 #alias tel {
