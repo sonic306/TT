@@ -95,12 +95,6 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
-	#SEND !hp;
-	#delay {2} { #if {$magebar[sp][current] < 1000} {
-			.stop;
-			rest;
-		}
-	}
 }
 
 #alias tel {
