@@ -41,7 +41,7 @@
 		#SHOWME !cast mystic immersion;
 		#SEND !cast mystic immersion;
 	};
-	
+	.
 	#NOP About to reset. Don't let explosive releases go to waste meow;
 	#if {${magebar[sat]} > 85 && ${magebar[er]} > 0} {
 		#SHOWME !cast explosive release;
@@ -95,7 +95,7 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
-	#if {$my[sp][current] < 500} {
+	#if {$my[sp][current] < 1000} {
 		.stop;
 		rest;
 	}
