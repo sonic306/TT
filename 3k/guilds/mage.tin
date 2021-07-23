@@ -87,7 +87,7 @@
 	};
 };
 
-#act {{Mikefury dealt the killing blow} {
+#act {Mikefury dealt the killing blow} {
     corpsetrig;
 } {2}
 
