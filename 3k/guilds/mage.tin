@@ -95,7 +95,7 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
-	#send !hp
+	#send !hp;
 	#if {#magebar[sp][current] < 1000} {
 		.stop;
 	}
