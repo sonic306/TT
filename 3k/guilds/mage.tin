@@ -87,6 +87,10 @@
 	};
 };
 
+#act {Your minor globe has ended.} {
+	#send !cast minor globe;
+}
+
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
 } {2}
