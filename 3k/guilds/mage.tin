@@ -95,9 +95,10 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
+	#send !hp;
 	#if {$my[sp][current] < 1000 || $my[gp1][current] > 50} {
 		.stop;
-		#SEND !rest;
+		rest;
 	}
 }
 
