@@ -72,13 +72,13 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {${magebar[sp][current]} < ${magebar[sp][max]} || ${magebar[sat]} > 40} {
+	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 40} {
 		#SHOWME Recovering...;
 		#DELAY {5} {
 			rest;
 		};
 	};
-	#elseif {${magebar[sp][current]} == $magebar[sp][max] && !$resting} {
+	#elseif {$magebar[sp][current] == $magebar[sp][max] && $magebar[sat] == 0} {
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
