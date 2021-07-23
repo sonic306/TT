@@ -82,7 +82,7 @@
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
-			.bot;
+			..;
 		};
 	};
 };
@@ -96,7 +96,7 @@
 	#send !wrap all;
     #SEND !get gold;
 	#if {$my[sp][current] < 1000} {
-		.pause;
+		.stop;
 		#delay 2 {rest}
 	}
 }
