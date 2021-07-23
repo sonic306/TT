@@ -95,8 +95,7 @@
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
-	#send !hp;
-	#if {$magebar[sp][current] < 1000} {
+	#if {$my[sp][current] < 1000} {
 		.pause;
 		#delay 2 {rest}
 	}
