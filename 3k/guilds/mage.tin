@@ -98,7 +98,7 @@
 	#send !hp;
 	#if {$magebar[sp][current] < 1000} {
 		.pause;
-		delay 2 {rest}
+		#delay 2 {rest}
 	}
 }
 
