@@ -77,8 +77,8 @@
 		#DELAY {5} {
 			rest;
 		};
-	}
-	{
+	};
+	#else {
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
