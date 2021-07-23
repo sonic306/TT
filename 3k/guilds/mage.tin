@@ -78,7 +78,7 @@
 			rest;
 		};
 	};
-	#elseif {${magebar[sp][current]} == ${magebar[sp][max]}} {
+	#elseif {${magebar[sp][current]} == $magebar[sp][max] && !$resting} {
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
