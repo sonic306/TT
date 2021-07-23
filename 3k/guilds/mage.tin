@@ -91,6 +91,10 @@
 	#send !cast minor globe;
 }
 
+#act {You may not cast another defensive spell so quickly!} {
+	#send !cast minor globe;
+}
+
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
 } {2}
