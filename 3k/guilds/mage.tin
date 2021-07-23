@@ -87,9 +87,9 @@
 	};
 };
 
-#act {dealt the killing blow} {
+#act {{Mikefury dealt the killing blow} {
     corpsetrig;
-}
+} {2}
 
 #alias corpsetrig {
     #SEND !cast spell tap on corpse;
