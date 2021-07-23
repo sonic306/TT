@@ -93,6 +93,7 @@
 
 #act {You may not cast another defensive spell so quickly!} {
 	#send !cast minor globe;
+	#line gag;
 }
 
 #act {Mikefury dealt the killing blow} {
