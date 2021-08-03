@@ -78,10 +78,10 @@
 	#SEND !hp;
 	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 50} {
 		#SHOWME Recovering...;
-		#DELAY {5} {
+		#DELAY {4} {
 			rest;
 		};
-	};
+	}
 	{
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
