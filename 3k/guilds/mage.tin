@@ -27,8 +27,9 @@
 	};
 
 	#NOP About to reset. Don't let mystic immersion go to waste homie;
-	#if {${magebar[magreset]} > 94 && ${magebar[imm]} > 0} {
+	#if {${magebar[magreset]} > 85 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
 		#SEND !cast mystic immersion;
+		#var magebar[powers][immersing] 1;
 	};
 
 	#NOP If sat is this high, then you're out of corpses. Secure shelter like a lil bitch;
@@ -36,10 +37,11 @@
 		#SEND !cast secure shelter;
 	};
 
-	#NOP Enage mystic immersion;
-	#if {${magebar[sp][current]} < 200 && ${magebar[imm]} > 0} {
+	#NOP Engage mystic immersion;
+	#if {${magebar[sp][current]} < 200 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
 		#SHOWME !cast mystic immersion;
 		#SEND !cast mystic immersion;
+		#var magebar[powers][immersing] 1;
 	};
 	
 	#NOP About to reset. Don't let explosive releases go to waste meow;
@@ -61,24 +63,26 @@
 		#SEND !hmheal;
 		#SEND !cast spell tap;
 	};
+	#line gag;
 };
 
 #NOP  PROT: [ A MS SS M PS MG PE MB <P> ST] COF:30/30 *!!! Mon(Rip):eme;
 #act {{^ PROT:.*COF:(\d+)\/(\d+)}} {
 	#var {magebar[cof][current]}	{%2};
 	#var {magebar[cof][max]}	    {%3};
+	#line gag;
 };
 
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 10} {
+	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 50} {
 		#SHOWME Recovering...;
 		#DELAY {5} {
 			rest;
 		};
 	};
-	#elseif {$magebar[sp][current] == $magebar[sp][max]} {
+	{
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
@@ -87,24 +91,74 @@
 	};
 };
 
-#act {Your minor globe has ended.} {
-	#send !cast minor globe;
+#act {Your major globe has ended.} {
+	#send !cast major globe;
+	#var magebar[powers][majorglobe] 0;
+}
+
+#act {You cast protection from evil on yourself} {
+	#var magebar[powers][pe] = 1
+}
+
+#act {You feel safer as the major globe surrounds and protects you.} {
+	#var magebar[powers][majorglobe] 1;
+}
+
+#act {You begin to phase in and out of the Ethereal plane!} {
+	#var magebar[powers][blink] 1;
+}
+
+#act {Your skin begins to shimmer and flash} {
+	#var magebar[powers][prisaura] 1;
+}
+
+#act {Your form has solidified.} {
+	#var magebar[powers][blink] 0;
+	cast blink;
+}
+
+#act {Your immersion has expired.} {
+	#var magebar[powers][immersing] 0;
+}
+
+#act {Your protection from evil has ended.} {
+	#var magebar[powers][pe] 0;
+	cast protection from evil;
+}
+
+#act {The magic of your Major Globe shatters from the force of the attack!} {
+	#var magebar[powers][majorglobe] 0;
+	cast major globe;
+}
+
+#act {Your skin ceases its colorful displays} {
+	#var magebar[powers][prisaura] 0;
+	cast prismatic aura;
+}
+
+#act {Your deeppocket begins to fade} {
+	cast deeppockets;
 }
 
 #act {You may not cast another defensive spell so quickly!} {
-	#send !cast minor globe;
+	#if {$magebar[powers][majorglobe] == 0} {#send !cast major globe;}
+	#if {$magebar[powers][pe] == 0} {#send !cast protection from evil;}
+	#if {$magebar[powers][blink] == 0} {#send !cast blink;}
+	#if {$magebar[powers][prisaura] == 0} {#send !cast prismatic aura;}
 	#line gag;
 }
 
+
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
-} {2}
+} {1}
+
 
 #alias corpsetrig {
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
-	#if {$my[sp][current] < 1000 || $my[gp1][current] > 50} {
+	#if {$my[sp][current] < $my[sp][max] || $my[gp1][current] > 50} {
 		.stop;
 		rest;
 	}
