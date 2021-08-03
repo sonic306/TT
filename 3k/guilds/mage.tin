@@ -153,6 +153,9 @@
     corpsetrig;
 } {1}
 
+#act {All your corpses are already bigger than what is here} {
+	cast corpse blast;
+}
 
 #alias corpsetrig {
     #SEND !cast spell tap on corpse;
