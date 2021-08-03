@@ -97,7 +97,7 @@
 }
 
 #act {You cast protection from evil on yourself} {
-	#var magebar[powers][pe] = 1
+	#var magebar[powers][pe] 1;
 }
 
 #act {You feel safer as the major globe surrounds and protects you.} {
