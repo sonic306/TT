@@ -141,10 +141,10 @@
 }
 
 #act {You may not cast another defensive spell so quickly!} {
-	#if {$magebar[powers][majorglobe] == 0} {#send !cast major globe;}
-	#if {$magebar[powers][pe] == 0} {#send !cast protection from evil;}
-	#if {$magebar[powers][blink] == 0} {#send !cast blink;}
-	#if {$magebar[powers][prisaura] == 0} {#send !cast prismatic aura;}
+	#if {$magebar[powers][majorglobe] == 0} {#send !cast major globe;};
+	#if {$magebar[powers][pe] == 0} {#send !cast protection from evil;};
+	#if {$magebar[powers][blink] == 0} {#send !cast blink;};
+	#if {$magebar[powers][prisaura] == 0} {#send !cast prismatic aura;};
 	#line gag;
 }
 
