@@ -65,6 +65,19 @@
 		#SEND !hmheal;
 		#SEND !cast spell tap;
 	};
+
+	#if {$magebar[gem] < 80 } {
+		ffetch gem;
+	};
+
+	#if {$magebar[imm] == 0 && $magebar[sat] < 75 && $magebar[sp][current] < 3000} {
+		cast spell tap;
+	};
+
+	#if {$magebar[sat] > 80} {
+		unwrap;
+		cast corpse blast;
+	}
 	#line gag;
 };
 
@@ -80,7 +93,7 @@
 	#SEND !hp;
 	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 50} {
 		#SHOWME Recovering...;
-		#DELAY {4} {
+		#DELAY {2} {
 			rest;
 		};
 	}
@@ -161,8 +174,7 @@
 
 #alias corpsetrig {
 	#if {$magebar[mc] < 90} {study spellbook};
-    #SEND !cast spell tap on corpse;
-	#send !wrap all;
+    #if {$magebar[cof][current] == $magebar[cof][max]} {#SEND !cast spell tap on corpse;#SEND !cast corpse blast;} {#SEND !cast spell tap on corpse;#SEND !wrap all;};
     #SEND !get gold;
 	.stop;
 	rest; 
