@@ -77,7 +77,7 @@
 	#if {$magebar[sat] > 80} {
 		unwrap;
 		cast corpse blast;
-	}
+	};
 	#line gag;
 };
 
