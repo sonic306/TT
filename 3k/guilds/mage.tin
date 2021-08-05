@@ -78,7 +78,6 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[mc] < 90} {study spellbook};
 	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 50} {
 		#SHOWME Recovering...;
 		#DELAY {4} {
@@ -161,6 +160,7 @@
 }
 
 #alias corpsetrig {
+	#if {$magebar[mc] < 90} {study spellbook};
     #SEND !cast spell tap on corpse;
 	#send !wrap all;
     #SEND !get gold;
