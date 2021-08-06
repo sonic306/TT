@@ -173,6 +173,7 @@
 }
 
 #alias corpsetrig {
+	#var idle 0;
 	#if {$magebar[mc] < 90} {study spellbook};
     #if {$magebar[cof][current] == $magebar[cof][max]} {#SEND !cast spell tap on corpse;#SEND !cast corpse blast;} {#SEND !cast spell tap on corpse;#SEND !wrap all;};
     #SEND !get gold;
