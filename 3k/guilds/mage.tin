@@ -29,7 +29,7 @@
 	};
 
 	#NOP About to reset. Don't let mystic immersion go to waste homie;
-	#if {${magebar[magreset]} > 85 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
+	#if {${magebar[magreset]} > 80 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
 		#SEND !cast mystic immersion;
 		#var magebar[powers][immersing] 1;
 	};
@@ -191,7 +191,7 @@
 
 
 #alias setcont {
-		#SEND !cast perform as cast clenched fist;
+		#SEND !cast perform as cast disintegrate;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
 		#SEND !cast find familiar;
@@ -200,48 +200,32 @@
 		#DELAY {1} {
 			#SEND !cast greater contingency as shield#cast magnificent shield;
 			#SEND !cast magnificent shield;
-			#DELAY {5} {
+			#DELAY {10} {
 				#SEND !cast greater contingency as stoneskin#cast stoneskin;
 				#SEND !cast stoneskin;
-				#DELAY {5} {
+				#DELAY {10} {
 					#SEND !cast greater contingency as armor#cast armor;
 					#SEND !cast armor;
-					#DELAY {5} {
+					#DELAY {10} {
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;
-						#DELAY {5} {
-                            #SEND !cast greater contingency as minor globe#cast minor globe;
-						    #SEND !cast minor globe;
-						    #DELAY {5} {
-                                #SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
-                                #SEND !cast prismatic sphere;
-                                #DELAY {5} {
-                                    #SEND !cast greater contingency as mantle#200#cast mantle;
-                                    #SEND !cast mantle;
-                                    #DELAY {5} {
-                                        #SEND !cast greater contingency as protection from evil#cast protection from evil;
-                                        #SEND !cast protection from evil;
-                                        #DELAY {5} {
-                                            #SEND !cast contingency as hp#100#cast secure shelter;
-                                            #DELAY {5} {
-                                                #SEND !cast contingency as sp#50#cast secure shelter;
-                                                #DELAY {5} {
-                                                    #SEND !cast mindblank;
-                                                    #DELAY {5} {
-                                                        #SEND !cast giant strength mikefury;
-                                                    };
-                                                };
-                                            };
-                                        };
-                                    };
-                                };
-                            };
+						#DELAY {10} {
+							#SEND !cast greater contingency as prismatic aura#cast prismatic aura;
+							#SEND !cast prismatic aura;
+							#DELAY {10} {
+								#SEND !cast greater contingency as protection from evil#cast protection from evil;
+								#SEND !cast protection from evil;
+								#DELAY {10} {
+									#SEND !cast greater contingency as blink#cast blink;
+									#SEND !cast blink;
+								}
+							};
 						};
 					};
 				};
 			};
 		};
 	};
-
+};
 
 #class {mage} {close}
