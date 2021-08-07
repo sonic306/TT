@@ -218,7 +218,7 @@
 								#DELAY {10} {
 									#SEND !cast greater contingency as blink#cast blink;
 									#SEND !cast blink;
-								}
+								};
 							};
 						};
 					};
