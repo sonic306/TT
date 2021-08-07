@@ -91,7 +91,7 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < 3000 && $magebar[power][immersing] == 0} { 
+	#if {$magebar[sp][current] < 3000 && $magebar[powers][immersing] == 0} { 
 		#SHOWME Recovering...;
 		#DELAY {2} {
 			rest;
