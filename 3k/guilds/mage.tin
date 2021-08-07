@@ -91,7 +91,7 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < 3000 } {
+	#if {$magebar[sp][current] < 3000 || $magebar[power][immersing] == 0} { 
 		#SHOWME Recovering...;
 		#DELAY {2} {
 			rest;
@@ -194,7 +194,9 @@
 		#SEND !cast perform as cast disintegrate;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
+		#SEND !cast mindblank;
 		#SEND !cast find familiar;
+		#SEND !cast protection from evil;
 		#SEND !cast deeppockets;
 		#SEND !cast light;
 		#DELAY {1} {
