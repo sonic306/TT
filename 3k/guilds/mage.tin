@@ -91,7 +91,7 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < $magebar[sp][max] || $magebar[sat] > 50} {
+	#if {$magebar[sp][current] < 3000 } {
 		#SHOWME Recovering...;
 		#DELAY {2} {
 			rest;
@@ -198,13 +198,13 @@
 		#SEND !cast deeppockets;
 		#SEND !cast light;
 		#DELAY {1} {
-			#SEND !cast greater contingency as shield#cast magnificent shield;
+			#SEND !cast contingency as shield#cast magnificent shield;
 			#SEND !cast magnificent shield;
 			#DELAY {10} {
-				#SEND !cast greater contingency as stoneskin#cast stoneskin;
+				#SEND !cast contingency as stoneskin#cast stoneskin;
 				#SEND !cast stoneskin;
 				#DELAY {10} {
-					#SEND !cast greater contingency as armor#cast armor;
+					#SEND !cast contingency as armor#cast armor;
 					#SEND !cast armor;
 					#DELAY {10} {
 						#SEND !cast greater contingency as major globe#cast major globe;
@@ -213,18 +213,15 @@
 							#SEND !cast greater contingency as prismatic aura#cast prismatic aura;
 							#SEND !cast prismatic aura;
 							#DELAY {10} {
-								#SEND !cast greater contingency as protection from evil#cast protection from evil;
-								#SEND !cast protection from evil;
-								#DELAY {10} {
-									#SEND !cast greater contingency as blink#cast blink;
-									#SEND !cast blink;
-								};
-							};
+								#SEND !cast greater contingency as blink#cast blink;
+								#SEND !cast blink;
 						};
 					};
 				};
 			};
 		};
 	};
+};
+
 
 #class {mage} {close}
