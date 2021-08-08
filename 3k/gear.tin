@@ -23,7 +23,7 @@ Shield:       none
 }
 #act {{^Around neck:\s+(.+)}} {
     #var {my[gear][neck]} {%2};
-    #regex {%0} {The mask of Gemino Mortis} {
+    #regex {"%2"} {"The mask of Gemino Mortis"} {
         #var mask 1
     }
     {
