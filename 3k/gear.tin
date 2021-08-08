@@ -23,6 +23,12 @@ Shield:       none
 }
 #act {{^Around neck:\s+(.+)}} {
     #var {my[gear][neck]} {%2}
+    #regex {%2} {The mask of Gemino Mortis} {
+        #var mask 1
+    }
+    {
+        #var mask 0
+    }
 }
 #act {{^Heavy body:\s+(.+)}} {
     #var {my[gear][armour]} {%2}

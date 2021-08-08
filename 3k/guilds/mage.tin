@@ -3,6 +3,7 @@
 #var guild mage
 
 #var magebar[powers][immersing] 0
+#var mask 0
 
 #NOP   HP: 2529/1261 SP: 7877/11675/94%/60% Sat: 79 Cnc: 0 G/MI: 3/1/21% ER: 0/81% G2N: 39%;
 #NOP As I learned more about TT++ I realized I could have put the normal regular expression in double curly brackets instead of curling each capture. Not refactoring.;
@@ -175,7 +176,30 @@
 #alias corpsetrig {
 	#var idle 0;
 	#if {$magebar[mc] < 90} {study spellbook};
-    #if {$magebar[cof][current] == $magebar[cof][max]} {#SEND !cast spell tap on corpse;#SEND !cast corpse blast;} {#SEND !cast spell tap on corpse;#SEND !wrap all;};
+    #if {$magebar[cof][current] == $magebar[cof][max]} {
+		#if {!$mask} {
+			#SEND !cast spell tap on corpse;
+			#SEND !cast corpse blast;
+		}
+		{
+			#SEND !cast spell tap on corpse;
+			#SEND !cast spell tap on corpse 2;
+			#SEND !cast corpse blast;
+			#SEND !cast corpse blast 2;
+		}
+		
+	} 
+	{
+		#if {$mask} {
+			#SEND !cast spell tap on corpse;
+			#SEND !cast spell tap on corpse 2;
+			#SEND !wrap all;
+		}
+		{
+			#SEND !cast spell tap on corpse;
+			#SEND !wrap all;
+		}
+	};
     #SEND !get gold;
 	.stop;
 	rest; 
