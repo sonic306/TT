@@ -167,7 +167,7 @@
 
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
-} {1}
+} {2}
 
 #act {All your corpses are already bigger than what is here} {
 	cast corpse blast;
@@ -236,7 +236,7 @@
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;
 						#DELAY {10} {
-							#SEND !cast greater contingency as prismatic aura#cast prismatic aura;
+							#SEND !cast greater contingency as prismatic sphere#500#cast prismatic sphere;
 							#SEND !cast prismatic aura;
 							#DELAY {10} {
 								#SEND !cast greater contingency as blink#cast blink;
