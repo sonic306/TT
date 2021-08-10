@@ -101,9 +101,9 @@
 	{
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
-		#NOP #if {!$singlestep} {
-		#NOP	..;
-		#NOP };
+		#if {!$singlestep} {
+		..;
+		};
 	};
 };
 
@@ -167,7 +167,7 @@
 
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
-} {2}
+} {1}
 
 #act {All your corpses are already bigger than what is here} {
 	cast corpse blast;
