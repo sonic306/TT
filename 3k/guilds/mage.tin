@@ -101,9 +101,9 @@
 	{
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
-		#if {!$singlestep} {
-			..;
-		};
+		#NOP #if {!$singlestep} {
+		#NOP	..;
+		#NOP };
 	};
 };
 
