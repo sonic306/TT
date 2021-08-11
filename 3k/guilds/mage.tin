@@ -92,7 +92,7 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < 3000 && $magebar[powers][immersing] == 0 || $magebar[sat] > 50 && $magebar[er] == 0 } { 
+	#if {$magebar[sp][current] < 3000 && $magebar[powers][immersing] == 0 || $magebar[sat] > 40 && $magebar[er] == 0 } { 
 		#SHOWME Recovering...;
 		#DELAY {2} {
 			rest;
@@ -102,68 +102,15 @@
 		#VAR {resting} {0};
 		#showme Resuming from deep rest...;
 		#if {!$singlestep} {
-		..;
+			..;
 		};
 	};
 };
 
-#act {Your major globe has ended.} {
-	#send !cast major globe;
-	#var magebar[powers][majorglobe] 0;
-}
-
-#act {You cast protection from evil on yourself} {
-	#var magebar[powers][pe] 1;
-}
-
-#act {You feel safer as the major globe surrounds and protects you.} {
-	#var magebar[powers][majorglobe] 1;
-}
-
-#act {You begin to phase in and out of the Ethereal plane!} {
-	#var magebar[powers][blink] 1;
-}
-
-#act {Your skin begins to shimmer and flash} {
-	#var magebar[powers][prisaura] 1;
-}
-
-#act {Your form has solidified.} {
-	#var magebar[powers][blink] 0;
-	cast blink;
-}
-
-#act {Your immersion has expired.} {
-	#var magebar[powers][immersing] 0;
-}
-
-#act {Your protection from evil has ended.} {
-	#var magebar[powers][pe] 0;
-	cast protection from evil;
-}
-
-#act {The magic of your Major Globe shatters from the force of the attack!} {
-	#var magebar[powers][majorglobe] 0;
-	cast major globe;
-}
-
-#act {Your skin ceases its colorful displays} {
-	#var magebar[powers][prisaura] 0;
-	cast prismatic aura;
-}
 
 #act {Your deeppocket begins to fade} {
 	cast deeppockets;
-}
-
-#act {You may not cast another defensive spell so quickly!} {
-	#if {$magebar[powers][majorglobe] == 0} {#delay {2} {#send !cast major globe;}};
-	#if {$magebar[powers][pe] == 0} {#delay {4} {#send !cast protection from evil;}};
-	#if {$magebar[powers][blink] == 0} {#delay {6} {#send !cast blink;}};
-	#if {$magebar[powers][prisaura] == 0} {#delay {8} {#send !cast prismatic aura;}};
-	#line gag;
-}
-
+};
 
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
@@ -171,10 +118,11 @@
 
 #act {All your corpses are already bigger than what is here} {
 	cast corpse blast;
-}
+};
 
 #alias corpsetrig {
 	#var idle 0;
+	#send !hp;
 	#if {$magebar[mc] < 90} {study spellbook};
     #if {$magebar[cof][current] == $magebar[cof][max]} {
 		#if {!$mask} {
