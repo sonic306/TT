@@ -114,7 +114,7 @@
 
 #act {Mikefury dealt the killing blow} {
     corpsetrig;
-} {1}
+} {2}
 
 #act {All your corpses are already bigger than what is here} {
 	cast corpse blast;

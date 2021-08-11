@@ -130,7 +130,7 @@ prompt >$nl$
 
 #act {{^=K=Stormer|Mikefury dealt the killing blow}} {
 	#delay {2} {corpsetrig;#if {!$singlestep} {..}};
-} {2}
+} {1}
 
 /* Detect Players */
 #act {^=P= %*} {
