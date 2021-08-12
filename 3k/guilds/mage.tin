@@ -116,7 +116,7 @@
 	cast deeppockets;
 };
 
-#act {Mikefury|golem dealt the killing blow} {
+#act {Mikefury dealt the killing blow} {
     corpsetrig;
 } {2}
 
