@@ -1,3 +1,4 @@
+#class {mage} {kill}
 #class {mage} {open}
 
 #var guild mage
@@ -116,7 +117,7 @@
 	cast deeppockets;
 };
 
-#act {Mikefury dealt the killing blow} {
+#act {{Mikefury|golem} dealt the killing blow} {
     corpsetrig;
 } {2}
 
