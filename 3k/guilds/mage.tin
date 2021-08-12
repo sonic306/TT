@@ -166,7 +166,7 @@
 };
 
 #alias cg {
-	cast create golem %2;
+	cast create golem %1;
 	#delay {3} {cast monstrous fortitude on golem;say all, always assist;cast haste on golem};
 };
 
