@@ -116,7 +116,7 @@
 	cast deeppockets;
 };
 
-#act {Mikefury dealt the killing blow} {
+#act {{Mikefury|golem dealt the killing blow}} {
     corpsetrig;
 } {2}
 
@@ -165,9 +165,13 @@
     cast box check;
 };
 
+#alias cg {
+	cast create golem %2;
+	#delay {3} {cast monstrous fortitude on golem;say all, always assist};
+}
 
 #alias setcont {
-		#SEND !cast perform as cast disintegrate;
+		#SEND !cast perform as cast implosion;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
 		#SEND !cast mindblank;
@@ -176,23 +180,27 @@
 		#SEND !cast deeppockets;
 		#SEND !cast light;
 		#DELAY {1} {
-			#SEND !cast contingency as shield#cast magnificent shield;
+			#SEND !cast greater contingency as shield#cast magnificent shield;
 			#SEND !cast magnificent shield;
 			#DELAY {10} {
-				#SEND !cast contingency as stoneskin#cast stoneskin;
+				#SEND !cast greater contingency as stoneskin#cast stoneskin;
 				#SEND !cast stoneskin;
 				#DELAY {10} {
-					#SEND !cast contingency as armor#cast armor;
+					#SEND !cast greater contingency as armor#cast armor;
 					#SEND !cast armor;
 					#DELAY {10} {
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;
 						#DELAY {10} {
-							#SEND !cast greater contingency as prismatic sphere#500#cast prismatic sphere;
-							#SEND !cast prismatic aura;
+							#SEND !cast greater contingency as blink#cast blink;
+							#SEND !cast blink;
 							#DELAY {10} {
-								#SEND !cast greater contingency as blink#cast blink;
-								#SEND !cast blink;
+								#SEND !cast contingency as prismatic aura#cast prismatic aura;
+								#SEND !cast prismatic aura;
+								#DELAY {10} {
+									#SEND !cast contingency as protection from evil#cast protection from evil;
+									#SEND !cast protection from evil;
+							};
 						};
 					};
 				};
