@@ -116,7 +116,7 @@
 	cast deeppockets;
 };
 
-#act {{Mikefury|golem dealt the killing blow}} {
+#act {Mikefury|golem dealt the killing blow} {
     corpsetrig;
 } {2}
 
@@ -168,7 +168,7 @@
 #alias cg {
 	cast create golem %2;
 	#delay {3} {cast monstrous fortitude on golem;say all, always assist;cast haste on golem};
-}
+};
 
 #alias setcont {
 		#SEND !cast perform as cast implosion;
@@ -176,7 +176,6 @@
 		#SEND !study spellbook;
 		#SEND !cast mindblank;
 		#SEND !cast find familiar;
-		#SEND !cast protection from evil;
 		#SEND !cast deeppockets;
 		#SEND !cast light;
 		#DELAY {1} {
