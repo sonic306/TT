@@ -108,6 +108,9 @@
 	};
 };
 
+#act {Your immersion has expired.} {
+	#var magebar[powers][immersing] 0;
+}
 
 #act {Your deeppocket begins to fade} {
 	cast deeppockets;
@@ -152,7 +155,7 @@
     #SEND !get gold;
 	.stop;
 	rest; 
-}
+};
 
 #alias tel {
     cast telekinesis as %1 from box;
