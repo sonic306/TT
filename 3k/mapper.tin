@@ -325,14 +325,12 @@
 #alias {bmapsave} {#map write .tt/map/breed.map}
 
 #alias {mapon} {
-	#send !brief on no;
 	#map flag static off;
 	#var mapstatic 1;
 	#var area %1;
 	#var mapping on;
 }
 #alias {mapoff}{
-	#send !brief off yes;
 	#map flag static on;
 	#unvar mapstatic;
 	#unvar mapping;
