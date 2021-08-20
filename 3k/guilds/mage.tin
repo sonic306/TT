@@ -183,22 +183,22 @@
 		#DELAY {1} {
 			#SEND !cast greater contingency as shield#cast magnificent shield;
 			#SEND !cast magnificent shield;
-			#DELAY {10} {
+			#DELAY {15} {
 				#SEND !cast greater contingency as stoneskin#cast stoneskin;
 				#SEND !cast stoneskin;
-				#DELAY {10} {
+				#DELAY {15} {
 					#SEND !cast greater contingency as armor#cast armor;
 					#SEND !cast armor;
-					#DELAY {10} {
+					#DELAY {15} {
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;
-						#DELAY {10} {
+						#DELAY {15} {
 							#SEND !cast greater contingency as blink#cast blink;
 							#SEND !cast blink;
-							#DELAY {10} {
+							#DELAY {15} {
 								#SEND !cast contingency as prismatic aura#cast prismatic aura;
 								#SEND !cast prismatic aura;
-								#DELAY {10} {
+								#DELAY {15} {
 									#SEND !cast contingency as protection from evil#cast protection from evil;
 									#SEND !cast protection from evil;
 							};
