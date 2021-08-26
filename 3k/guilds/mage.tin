@@ -39,11 +39,10 @@
 	#NOP If sat is this high, then you're out of corpses. Secure shelter like a lil bitch;
 	#if {${magebar[sat]} > 93} {
 		#SEND !cast secure shelter;
-		#SEND !ash off;
 	};
 
 	#NOP Engage mystic immersion;
-	#if {${magebar[sp][current]} < 200 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
+	#if {${magebar[sp][current]} < 500 && ${magebar[imm]} > 0 && $magebar[powers][immersing] == 0} {
 		#SHOWME !cast mystic immersion;
 		#SEND !cast mystic immersion;
 		#var magebar[powers][immersing] 1;
@@ -191,17 +190,13 @@
 					#SEND !cast armor;
 					#DELAY {15} {
 						#SEND !cast greater contingency as major globe#cast major globe;
-						#SEND !cast major globe;
+						#SEND !cast major globe;					
 						#DELAY {15} {
-							#SEND !cast greater contingency as blink#cast blink;
-							#SEND !cast blink;
+							#SEND !cast contingency as prismatic sphere#400#cast prismatic sphere;
+							#SEND !cast prismatic aura;
 							#DELAY {15} {
-								#SEND !cast contingency as prismatic aura#cast prismatic aura;
-								#SEND !cast prismatic aura;
-								#DELAY {15} {
-									#SEND !cast contingency as protection from evil#cast protection from evil;
-									#SEND !cast protection from evil;
-							};
+								#SEND !cast contingency as protection from evil#cast protection from evil;
+								#SEND !cast protection from evil;
 						};
 					};
 				};
