@@ -172,7 +172,7 @@
 };
 
 #alias setcont {
-		#SEND !cast perform as cast implosion;
+		#SEND !cast perform as cast incinerate;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
 		#SEND !cast mindblank;
