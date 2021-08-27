@@ -72,7 +72,8 @@
 #alias corpsetrig {
 	focus absorb energy;
 	get coins;
-	#if {$my[gp1][current] < 20 || $my[gp2][current] > 80} {.stop;hb};
+	#var idle 0;
+	#if {$my[gp1][current] < 25 || $my[gp2][current] > 75} {.stop;hb};
 	#else {..}
 };
 
