@@ -61,6 +61,8 @@
 
 #act {You draw your weapon from the sheath in your belt} {guide};
 
+#act {You stop your meditation exercises and prepare for things} {..}
+
 #act {Your lightsaber has run out of charge} {
 	get cell from pack;
 	recharge;
