@@ -115,7 +115,8 @@
 #alias {corpsetrig} {
 	#if {$solo} {
 		corpseme;		
-		#var idle 0
+		#var idle 0;
+		.bot;
 	} 
 	{
 		look;
