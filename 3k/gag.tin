@@ -48,6 +48,8 @@
 #NOP Zelligar's Headband
 #gag {Zelligar's Headband warms you with a radiant glow.}
 
+#NOP Crismon Cloak
+#gag {Your cloak causes your form to phase, reducing the impact from the attack}
 
 /* Mskills */
 #NOP Dodge
