@@ -117,7 +117,15 @@
 };
 
 #act {{Mikefury|golem} dealt the killing blow} {
-    corpsetrig;
+   	#if {$solo} {
+		corpseme;		
+		#var idle 0;
+		.bot;
+	} 
+	{
+		look;
+		#var idle 0
+	}
 } {2}
 
 #act {All your corpses are already bigger than what is here} {
@@ -193,7 +201,7 @@
 						#SEND !cast major globe;					
 						#DELAY {15} {
 							#SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
-							#SEND !cast prismatic shpere;
+							#SEND !cast prismatic sphere;
 							#DELAY {15} {
 								#SEND !cast contingency as protection from evil#cast protection from evil;
 								#SEND !cast protection from evil;
