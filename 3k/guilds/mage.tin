@@ -192,7 +192,7 @@
 						#SEND !cast greater contingency as major globe#cast major globe;
 						#SEND !cast major globe;					
 						#DELAY {15} {
-							#SEND !cast contingency as prismatic sphere#400#cast prismatic sphere;
+							#SEND !cast greater contingency as prismatic sphere#400#cast prismatic sphere;
 							#SEND !cast prismatic shpere;
 							#DELAY {15} {
 								#SEND !cast contingency as protection from evil#cast protection from evil;
