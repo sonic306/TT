@@ -39,6 +39,7 @@
 	#NOP If sat is this high, then you're out of corpses. Secure shelter like a lil bitch;
 	#if {${magebar[sat]} > 93} {
 		#SEND !cast secure shelter;
+		#SEND !ash off;
 	};
 
 	#NOP Engage mystic immersion;
