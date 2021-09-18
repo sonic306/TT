@@ -93,7 +93,7 @@
 #alias rest {
 	#VAR {resting} {1};
 	#SEND !hp;
-	#if {$magebar[sp][current] < $magebar[sp][max] && $magebar[powers][immersing] == 0 || $magebar[sat] > 40 && $magebar[er] == 0 } { 
+	#if {$magebar[sp][current] < $magebar[sp][max] && $magebar[powers][immersing] == 0 || $magebar[sat] > 40 && $magebar[er] == 0 && $magebar[cof][currnet] == 0} { 
 		#SHOWME Recovering...;
 		#DELAY {2} {
 			rest;
