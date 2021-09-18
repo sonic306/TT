@@ -76,7 +76,7 @@
 		cast spell tap;
 	};
 
-	#if {$magebar[sat] > 85 && $magebar[cof][current] > 0} {
+	#if {$magebar[sat] > 90 && $magebar[cof][current] > 0} {
 		unwrap;
 		cast corpse blast;
 	};
