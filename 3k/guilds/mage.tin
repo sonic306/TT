@@ -49,7 +49,7 @@
 	};
 	
 	#NOP About to reset. Don't let explosive releases go to waste meow;
-	#if {${magebar[sat]} > 85 && ${magebar[er]} > 0} {
+	#if {${magebar[sat]} > 90 && ${magebar[er]} > 0} {
 		#SHOWME !cast explosive release;
 		#SEND !cast explosive release;
 	};
@@ -76,7 +76,7 @@
 		cast spell tap;
 	};
 
-	#if {$magebar[sat] > 90 && $magebar[cof][current] > 0} {
+	#if {$magebar[sat] > 85 && $magebar[cof][current] > 0} {
 		unwrap;
 		cast corpse blast;
 	};
