@@ -73,10 +73,6 @@
 		ffetch gem;
 	};
 
-	#if {$magebar[imm] == 0 && $magebar[sat] < 75 && $magebar[sp][current] < 1000 && $magebar[cof][currnet] > 0} {
-		cast spell tap;
-	};
-
 	#if {$magebar[sat] > 85 && $magebar[cof][current] > 0} {
 		unwrap;
 		cast corpse blast;
