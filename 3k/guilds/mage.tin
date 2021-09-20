@@ -136,7 +136,7 @@
 #alias corpsetrig {
 	#var idle 0;
 	#send !hp;
-	#if {$magebar[mc] < 90} {study spellbook};
+	#send !study spellbook;
     #if {$magebar[cof][current] == $magebar[cof][max]} {
 		#if {!$mask} {
 			#SEND !cast spell tap on corpse;
