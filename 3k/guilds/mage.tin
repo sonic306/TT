@@ -5,6 +5,7 @@
 
 #var magebar[powers][immersing] 0
 #var mask 0
+#var solo 1
 
 #NOP   HP: 2529/1261 SP: 7877/11675/94%/60% Sat: 79 Cnc: 0 G/MI: 3/1/21% ER: 0/81% G2N: 39%;
 #NOP As I learned more about TT++ I realized I could have put the normal regular expression in double curly brackets instead of curling each capture. Not refactoring.;
