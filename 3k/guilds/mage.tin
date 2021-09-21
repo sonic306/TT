@@ -118,7 +118,6 @@
    	#if {$solo} {
 		#var idle 0;
 		corpsetrig;		
-		.bot;
 	} 
 	{
 		look;
