@@ -104,7 +104,7 @@
         #class {miner} {close}
         }
 
-#act {Stormer dealt the killing blow} {corpsetrig;glance}
+#act {Stormer|Mikefury dealt the killing blow} {corpsetrig;glance}
 
 #act {You hop in the exit chute and fly out of the mine shaft!} {
         #if {$curr_level < $num_levels} {
