@@ -62,7 +62,7 @@
 		prot
 	};
 	
-	#if {$my[hpbar][powers][dream] < 15 } {
+	#if {$my[hpbar][powers][dream] < 20 } {
 		#if {$bot == 1} {
 			killbot;
 		}
