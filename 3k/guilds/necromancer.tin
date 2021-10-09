@@ -54,7 +54,7 @@
 		con 100
 	};
 
-	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 6};
+	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 7};
 
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
@@ -92,22 +92,23 @@
 	} {
 		#var {sb2_freezer} {}
 	};
-	#var {my[hp][graph]}		{@graph{$my[hp][current];$my[hp][max]}};
-	#var {my[sp][graph]}		{@graph{$my[sp][current];$my[sp][max]}};
-	#var {my[gp1][graph]}		{@graph{$my[gp1][current];$my[gp1][max]}};
-	#var {enemy[graph]}		{@graph{$enemy[hp];100}};
-	#format {hp}			{%+4s} {@colscale{$my[hp][current];$my[hp][max]}};
-	#format {hp_max}		{%+4s} {<128>$my[hp][max]<088>};
-	#format {sp}			{%+4s} {@colscale{$my[sp][current];$my[sp][max]}};
-	#format {sp_inf}		{%+3s} {<168>$my[sp][fuse][current]<088>};
-	#format {sp_max}		{%+4s} {<128>$my[sp][max]<088>};
-	#format {np}			{%+5s} {@colscale{$my[gp1][current];$my[gp1][max]}};
-	#format {np_max}		{%+5s} {<128>$my[gp1][max]<088>};
-	#format {ehealth}		{%+8s} {@colscale{$enemy[hp];100}\%};
-	#format {corpses[inventory]}	{%+2s} {$corpses[inventory]};
-	#format {corpses[coffin]}	{%+2s} {$corpses[coffin]};
-	#format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
-	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4};
+	#var {my[hp][graph]}				{@graph{$my[hp][current];$my[hp][max]}};
+	#var {my[sp][graph]}				{@graph{$my[sp][current];$my[sp][max]}};
+	#var {my[gp1][graph]}				{@graph{$my[gp1][current];$my[gp1][max]}};
+	#var {enemy[graph]}					{@graph{$enemy[hp];100}};
+	#format {hp}						{%+4s} {@colscale{$my[hp][current];$my[hp][max]}};
+	#format {hp_max}					{%+4s} {<128>$my[hp][max]<088>};
+	#format {sp}						{%+4s} {@colscale{$my[sp][current];$my[sp][max]}};
+	#format {sp_inf}					{%+3s} {<168>$my[sp][fuse][current]<088>};
+	#format {sp_max}					{%+4s} {<128>$my[sp][max]<088>};
+	#format {np}						{%+5s} {@colscale{$my[gp1][current];$my[gp1][max]}};
+	#format {np_max}					{%+5s} {<128>$my[gp1][max]<088>};
+	#format {ehealth}					{%+8s} {@colscale{$enemy[hp];100}\%};
+	#format {corpses[inventory]}		{%+2s} {$corpses[inventory]};
+	#format {corpses[coffin]}			{%+2s} {$corpses[coffin]};
+	#format {corpses[freezer]}			{%+2s} {$corpses[freezer]};
+	#format {my[hpbar][powers][dream]}  {%+3s} {$my[hpbar][powers][dream]}
+	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler}} Dreams: $my[hpbar][powers][dreams] {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
