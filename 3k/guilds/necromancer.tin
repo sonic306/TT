@@ -50,8 +50,6 @@
 	#var {my[hpbar][veil_status]}         {%9};
 	#var {my[hpbar][power_reset]}         {%10};
 	
-	update_status;
-
 	#if {$my[hpbar][worth] < 125} {
 		con 100
 	};
@@ -109,7 +107,7 @@
 	#format {corpses[inventory]}		{%+2s} {$corpses[inventory]};
 	#format {corpses[coffin]}			{%+2s} {$corpses[coffin]};
 	#format {corpses[freezer]}			{%+2s} {$corpses[freezer]};
-	#format {my[hpbar][powers][dream]}  {%+3s} {$my[hpbar][powers][dream]};
+	#format {my[hpbar][powers][dream]}  {%+3s} {<138>$my[hpbar][powers][dream]<088>};
 	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} Dreams: $my[hpbar][powers][dream]} {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
