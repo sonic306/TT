@@ -16,10 +16,6 @@
 	#var {gentech[cpc][max]}	{%9};
 	#var ehealth			{%10};
 
-	#if {$my[gp1][current] < 100} {
-		unwrap;
-		reclaim;
-		recharge
 	}
 }
 
