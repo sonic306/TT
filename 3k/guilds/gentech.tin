@@ -42,11 +42,11 @@
 	#var {gentech[hg][num]}		{%8};
 	#var {gentech[hg][time]}	{%9};
 	#var {gentech[hg][unit]}	{%10};
-	
+	update_status;
 }
 
 #var recently_reclaimed no
-#alias {update_status} {
+#NOP #alias {update_status} {
 	#NOP Adrenaline Surge to heal HP;
 	#if {$my[hp][current] < $my[hp][max] * .8} {
 		#delay {surge} {#send !surge} {0.1}
