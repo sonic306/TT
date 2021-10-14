@@ -53,12 +53,12 @@
 #alias {update_status} {
 	#NOP Adrenaline Surge to heal HP;
 #NOP	#if {$my[hp][current] < $my[hp][max] * .8} {
-		#delay {surge} {#send !surge} {0.1}
-	};
+#NOP		#delay {surge} {#send !surge} {0.1}
+#NOP	};
 	#NOP Meditate to heal SP;
 #NOP	#if {$my[sp][current] < $my[sp][max] * .5} {
-		#delay {mediate} {#send !meditate} {0.1}
-	};
+#NOP		#delay {mediate} {#send !meditate} {0.1}
+#NOP	};
 	#NOP Reactivate EDNA;
 	#if {$gentech[edna][num] == 0} {
 		#delay {edna} {#send !edna} {0.1}
