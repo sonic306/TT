@@ -89,7 +89,7 @@
                 #var {mud} {3k}
         };
         $ses_name;
-        #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight"} {
+        #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight" || "$world" == "stormergentech"} {
                 #textin .tt/.pass
         };
         #elseif {"$world" == "stormer3s"} {
