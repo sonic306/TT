@@ -58,9 +58,9 @@
 #NOP		#delay {mediate} {#send !meditate} {0.1}
 #NOP	};
 	#NOP Reactivate EDNA;
-	#if {$gentech[edna][num] == 0} {
-		#delay {edna} {#send !edna} {0.1}
-	};
+#NOP	#if {$gentech[edna][num] == 0} {
+#NOP		#delay {edna} {#send !edna} {0.1}
+#NOP	};
 	#NOP Recharge PU from SPU;
 	#if {$my[gp1][max] - $my[gp1][current] > $my[gp2][current] &&
 	     $my[gp2][current] > 0} {
