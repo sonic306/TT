@@ -181,7 +181,8 @@
 	#if {$solo} {
 		#var idle 0;
 		wrap;
-		get coins
+		get coins;
+		..
 	} 
 	{
 		look;
