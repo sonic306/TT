@@ -78,6 +78,11 @@
                 #var {ses_name} {stormer};
                 #var {mud} {3k}
         };
+        #regex {%0} {gentech} {
+                #ses {stormergentech} {3k.org} {3000};
+                #var {ses_name} {stormer};
+                #var {mud} {3k}
+        };
         #regex {%0} {mikefury} {
                 #ses {mikefury} {3k.org} {3000};
                 #var {ses_name} {mikefury};

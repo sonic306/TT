@@ -1,0 +1,8 @@
+#class {stormer} {open}
+
+/* Read in files */
+#NOP Primary Guild Files
+#read .tt/3k/guilds/gentech.tin
+#read .tt/3k/gear.tin;
+
+#class {stormer} {close}
