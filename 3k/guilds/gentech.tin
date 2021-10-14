@@ -1,8 +1,8 @@
 #class {gentech} {open}
 
-#var guild gentech
-#var solo 1
-#var mask 0
+#var guild gentech;
+#var solo 1;
+#var mask 0;
 
 #act {HP:%d/%d SP:%d/%d PU:%d/%d(%d) CPC:%d/%d E:%w} {
 	#var {my[hp][current]}		{%1};
@@ -14,7 +14,7 @@
 	#var {my[gp2][current]}		{%7};
 	#var {gentech[cpc][current]}	{%8};
 	#var {gentech[cpc][max]}	{%9};
-	#var ehealth			{%10}
+	#var ehealth			{%10};
 
 	#if {$my[gp1][current] < 100} {
 		unwrap;
