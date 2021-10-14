@@ -69,13 +69,19 @@
 	guide
 };
 
-#alias corpsetrig {
-	focus absorb energy;
-	get coins;
-	#var idle 0;
-	#if {$my[gp1][current] < 25 || $my[gp2][current] > 75} {.stop;hb};
-	#else {..}
-};
+#alias {corpsetrig} {
+	#if {$solo} {
+		focus absorb energy;
+		get coins;
+		#var idle 0;
+		#if {$my[gp1][current] < 25 || $my[gp2][current] > 75} {.stop;hb};
+		#else {..}
+	} 
+	{
+		look;
+		#var idle 0
+	}
+}
 
 #alias lstats {focus login stats};
 #alias gs {focus guild score};

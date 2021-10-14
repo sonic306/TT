@@ -178,9 +178,21 @@
 #SUB {EField[%d %w] EDNA[%d %w] Synth[%w] EFF:%d|%d HG: %d(%d %w)} {EField[${gentech[efield][num]} $gentech[efield][unit]] EDNA[$gentech[edna][num] $gentech[edna][unit]] Synth[$synthorg] EFF:$geneff|$techeff HG: $gentech[hg][num]($gentech[hg][time] $gentech[hg][unit])}
 
 #alias {corpsetrig} {
-	wrap;
-	get coins
+
 }
+
+#alias {corpsetrig} {
+	#if {$solo} {
+		#var idle 0;
+		wrap;
+		get coins
+	} 
+	{
+		look;
+		#var idle 0
+	}
+}
+
 
 #act {Stormer dealt the killing blow} {corpsetrig}
 
