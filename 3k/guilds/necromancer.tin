@@ -49,8 +49,6 @@
 	#var {my[hpbar][protection_status]}   {%8};
 	#var {my[hpbar][veil_status]}         {%9};
 	#var {my[hpbar][power_reset]}         {%10};
-
-	update_status;
 	
 	#if {$my[hpbar][worth] < 125} {
 		con 100
@@ -79,6 +77,8 @@
 	#if {$my[hpbar][powers][psibleed] > 0 && $canPsi == 0} {
 		#var canPsi 1;
 	};
+	
+	update_status;
 }
 
 #alias {update_status} {
