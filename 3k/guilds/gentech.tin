@@ -50,13 +50,13 @@
 }
 
 #var recently_reclaimed no
-#NOP #alias {update_status} {
+#alias {update_status} {
 	#NOP Adrenaline Surge to heal HP;
-	#if {$my[hp][current] < $my[hp][max] * .8} {
+#NOP	#if {$my[hp][current] < $my[hp][max] * .8} {
 		#delay {surge} {#send !surge} {0.1}
 	};
 	#NOP Meditate to heal SP;
-	#if {$my[sp][current] < $my[sp][max] * .5} {
+#NOP	#if {$my[sp][current] < $my[sp][max] * .5} {
 		#delay {mediate} {#send !meditate} {0.1}
 	};
 	#NOP Reactivate EDNA;
