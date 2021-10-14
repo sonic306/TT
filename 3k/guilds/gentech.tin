@@ -180,7 +180,7 @@
 #alias {corpsetrig} {
 	#if {$solo} {
 		#var idle 0;
-		wrap;
+		wrap all;
 		get coins;
 		..
 	} 
