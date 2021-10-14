@@ -42,7 +42,7 @@
 	#var {gentech[hg][num]}		{%8};
 	#var {gentech[hg][time]}	{%9};
 	#var {gentech[hg][unit]}	{%10};
-	update_status
+	#NOP update_status
 }
 
 #var recently_reclaimed no
