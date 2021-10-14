@@ -162,7 +162,7 @@
 		#DEFAULT {#NOP Every other non-handled flag}
 	};
 	#NOP update_status alias defined in personal hpbar trigger;
-	update_status
+	#NOP update_status
 }
 
 #NOP ***** Combat Mob Name *****;
