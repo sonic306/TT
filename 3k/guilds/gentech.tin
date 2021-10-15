@@ -51,15 +51,15 @@
 #alias {update_status} {
 	#NOP Adrenaline Surge to heal HP;
 #NOP	#if {$my[hp][current] < $my[hp][max] * .8} {
-#NOP		#delay {surge} {#send !surge} {0.1}
+#NOP		#delay {surge} {#send !surge} {0.1};
 #NOP	};
 	#NOP Meditate to heal SP;
 #NOP	#if {$my[sp][current] < $my[sp][max] * .5} {
-#NOP		#delay {mediate} {#send !meditate} {0.1}
+#NOP		#delay {mediate} {#send !meditate} {0.1};
 #NOP	};
 	#NOP Reactivate EDNA;
 #NOP	#if {$gentech[edna][num] == 0} {
-#NOP		#delay {edna} {#send !edna} {0.1}
+#NOP		#delay {edna} {#send !edna} {0.1};
 #NOP	};
 	#NOP Recharge PU from SPU;
 	#if {$my[gp1][max] - $my[gp1][current] > $my[gp2][current] &&
@@ -193,6 +193,6 @@
 }
 
 
-#act {Stormer dealt the killing blow} {corpsetrig}
+#act {Stormer dealt the killing blow} {corpsetrig} {2}
 
 #class {gentech} {close}
