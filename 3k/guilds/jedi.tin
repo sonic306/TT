@@ -55,7 +55,7 @@
 	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 };
 
-#act {Stormer dealt the killing blow} {corpsetrig} {2};
+#act {dealt the killing blow} {corpsetrig} {2};
 
 #act {You are fully rejuvenated and thus exit your trance} {med};
 
