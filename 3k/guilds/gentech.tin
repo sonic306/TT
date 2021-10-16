@@ -193,6 +193,6 @@
 }
 
 
-#act {Stormer dealt the killing blow} {corpsetrig} {2}
+#act {dealt the killing blow} {corpsetrig} {2}
 
 #class {gentech} {close}

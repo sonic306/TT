@@ -114,7 +114,7 @@
 	cast deeppockets;
 };
 
-#act {{Mikefury|golem} dealt the killing blow} {
+#act {dealt the killing blow} {
    	#if {$solo} {
 		#var idle 0;
 		corpsetrig;		
