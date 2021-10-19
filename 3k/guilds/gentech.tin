@@ -50,17 +50,17 @@
 #var recently_reclaimed no
 #alias {update_status} {
 	#NOP Adrenaline Surge to heal HP;
-#NOP	#if {$my[hp][current] < $my[hp][max] * .8} {
-#NOP		#delay {surge} {#send !surge} {0.1};
-#NOP	};
+	#if {$my[hp][current] < $my[hp][max] * .8} {
+		#delay {surge} {#send !surge} {0.1};
+	};
 	#NOP Meditate to heal SP;
 #NOP	#if {$my[sp][current] < $my[sp][max] * .5} {
 #NOP		#delay {mediate} {#send !meditate} {0.1};
 #NOP	};
 	#NOP Reactivate EDNA;
-#NOP	#if {$gentech[edna][num] == 0} {
-#NOP		#delay {edna} {#send !edna} {0.1};
-#NOP	};
+	#if {$gentech[edna][num] == 0} {
+		#delay {edna} {#send !edna} {0.1};
+	};
 	#NOP Recharge PU from SPU;
 	#if {$my[gp1][max] - $my[gp1][current] > $my[gp2][current] &&
 	     $my[gp2][current] > 0} {
@@ -99,18 +99,18 @@
 	};
 
 	#NOP Build HP Bars;
-        #if {"$cooler" == "on" || $corpses[cooler] > 0} {
-                #format {sb1_cooler} {%+2s} {$corpses[cooler]};
-                #var {sb1_cooler} { CL:<130>$sb1_cooler<088>}
-        } {
-                #var {sb1_cooler} {}
-        };
-        #if {"$freezer" == "on" || $corpses[freezer] > 0} {
-                #format {sb2_freezer} {%+2s} {$corpses[freezer]};
-                #var {sb2_freezer} { FZ:<130>$sb2_freezer<088>}
-        } {
-                #var {sb2_freezer} {}
-        };
+	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
+			#format {sb1_cooler} {%+2s} {$corpses[cooler]};
+			#var {sb1_cooler} { CL:<130>$sb1_cooler<088>}
+	} {
+			#var {sb1_cooler} {}
+	};
+	#if {"$freezer" == "on" || $corpses[freezer] > 0} {
+			#format {sb2_freezer} {%+2s} {$corpses[freezer]};
+			#var {sb2_freezer} { FZ:<130>$sb2_freezer<088>}
+	} {
+			#var {sb2_freezer} {}
+	};
 	#switch {"$gentech[synthorg]"} {
 		#case {"LA"}		{#var synthorg {<118>LA<088>}};
 		#case {"SH"}		{#var synthorg {<138>SH<088>}};
@@ -164,10 +164,10 @@
 	#format {tot_last}		{%+3s} {$gxp[last]};
 	#format {gxp_time}		{%-15s} {$gxp[time]};
 	#format {ehealth}		{%+8s} {@colscale{$enemy[hp];100}\%};
-        #format {corpses[inventory]}    {%+2s} {$corpses[inventory]};
-        #format {corpses[truck]}	{%+2s} {$corpses[truck]};
-        #format {corpses[coffin]}	{%+2s} {$corpses[coffin]};
-        #format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
+	#format {corpses[inventory]}    {%+2s} {$corpses[inventory]};
+	#format {corpses[truck]}	{%+2s} {$corpses[truck]};
+	#format {corpses[coffin]}	{%+2s} {$corpses[coffin]};
+	#format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
 	#showme {HP:${hp}/${hp_max} SP:${sp}/${sp_max} PU:${pu}/${pu_max}(${spu}) GL:${gxp_last} RL:${rc_last} TL:${tot_last} ${gxp_time} IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4};
 	#showme {H:${my[hp][graph]} S:${my[sp][graph]} PU:${my[gp1][graph]} SU:${my[gp2][graph]} G: ${gentech[gxp][graph]} E:${enemy[graph]}  CF:<138>${corpses[coffin]}<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
@@ -183,8 +183,10 @@
 	#if {$solo} {
 		#var idle 0;
 		wrap all;
-		get coins;
-		..
+		get all;
+		#if {$bot == 1} {
+			..;
+		}
 	} 
 	{
 		look;
