@@ -115,7 +115,7 @@
 	#format {my[hpbar][powers][corrode]}    {%+3s} {<138>$my[hpbar][powers][corrode]<088>};
 	#format {my[hpbar][powers][light]} 	    {%+2s} {<138>$my[hpbar][powers][light]<088>};
 	#format {my[hpbar][powers][protection]} {%+2s} {<138>$my[hpbar][powers][protection]<088>};
-	#format {currentsmuggle}				{%+2s} {<138>$currentsmuggle<088>}
+	#format {currentsmuggle}				{%+2s} {<138>$currentsmuggle<088>};
 
 	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$currentsmuggle Dreams:$my[hpbar][powers][dream] Corrode:$my[hpbar][powers][corrode] Prot:$my[hpbar][powers][protection]} {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$my[hpbar][follower_corpses] PsiBleed:$my[hpbar][powers][psibleed] Light:$my[hpbar][powers][light]} {-3};
