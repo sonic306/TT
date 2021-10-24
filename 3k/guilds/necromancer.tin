@@ -115,9 +115,9 @@
 	#format {corrode}    {%+3s} {<138>$my[hpbar][powers][corrode]<088>};
 	#format {light} 	    {%+2s} {<138>$my[hpbar][powers][light]<088>};
 	#format {protection} {%+2s} {<138>$my[hpbar][powers][protection]<088>};
-	#format {currentsmuggle}				{%+2s} {<138>$currentsmuggle<088>};
+	#format {curmuggle}				{%+2s} {<138>$currentsmuggle<088>};
 
-	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$currentsmuggle Dreams:$dream Corrode:$corrode Prot:$protection} {-4};
+	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle Dreams:$dream Corrode:$corrode Prot:$protection} {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$follower_corpses PsiBleed:$psibleed Light:$light} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
