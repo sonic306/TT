@@ -38,6 +38,7 @@
 	#send !i;
 	#send !eq;
 	#send mywho;
+	#send hp;
 }
 
 #act {^Your talisman grows warm.$} {
