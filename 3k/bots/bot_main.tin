@@ -18,7 +18,6 @@ prompt >$nl$
 
 
 #alias {.pause} {
-	brief off yes;
 	#class {xbot} {kill};
 	#var stepping 0;
 	#alias {_check_mob} {.pause}
