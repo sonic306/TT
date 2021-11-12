@@ -25,7 +25,6 @@ prompt >$nl$
 }
 
 #alias {.stop} {
-	brief off yes;
 	#map get {roomvnum} {bots[vnum]};
 	#path save forward bots[path];
 	#path save position bots[position];
