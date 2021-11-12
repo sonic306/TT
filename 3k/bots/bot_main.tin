@@ -37,7 +37,6 @@ prompt >$nl$
 }
 
 #alias {.resume} {
-	brief on yes;
 	#map run $bots[vnum];
 	#path load $bots[path];
 	#path goto $bots[position];
