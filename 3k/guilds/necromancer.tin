@@ -2,7 +2,6 @@
 
 #read .tt/3k/gear.tin;
 #read .tt/3k/TierTracker.tin;
-#NOP #read .tt/3k/InvokePrime.tin;
 
 #var guild necromancer
 #var mask 0

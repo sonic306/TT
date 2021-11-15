@@ -18,7 +18,7 @@ Shield:       none
 #act {{^Held:\s+(.+)}} {
     #var {my[gear][held]} {%2}
 }
-#act {{^head:\s+(.+)}} {
+#act {{^Head:\s+(.+)}} {
     #var {my[gear][helmet]} {%2}
 }
 #act {{^Around neck:\s+(.+)}} {
