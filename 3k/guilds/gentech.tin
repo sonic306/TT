@@ -17,6 +17,8 @@
 	#var {gentech[cpc][current]}	{%8};
 	#var {gentech[cpc][max]}	{%9};
 	#var ehealth			{%10};
+
+	#line gag;
 }
 
 #act {G:%d/%d(%d\%) RC:%d Bias:( %d\% | %d\% ) TS:%d/%d(%d\%)} {
