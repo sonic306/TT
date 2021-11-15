@@ -19,7 +19,7 @@ Shield:       none
     #var {my[gear][held]} {%2}
 }
 #act {{^Head:\s+(.+)}} {
-    #var {my[gear][helmet]} {%2}
+    #var {my[gear][helmet]} {%2};
     #regex {%2} {The mask of Gemino Mortis} {
         #var mask 1
     }
