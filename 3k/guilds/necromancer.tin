@@ -208,7 +208,7 @@
 #act {Your coffin flashes as its capacity expands!} {i}
 
 #alias corpseme {
-	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask} {
+	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask == 1} {
 		qtrance preserve remains/wrap>2;get gold;cga
 	}
 	{
@@ -216,7 +216,7 @@
 			qtrance preserve remains/wrap;get gold;cga
 		}
 	};
-	#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax && $mask} {
+	#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax && $mask $mask == 1} {
 		qtrance preserve remains/=get corpse>2;get gold;cga
 	}
 	{
@@ -224,7 +224,7 @@
 			qtrance preserve remains/=get corpse;get gold;cga
 		}
 	};
-	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask && $currentsmuggle < $smugglemax} {
+	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask $mask == 1 && $currentsmuggle < $smugglemax} {
 		qtrance preserve remains/smuggle corpse>2;get gold;cga
 	}
 	{
@@ -232,7 +232,7 @@
 			qtrance preserve remains/smuggle corpse;get gold;cga
 		}
 	};
-	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask} {
+	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask $mask == 1} {
 		qtrance preserve remains/get corpse>2;get gold;cga
 	}
 	{
