@@ -54,6 +54,10 @@
 
 #var recently_reclaimed no
 #alias {update_status} {
+	#if {$my[hp][current] < $my[hp][max] * .8} {
+		#delay {surge} {#send !surge} {0.1}
+	};
+	
 	#NOP Recharge PU from SPU;
 	#if {$my[gp1][max] - $my[gp1][current] > $my[gp2][current] &&
 	     $my[gp2][current] > 0} {
