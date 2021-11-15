@@ -17,7 +17,6 @@
 	#var {gentech[cpc][current]}	{%8};
 	#var {gentech[cpc][max]}	{%9};
 	#var ehealth			{%10};
-
 	#line gag;
 }
 
@@ -34,8 +33,7 @@
 	#var {gentech[ts][max]}		{%8};
 	#var {gentech[reset]}		{%9};
 	#math {gentech[gxp][last]}	{$gentech[gxp][num] - $gentech[gxp][prev]};
-	#math {gentech[rc][last]}	{$gentech[rc][num] - $gentech[rc][prev]}
-
+	#math {gentech[rc][last]}	{$gentech[rc][num] - $gentech[rc][prev]};
 	#line gag;
 }
 
@@ -51,7 +49,6 @@
 	#var {gentech[hg][time]}	{%9};
 	#var {gentech[hg][unit]}	{%10};
 	update_status;
-
 	#line gag;
 }
 
