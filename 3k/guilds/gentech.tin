@@ -35,6 +35,8 @@
 	#var {gentech[reset]}		{%9};
 	#math {gentech[gxp][last]}	{$gentech[gxp][num] - $gentech[gxp][prev]};
 	#math {gentech[rc][last]}	{$gentech[rc][num] - $gentech[rc][prev]}
+
+	#line gag;
 }
 
 #act {EField[%d %w] EDNA[%d %w] Synth[%w] EFF:%d|%d HG: %d(%d %w)} {
@@ -49,6 +51,8 @@
 	#var {gentech[hg][time]}	{%9};
 	#var {gentech[hg][unit]}	{%10};
 	update_status;
+
+	#line gag;
 }
 
 #var recently_reclaimed no
