@@ -7,7 +7,7 @@
 #var mask 0
 #var solo 1
 #var coffinmax 30
-#var followermax 30
+#var followermax 33
 #var smugglemax 20
 #var currentsmuggle 0
 #var canPsi 1
@@ -125,7 +125,7 @@
 	#if {$solo} {
 		corpseme;		
 		#var idle 0;
-		#if {$bot == 1} {
+		#if {$bot == 1 && $mask == 0} {
 			.bot;
 		}
 	} 
@@ -135,7 +135,9 @@
 	}
 }
 
-#act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}} {2}
+#act {dealt the killing blow} {corpsetrig} {2}
+
+#act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
 #act {{The psibleed upon (.*) has dissipated}} {
 	#if {$canPsi == 1} {
