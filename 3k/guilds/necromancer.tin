@@ -139,6 +139,8 @@
 
 #act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
+#act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
+
 #act {{The psibleed upon (.*) has dissipated}} {
 	#if {$canPsi == 1} {
 		psibleed
