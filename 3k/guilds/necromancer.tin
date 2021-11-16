@@ -135,7 +135,7 @@
 	}
 }
 
-#act {dealt the killing blow} {#if {$mask} { #delay {2} {corpsetrig}} {corpsetrig}} {2}
+#act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
 
 #act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
