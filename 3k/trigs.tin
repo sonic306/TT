@@ -54,4 +54,8 @@
 	hold talisman;
 }
 
+#act {{(\w+) unloads one of his long range missiles}} {
+	load core
+}
+
 #class {trigs} {close}
