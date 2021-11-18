@@ -129,7 +129,7 @@ prompt >$nl$
 
 #act {dealt the killing blow} {
 	#if {$mask} {#NOP} {corpsetrig};
-} {1}
+} {2}
 
 /* Detect Players */
 #act {^=P= %*} {
