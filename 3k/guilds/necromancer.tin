@@ -154,7 +154,6 @@
 	#if {$canPsi == 1} {
 		psibleed;
 	};	
-	call
 }
 
 

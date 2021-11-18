@@ -58,4 +58,6 @@
 	load core
 }
 
+#act {dealt the killing blow Aegis Soldier} {..} {1}
+
 #class {trigs} {close}
