@@ -36,7 +36,7 @@
 	};
 }
 
-#act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+)\%\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
+#act {{w(\d+)%|p(\w+)|v(\w+)|r(\d+)%}} {
 	#var {my[hpbar][worth]}               {%2};
 	#var {my[hpbar][protection_status]}   {%3};
 	#var {my[hpbar][veil_status]}         {%4};
@@ -50,12 +50,6 @@
 
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
-	};
-	
-	#if {$my[hpbar][powers][dream] < 20 } {
-		#if {$bot == 1} {
-			killbot;
-		}
 	};
 	
 	update_status;
