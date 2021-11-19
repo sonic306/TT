@@ -10,8 +10,6 @@
 #var followermax 33
 #var smugglemax 20
 #var currentsmuggle 0
-#var canPsi 1
-#var canCorrode 1
 
 /* HP Bar */
 #act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]}} {
@@ -39,21 +37,16 @@
 }
 
 #act {{\w+\[.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\s.{3}(\d+)\]\s+\w+\[w(\d+)\%\|p(\w+)\|v(\w+)\|r(\d+)\%]}} {
-	#var {my[hpbar][powers][dream]} 	  {%2};
-	#var {my[hpbar][powers][psibleed]} 	  {%3};
-	#var {my[hpbar][powers][corrode]} 	  {%4};
-	#var {my[hpbar][powers][light]} 	  {%5};
-	#var {my[hpbar][powers][protection]}  {%6};
-	#var {my[hpbar][worth]}               {%7};
-	#var {my[hpbar][protection_status]}   {%8};
-	#var {my[hpbar][veil_status]}         {%9};
-	#var {my[hpbar][power_reset]}         {%10};
+	#var {my[hpbar][worth]}               {%2};
+	#var {my[hpbar][protection_status]}   {%3};
+	#var {my[hpbar][veil_status]}         {%4};
+	#var {my[hpbar][power_reset]}         {%5};
 	
 	#if {$my[hpbar][worth] < 125} {
 		con 100
 	};
 
-	#if {$my[hpbar][sp] < 200 && $my[hpbar][powers][dream] != 0} {dream 7};
+	#if {$my[hpbar][sp] < 200} {dream 7};
 
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
@@ -63,18 +56,6 @@
 		#if {$bot == 1} {
 			killbot;
 		}
-	};
-	#if {$my[hpbar][powers][corrode] == 0 && $canCorrode == 1} {
-		#var canCorrode 0;
-	};
-	#if {$my[hpbar][powers][corrode] > 0 && $canCorrode == 0} {
-		#var canCorrode 1;
-	};
-	#if {$my[hpbar][powers][psibleed] == 0 && $canPsi == 1} {
-		#var canPsi 0;
-	};
-	#if {$my[hpbar][powers][psibleed] > 0 && $canPsi == 0} {
-		#var canPsi 1;
 	};
 	
 	update_status;
@@ -109,15 +90,11 @@
 	#format {corpses[coffin]}			    {%+2s} {$corpses[coffin]};
 	#format {corpses[freezer]}			    {%+2s} {$corpses[freezer]};
 	#format {follower_corpses}   {%+2s} {<138>$my[hpbar][follower_corpses]<088>};
-	#format {dream}      {%+3s} {<138>$my[hpbar][powers][dream]<088>};
-	#format {psibleed}   {%+3s} {<138>$my[hpbar][powers][psibleed]<088>};
-	#format {corrode}    {%+3s} {<138>$my[hpbar][powers][corrode]<088>};
-	#format {light} 	    {%+2s} {<138>$my[hpbar][powers][light]<088>};
-	#format {protection} {%+2s} {<138>$my[hpbar][powers][protection]<088>};
+	#format {powerreset} 		 {%+3s} <138>$my[hpbar][power_reset]<088>};
 	#format {curmuggle}				{%+2s} {<138>$currentsmuggle<088>};
 
-	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle Dreams:$dream Corrode:$corrode Prot:$protection} {-4};
-	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$follower_corpses PsiBleed:$psibleed Light:$light} {-3};
+	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle Repower:$powerreset} {-4};
+	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$follower_corpses} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
 
