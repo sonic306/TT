@@ -37,10 +37,10 @@
 }
 
 #act {{\w(\d+)\%|\w(\w+)|\w(\w+)|\w(\d+)\%}} {
-	#var {my[hpbar][worth]}               {%1};
-	#var {my[hpbar][protection_status]}   {%2};
-	#var {my[hpbar][veil_status]}         {%3};
-	#var {my[hpbar][power_reset]}         {%4};
+	#var {my[hpbar][worth]}               {%2};
+	#var {my[hpbar][protection_status]}   {%3};
+	#var {my[hpbar][veil_status]}         {%4};
+	#var {my[hpbar][power_reset]}         {%5};
 	
 	#if {$my[hpbar][worth] < 125} {
 		con 100
@@ -82,12 +82,12 @@
 	#format {corpses[coffin]}			    {%+2s} {$corpses[coffin]};
 	#format {corpses[freezer]}			    {%+2s} {$corpses[freezer]};
 	#format {follower_corpses}   			{%+2s} {<138>$my[hpbar][follower_corpses]<088>};
-	# NOP #format {powerreset} 		 			{%+3s} {<138>$my[hpbar][power_reset]<088>};
+	#format {powerreset} 		 		{%+3s} {<138>$my[hpbar][power_reset]<088>};
 	#format {curmuggle}						{%+2s} {<138>$currentsmuggle<088>};
 
-	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle Repower:$powerreset} {-4};
+	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle } {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$follower_corpses} {-3};
-	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
+	#showme {$mip[gline][1]  $mip[gline][2] Repower:$powerreset} {-6}
 }
 
 #alias {corpsetrig} {
