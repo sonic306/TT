@@ -46,7 +46,7 @@
 		con 100
 	};
 
-	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
+	#if {"$my[hpbar][protection_status]"  == "OFF"} {
 		prot
 	};
 	
