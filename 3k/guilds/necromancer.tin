@@ -46,8 +46,6 @@
 		con 100
 	};
 
-	#if {$my[hpbar][sp] < 200} {dream 7};
-
 	#if {"$my[hpbar][protection_status]"  == "OFF" && $my[hpbar][powers][protection] != 0} {
 		prot
 	};
