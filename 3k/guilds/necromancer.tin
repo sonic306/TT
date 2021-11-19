@@ -50,7 +50,7 @@
 		prot
 	};
 	
-	# NOP update_status;
+	update_status;
 }
 
 #alias {update_status} {
@@ -82,7 +82,7 @@
 	#format {corpses[coffin]}			    {%+2s} {$corpses[coffin]};
 	#format {corpses[freezer]}			    {%+2s} {$corpses[freezer]};
 	#format {follower_corpses}   			{%+2s} {<138>$my[hpbar][follower_corpses]<088>};
-	#format {powerreset} 		 		{%+3s} {<138>$my[hpbar][power_reset]<088>};
+	#format {powerreset} 		 		    {%+3s} {<138>$my[hpbar][power_reset]<088>};
 	#format {curmuggle}						{%+2s} {<138>$currentsmuggle<088>};
 
 	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle } {-4};
