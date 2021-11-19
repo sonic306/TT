@@ -36,7 +36,7 @@
 	};
 }
 
-#act {{\w(\d+)\%|\w(\w+)|\w(\w+)|\w(\d+)\%}} {
+#act {{Status\[\w(\d+)\%\|\w(\w+)\|\w(\w+)\|\w(\d+)\%\]}} {
 	#var {my[hpbar][worth]}               {%2};
 	#var {my[hpbar][protection_status]}   {%3};
 	#var {my[hpbar][veil_status]}         {%4};
