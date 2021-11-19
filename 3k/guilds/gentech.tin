@@ -8,15 +8,15 @@
 #NOP genset hpbar HP:$hp$ SP:$sp$ PU:$pu$ CPC:$cpc$ E:$enemy$$nl$G:$gexp$/$g2n$($g2n-pct$%) RC:$rc$ Bias:$bias$ TS:$tslide$($reset-pct$%)$nl$EField[$efield$ min] EDNA[$edna$] Synth[$synthorg$] EFF:$gen-eff$|$tech-eff$ HG: $hypergen$($hypergent$)
 #act {HP:%d/%d SP:%d/%d PU:%d/%d(%d) CPC:%d/%d E:%w} {
 	#var {my[hp][current]}		{%1};
-	#var {my[hp][max]}		{%2};
+	#var {my[hp][max]}			{%2};
 	#var {my[sp][current]}		{%3};
-	#var {my[sp][max]}		{%4};
+	#var {my[sp][max]}			{%4};
 	#var {my[gp1][current]}		{%5};
-	#var {my[gp1][max]}		{%6};
+	#var {my[gp1][max]}			{%6};
 	#var {my[gp2][current]}		{%7};
-	#var {gentech[cpc][current]}	{%8};
+	#var {gentech[cpc][current]}{%8};
 	#var {gentech[cpc][max]}	{%9};
-	#var ehealth			{%10};
+	#var ehealth				{%10};
 	#line gag;
 }
 
@@ -39,7 +39,7 @@
 
 #act {EField[%d %w] EDNA[%d %w] Synth[%w] EFF:%d|%d HG: %d(%d %w)} {
 	#var {gentech[efield][num]}	{%1};
-	#var {gentech[efield][unit]}	{%2};
+	#var {gentech[efield][unit]}{%2};
 	#var {gentech[edna][num]}	{%3};
 	#var {gentech[edna][unit]}	{%4};
 	#var {gentech[synthorg]}	{%5};
