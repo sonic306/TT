@@ -192,8 +192,10 @@
 	}
 }
 
-#NOP Stormer's eyes glow bright green
+#act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
-#act {dealt the killing blow} {corpsetrig} {2}
+#act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
+
+#act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
 
 #class {gentech} {close}
