@@ -182,8 +182,8 @@
 		#var idle 0;
 		wrap all;
 		get all;
-		#if {$bot == 1} {
-			..;
+		#if {$bot == 1 && $mask == 0} {
+			.bot
 		}
 	} 
 	{
