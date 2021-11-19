@@ -50,7 +50,7 @@
 		prot
 	};
 	
-	update_status;
+	# NOP update_status;
 }
 
 #alias {update_status} {
