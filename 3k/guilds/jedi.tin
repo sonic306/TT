@@ -1,6 +1,8 @@
 #class {jedi} {open}
 
 #var guild jedi
+#var mask 0
+#var solo 1
 
 #NOP #hp/#mhp | SP:#sp/#msp | C:#c | F:#f | D: #dn | NRG: #ng | -#sm- | #%c | #gxp | #es  
 #act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s?([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
