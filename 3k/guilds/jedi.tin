@@ -58,7 +58,7 @@
 	
 	#showme {$mip[gline][1]  $mip[gline][2] NRG:$nrg Dissipates:$dissipates} {-6};
 	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%        E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
-	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph]       E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
+	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph]     E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 };
 
 #act {dealt the killing blow} {corpsetrig} {2};
