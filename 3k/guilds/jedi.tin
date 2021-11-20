@@ -98,4 +98,14 @@
 #alias abt {focus abilities /trainable};
 #alias med {focus meditation};
 
+#alias dissipate {
+	#switch {"%1"} {
+		#case {"attack"} {focus dissipate on attack}
+		#case {"aheal"} {focus dissipate on aheal}
+		#case {"cpain"} {focus dissipate on cpain}
+		#case {"regen"} {focus dissipate on regen}
+		#case {"shield"} {focus dissipate on shield}
+	}
+}
+
 #class {jedi} {close}
