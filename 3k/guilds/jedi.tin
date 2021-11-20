@@ -5,7 +5,7 @@
 #var solo 1
 
 #NOP #hp/#mhp | SP:#sp/#msp | C:#c | F:#f | D: #dn | NRG: #ng | -#sm- | #%c | #gxp | #es  
-#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s?([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
+#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s+?([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
 	#var {my[hpbar][hp][current]}				{%2};
 	#var {my[hpbar][hp][max]}	    			{%3};
 	#var {my[hpbar][sp][current]}				{%4};
@@ -53,9 +53,12 @@
 	#format {corpses_inv}	{%+2s} {<138>$corpses[inventory]<088>};
 	#format {corpses_cof}	{%+2s} {<138>$corpses[coffin]<088>};
 	#format {corpses_fz}	{%+2s} {<138>$corpses[freezer]<088>};
-	#showme {$mip[gline][1]  $mip[gline][2]} {-6};
-	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%    G:$gxp\%    E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
-	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph] G:$my[gxp][graph] E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
+	#format {nrg} 			{%+3s} {$my[hpbar][nrgStore]};
+	#format {dissipates}    {%+2s} {$my[hpbar][dissipate][cnt]};
+	
+	#showme {$mip[gline][1]  $mip[gline][2] NRG:$nrg Dissipates:$dissipates} {-6};
+	#showme {HP:$hp/$hp_max SP:$sp/$sp_max C:   $gp1\%    F:   $gp2\%        E:$ehealth\%    IC:$corpses_inv$sb1_cooler} {-4};
+	#showme {H:$my[hp][graph] S:$my[sp][graph] C:$my[gp1][graph] F:$my[gp2][graph]  E:$enemy[graph] CF:$corpses_cof$sb2_freezer} {-3};
 };
 
 #act {dealt the killing blow} {corpsetrig} {2};
