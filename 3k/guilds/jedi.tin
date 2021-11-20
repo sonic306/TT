@@ -18,10 +18,8 @@
 	#var {my[hpbar][charge]}					{%11};
 	#var {my[hpbar][gxp][current]}				{%12};
 	#var {my[hpbar][enemy][current]}			{%13};
-
-	#line gag;
-
 	update_status;
+	#line gag;
 }
 
 #alias {update_status} {
