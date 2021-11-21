@@ -216,6 +216,10 @@
 	#var currentsmuggle %2
 }
 
+#act {{^\w+ slaps you!!!$}} {
+	qtrance preserve remains>50
+}
+
 #alias pyre {
 	qtrance unwrap biggest/funeral pyre>2
 }
