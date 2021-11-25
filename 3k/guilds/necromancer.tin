@@ -33,7 +33,7 @@
 
 	#if {$my[hpbar][sp] < $my[sp][max] && !$psibleedOn} {
 		psibleed;
-		#var psibleedOn 1
+		#var psibleedOn 1;
 	}
 
 	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
