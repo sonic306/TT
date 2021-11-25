@@ -10,6 +10,7 @@
 #var followermax 33
 #var smugglemax 20
 #var currentsmuggle 0
+#var psibleedOn 0
 
 /* HP Bar */
 #act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]}} {
@@ -30,8 +31,9 @@
 		qtrance unwrap/get corpse/absorb>10
 	};
 
-	#if {$my[hpbar][sp] < 2000} {
+	#if {$my[hpbar][sp] < $my[sp][max] && !$psibleedOn} {
 		psibleed;
+		#var psibleedOn 1
 	}
 
 	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
@@ -115,7 +117,8 @@
 #act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
 
 #act {{The psibleed upon (.*) has dissipated}} {
-		psibleed
+		psibleed;
+		#var psibleedOn 0;
 }
 
 #act {{A field of superheated steam seeps into the room at your command}} {
