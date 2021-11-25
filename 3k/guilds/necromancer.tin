@@ -30,6 +30,10 @@
 		qtrance unwrap/get corpse/absorb>10
 	};
 
+	#if {$my[hpbar][sp] < 2000} {
+		psibleed;
+	}
+
 	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
 		sra;
 		wrap all

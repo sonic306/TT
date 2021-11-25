@@ -58,6 +58,6 @@
 	load core
 }
 
-#act {dealt the killing blow to Aegis Soldier} {..} {1}
+#act {dealt the killing blow to {Aegis Soldier|Aegis Sentry}} {..} {1}
 
 #class {trigs} {close}
