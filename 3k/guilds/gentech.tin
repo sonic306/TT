@@ -196,7 +196,7 @@
     #var {accper}           {%1};
     #format {atktype} {%l} {%3};
     #format {deftype} {%l} {%5};
-
+}
 #act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
 #act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
