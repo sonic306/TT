@@ -202,7 +202,7 @@
 
 #act {Switching TacShield Defensive Type to: %1 Shielding} {
     #format {shieldtype} {%l} {%1};
-
+}
 
 #act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
 
