@@ -127,6 +127,8 @@
 		#math {corpses[truck]} {$corpses[truck] -1}
 	}; #elseif {$corpses[cooler] > 0} {
 		#send !uncooler corpse
+	}; #elseif {$corpses[coffin] > 0} {
+		#send unwrap;get corpse
 	}; #else {
 		#if {"$bot" == "on"} {
 			.stop;
