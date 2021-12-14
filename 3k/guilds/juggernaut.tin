@@ -32,7 +32,7 @@
 	#if {$my[gp1][current] < 25} {#bell};
 	#if {$my[gp1][current] < 95 && $my[sp][current] > 50} {
 		#if {$my[gp2][current] > 70} {#send !dissipate};
-		#send !transpose max;
+		#NOP #send !transpose max;
 	};
 	#if {$reset >= 95} {
 		#if {$clan > 0} {
