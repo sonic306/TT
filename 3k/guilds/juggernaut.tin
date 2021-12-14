@@ -36,9 +36,9 @@
 	};
 	#if {$reset >= 95} {
 		#if {$clan > 0} {
-			#send !frenzy
+			#NOP #send !frenzy
 		}; #elseif {$nukes > 0 && $mip[round]} {
-			fire $nukes
+			#NOP fire $nukes
 		}
 	};
 
@@ -139,14 +139,14 @@
 }
 
 /* Set truck name */
-#var truck[name] {CanisLupus}
+#var truck[name] {Dollar}
 #format {truck[lower]} {%l} {$truck[name]}
 #format {truck[first_cap]} {%n} {$truck[lower]}
 
 /* Set Ammo Defaults */
 #var {ammo_buy_amount}	{5000}
 #var {weapon_type}	{missile}
-#var {ammo_type}	{6}
+#var {ammo_type}	{1}
 #var {ammo_buy}		{on}
 #var {ammo_donate}	{off}
 
@@ -203,7 +203,6 @@
 
 
 /* Aliases */
-#NOP No killtrig because I have ktrig!
 #alias corpsetrig {#nop}
 
 #NOP Fire all nukes at current stepper mob or current enemy
