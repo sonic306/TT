@@ -88,6 +88,11 @@
                 #var {ses_name} {mikefury};
                 #var {mud} {3k}
         };
+        #regex {%0} {jugg} {
+                #ses {stormerjugg} {3k.org} {3000};
+                #var {ses_name} {stormer};
+                #var {mud} {3k}
+        };
         $ses_name;
         #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight" || "$world" == "stormergentech"} {
                 #textin .tt/.pass
