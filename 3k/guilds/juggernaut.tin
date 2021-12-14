@@ -41,6 +41,8 @@
 			fire $nukes
 		}
 	}
+
+	#line gag;
 }
 
 #act {{^Ammo:\[(\d+)?/?(\d+)?/?(\d+)?/?(\d+)?/?(\d+)?\] SHP:\[\s*(\d+)\] SNL:\[([\d\.]*)\] SM:\[(\w+)\] SA:\[(\w+)\] SD:\[(\w+)\] E:([\d\w]+)?\%?}} {
@@ -72,6 +74,7 @@
 	#if {$shp > 0 && $shp < 9} {dismiss};
 	#if {"$saf" == "No"} {support assault fire};
 	update_status
+	#line gag;
 }
 
 #alias {update_status} {
