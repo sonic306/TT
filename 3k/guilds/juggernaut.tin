@@ -40,7 +40,7 @@
 		}; #elseif {$nukes > 0 && $mip[round]} {
 			fire $nukes
 		}
-	}
+	};
 
 	#line gag;
 }
@@ -73,7 +73,7 @@
 	};
 	#if {$shp > 0 && $shp < 9} {dismiss};
 	#if {"$saf" == "No"} {support assault fire};
-	update_status
+	update_status;
 	#line gag;
 }
 
