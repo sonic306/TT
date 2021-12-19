@@ -5,18 +5,18 @@
 /* HP Bars */
 #NOP bset custom_hp @hired:|@HP:&$HP2$& SP:&$SP2$& K:&$K2$& V:&$V2$& SM:&$S$&/&$SR$&% G:&$G2S$&/&$G2N$&[&$G2N%$&%] &$C$&&$NL$&@hired:|@A:&$AS$& &$P$&
 #act {|HP:%d/%d SP:%d/%d K:%d/%d V:%d/%d SM:%d/%d%% G:%d/%d[%d%%]} {
-	#var my[hp][current]		%2;
-	#var my[hp][max]		%3;
-	#var my[sp][current]		%4;
-	#var my[sp][max]		%5;
-	#var my[gp1][current]		%6;
-	#var my[gp1][max]		%7;
-	#var my[gp2][current]		%8;
-	#var my[smiles][current]	%9;
-	#var my[smiles][reset]		%10;
-	#var my[gxp][current]		%11;
-	#var my[gxp][max]		%12;
-	#var my[gxp][per]		%13
+	#var my[hp][current]		%1;
+	#var my[hp][max]		%2;
+	#var my[sp][current]		%3;
+	#var my[sp][max]		%4;
+	#var my[gp1][current]		%5;
+	#var my[gp1][max]		%6;
+	#var my[gp2][current]		%7;
+	#var my[smiles][current]	%8;
+	#var my[smiles][reset]		%9;
+	#var my[gxp][current]		%10;
+	#var my[gxp][max]		%11;
+	#var my[gxp][per]		%12
 }
 
 #act {|A: [[ %* ]]} {
@@ -37,6 +37,7 @@
                 #var {sb2_freezer} {}
         };
         #var {my[hp][graph]}    {@graph{$my[hp][current];${my[hp][max]}}};
+        #var {my[sp][graph]}    {@graph{$my[sp][current];${my[sp][max]}}};
         #var {my[gp1][graph]}   {@graph{$my[gp1][current];$my[gp1][max]}};
         #var {my[gp2][graph]}   {@graph{$my[gp2][current];$my[gp2][max]}};
         #var {my[gxp][graph]}	{@graph{$my[gxp][per];100}};
@@ -54,7 +55,7 @@
         #format {corpses[coffin]}  {%+2s} {$corpses[coffin]};
         #format {corpses[freezer]} {%+2s} {$corpses[freezer]};
         #showme {<088>HP:$hp/$hp_max SP:$sp/$sp_max K:$gp1/$gp1_max  V:   $gp2\%    G: $gxp_col\%    E:$ehealth\%    IC:<130>${corpses[inventory]}<088> ${sb1_cooler}} {-4};
-        #showme {H:${my[hp][graph]} S:${my[sp][graph]} K:${my[gp1][graph]} V:${my[gp2][graph]} G:${gxp_graph} E:${enemy[graph]} CF:<130>${corpses[coffin]}<088>${sb2_freezer}} {-3};
+        #showme {H:${my[hp][graph]} S:${my[sp][graph]} K:${my[gp1][graph]} V:${my[gp2][graph]} G:${my[gxp][graph]} E:${enemy[graph]} CF:<130>${corpses[coffin]}<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
 
