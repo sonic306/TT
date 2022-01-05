@@ -222,6 +222,17 @@
 	look;
 }
 
+#act {dealt the killing blow} {
+   	#if {$solo} {
+		#var idle 0;
+		corpsetrig;		
+	} 
+	{
+		look;
+		#var idle 0
+	}
+} {2}
+
 #NOP Fire all nukes at current stepper mob or current enemy
 #alias ff {fire $nukes}
 
