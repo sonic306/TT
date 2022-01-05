@@ -1,0 +1,8 @@
+#class {fremen} {open}
+
+#NOP Based on the default fremen hp bar
+#act {{HP: (\d+\/(\d+)) SP: (\d+\/(\d+)) \w: (\d+\/(\d+))\((\d+)\) L: (\d+)% P:(\d+)\/(\d+)% T: (\w+) G: (\d+) LT: (\w+)}} {
+
+}
+
+#class {fremen} {close}

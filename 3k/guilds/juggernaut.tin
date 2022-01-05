@@ -78,7 +78,7 @@
 		}
 	};
 	#if {$shp > 0 && $shp < 9} {dismiss};
-	#if {"$saf" == "No"} {support assault fire};
+	#if {"$saf" == "No"} {support assault blunt};
 	update_status;
 	#line gag;
 }
@@ -218,7 +218,9 @@
 
 
 /* Aliases */
-#alias corpsetrig {#nop}
+#alias corpsetrig {
+	look;
+}
 
 #NOP Fire all nukes at current stepper mob or current enemy
 #alias ff {fire $nukes}

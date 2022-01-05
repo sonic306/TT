@@ -83,16 +83,22 @@
                 #var {ses_name} {stormer};
                 #var {mud} {3k}
         };
-        #regex {%0} {mikefury} {
-                #ses {mikefury} {3k.org} {3000};
-                #var {ses_name} {mikefury};
-                #var {mud} {3k}
-        };
         #regex {%0} {jugg} {
                 #ses {stormerjugg} {3k.org} {3000};
                 #var {ses_name} {stormer};
                 #var {mud} {3k}
         };
+        #regex {%0} {mikefury} {
+                #ses {mikefury} {3k.org} {3000};
+                #var {ses_name} {mikefury};
+                #var {mud} {3k}
+        };
+        #regex {%0} {primanova} {
+                #ses {mikefury} {3k.org} {3000};
+                #var {ses_name} {primanova};
+                #var {mud} {3k}
+        };
+        
         $ses_name;
         #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight" || "$world" == "stormergentech" || "$world" == "stormerjugg"} {
                 #textin .tt/.pass
@@ -102,4 +108,7 @@
         };
         #elseif {"$world" == "mikefury"} {
                 #textin .tt/.passmike
+        };
+        #elseif {"$world" == "primanova"} {
+                #textin .tt/.pass3s
         };}
