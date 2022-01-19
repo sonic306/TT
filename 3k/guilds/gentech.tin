@@ -86,6 +86,14 @@
 				#send !reclaim;
 				#var recently_reclaimed yes
 			} {0.1}
+		}; #elseif {$currentsmuggle > 0} {
+			#delay {use_corpse} {
+				#send !smuggle remove corpse;
+				#send !drop corpse;
+				#send !reclaim;
+				#var recently_reclaimed yes
+			} {0.1}
+		};
 		}; #elseif {$corpses[freezer] > 0} {
 			#delay {use_corpse} {
 				#send !deslab;
