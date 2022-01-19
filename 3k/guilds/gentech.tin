@@ -3,6 +3,8 @@
 #var guild gentech;
 #var solo 1;
 #var mask 0;
+#var smugglemax 20;
+#var currentsmuggle 0;
 
 
 #NOP genset hpbar HP:$hp$ SP:$sp$ PU:$pu$ CPC:$cpc$ E:$enemy$$nl$G:$gexp$/$g2n$($g2n-pct$%) RC:$rc$ Bias:$bias$ TS:$tslide$($reset-pct$%)$nl$EField[$efield$ min] EDNA[$edna$] Synth[$synthorg$] EFF:$gen-eff$|$tech-eff$ HG: $hypergen$($hypergent$)
@@ -150,6 +152,7 @@
 	#var	{reset}			{@colscale{$gentech[reset];100}};
 	#var	{geneff}		{@colscale{$gentech[geneff];100}};
 	#var	{techeff}		{@colscale{$gentech[techeff];100}};
+	#format {curmuggle}		{%+2s} {<138>$currentsmuggle<088>};
 	#format {hp}			{%+4s} {@colscale{$my[hp][current];$my[hp][max]}};
 	#format {hp_max}		{%+4s} {<128>$my[hp][max]<088>};
 	#format {sp}			{%+4s} {@colscale{$my[sp][current];$my[sp][max]}};
@@ -166,7 +169,7 @@
 	#format {corpses[truck]}	{%+2s} {$corpses[truck]};
 	#format {corpses[coffin]}	{%+2s} {$corpses[coffin]};
 	#format {corpses[freezer]}	{%+2s} {$corpses[freezer]};
-	#showme {HP:${hp}/${hp_max} SP:${sp}/${sp_max} PU:${pu}/${pu_max}(${spu}) GL:${gxp_last} RL:${rc_last} TL:${tot_last} ${gxp_time} IC:<138>${corpses[inventory]}<088>${sb1_cooler}} {-4};
+	#showme {HP:${hp}/${hp_max} SP:${sp}/${sp_max} PU:${pu}/${pu_max}(${spu}) GL:${gxp_last} RL:${rc_last} TL:${tot_last} ${gxp_time} IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle} {-4};
 	#showme {H:${my[hp][graph]} S:${my[sp][graph]} PU:${my[gp1][graph]} SU:${my[gp2][graph]} G: ${gentech[gxp][graph]} E:${enemy[graph]}  CF:<138>${corpses[coffin]}<088>${sb2_freezer}} {-3};
 	#showme {$mip[gline][1]  $mip[gline][2]} {-6}
 }
@@ -192,6 +195,11 @@
 	}
 }
 
+#alias sra {
+	smuggle remove all;
+	#var currentsmuggle 0
+}
+
 #act {You attack} {
 	genscan;
 }
@@ -206,6 +214,10 @@
 
 #act {Switching TacShield Defensive Type to: %1 Shielding} {
     #format {shieldtype} {%l} {%1};
+}
+
+#act {{You are currently smuggling (\d+)/20 items}} {
+	#var currentsmuggle %2
 }
 
 #act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
