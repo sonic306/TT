@@ -216,7 +216,7 @@
     #format {shieldtype} {%l} {%1};
 }
 
-#act {{You are currently smuggling (\d+)/20 items}} {
+#act {{You are currently smuggling (\d+)/(20|30|40) items}} {
 	#var currentsmuggle %2
 }
 
