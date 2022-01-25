@@ -5,7 +5,7 @@
 
 /* Set numbers ansi for tracking */
 #NOP aset numbers_pref [31;1m[Dmg]: [0m
-#alias {dmgaset} {#send {aset numbers_pref [45m[Dmg]: [0m}}
+#alias {dmgaset} {#send {aset numbers_pref [31;1m[Dmg]: [0m}}
 
 /* Hightlight Numbers */
 #sub {[Dmg]: You hit %* %d time%*for %d damage.} {<118>[DMG]:<088> You hit %1 %2 time%3for <118>%4<088> damage.}
