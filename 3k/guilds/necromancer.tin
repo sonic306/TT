@@ -108,6 +108,8 @@
 		look;
 		#var idle 0
 	}
+	dmg;
+	dmgreset;
 }
 
 #act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}

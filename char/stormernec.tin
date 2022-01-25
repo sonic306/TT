@@ -4,5 +4,6 @@
 #NOP Primary Guild Files
 #read .tt/3k/guilds/necromancer.tin;
 #read .tt/3k/gear.tin;
+#read .tt/3k/damage.tin;
 
 #class {stormer} {close}
