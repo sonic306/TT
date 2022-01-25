@@ -8,7 +8,7 @@
 #alias {dmgaset} {#send {aset numbers_pref [31;1m[Dmg]: [0m}}
 
 /* Hightlight Numbers */
-#sub {[Dmg]: You hit %* %d time%*for %d damage.} {<118>[DMG]:<088> You hit %1 %2 time%3for <158>%4<088> damage.}
+#sub {[Dmg]: You hit %* %d time%*for %d damage.} {<118>[DMG]:<088> You hit %1 %2 time%3for <118>%4<088> damage.}
 
 /* Initialize variables */
 #var dmg[rnd][cur] 0
