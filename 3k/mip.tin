@@ -931,6 +931,7 @@
 		#switch {"$mip[comm][line]"} {
 			#case {"ADMIN"}			{#var {commcol} {<158>}};
 			#case {"Alpha"}			{#var {commcol} {<168>}};
+			#case {"Angel"}			{#var {commcol} {<168>}};
 			#case {"Announce"}		{#var {commcol} {<168>}};
 			#case {"Auction"}		{#var {commcol} {<108>}};
 			#case {"Bear"}			{#var {commcol} {<168>}};
@@ -971,6 +972,8 @@
 			#case {"Professions"}		{#var {commcol} {<178>}};
 			#case {"Psi Main"}		{#var {commcol} {<168>}};
 			#case {"Shout"}			{#var {commcol} {<178>}};
+			#case {"Slime Chat"}		{#var {commcol} {<128>}};
+			#case {"Time"}			{#var {commcol} {<168>}};
 			#case {"Whine"}			{#var {commcol} {<118>}};
 			#case {"Wolf"}			{#var {commcol} {<228>}};
 			#case {"Zilch_shout"}		{#var {commcol} {<168>}};
