@@ -273,7 +273,16 @@
 }
 
 #alias {go} {
-	#map run {{roomnote} {%0%*}}
+	#if {"%1" == "home"} {
+		#if {"%2" == ""} {
+			#map run {{roomnote} {home}}
+		} {
+			#map run {{roomnote} {resid}};
+			#delay {gohome} {home %2} {2}
+		}
+	} {
+		#map run {{roomnote} {%0%*}}
+	}
 }
 
 #alias {mapgo} {#map goto {roomnote} {%0}}
@@ -427,6 +436,9 @@
 	#map goto 22486
 } {4}
 
+#NOP Battlestar Galactica
+#act {^The simulation screens fade to black.} {#map goto 29532}
+
 #NOP Calvin and Hobbes
 #act {^on the snow calls to you, and you dread another day at school.} {#map goto 23824}
 #act {^and eagerly await the freedom of the afternoon.} {#map goto 23814}
@@ -459,8 +471,15 @@
 #NOP Death Taco
 #act {^You shoot through a graceful arc, and feel weightless for the} {#map goto {roomnote} roaches}
 
+#NOP Dexter's Laboratory
+#act {^Entrance Hallway (s,e,w)} {#map goto 29055}
+
 #NOP Dragon Realms
 #act {^You have to retreat against the onslaught of fire!} {#map move vortex}
+
+#NOP Dragonball Z
+#act {^Capsule Corp Lobby (nw)} {#map goto 28835}
+#act {^S P L A S H!} {#map goto 29792}
 
 #NOP Einstein
 #act {^Standing on the bench, you relax and the stagedive through the rift} {#map goto 7039}
@@ -584,7 +603,7 @@
 #act {^The captain announces: Welcome to Houston Transport Center.$} {exit2}
 
 #NOP Serinth
-#act {^The World of Serinth Board containing } {#map goto 16722}
+#act {^=I= The World of Serinth Board containing } {#map goto 16722}
 
 #NOP Starcraft:Broodwar
 #act {^Door number: 3, Access Code: %1$} {#var starcraft_code %1}
@@ -595,6 +614,10 @@
 
 #NOP Wayhaven Ferry
 #act {^The ferryman says: Well, here you are.} {#map goto 7354}
+
+#NOP Worm's Talon Airship
+#act {^Here we are folks. Welcome to the City of Westersea!} {#map goto 4756}
+#act {^You hop out onto the deck.} {#map goto 15875}
 
 
 /* Blocked Exits */
@@ -728,6 +751,5 @@
 #NOP Whorehouse
 #act {^Doh shoves you backwards with a scowl.} {#map undo}
 #act {^Your feet are mired in the bird poop, you can't seem to move!!} {#map undo}
-
 
 #class {mapper} {close}
