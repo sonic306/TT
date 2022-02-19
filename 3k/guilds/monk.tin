@@ -21,7 +21,9 @@
 	#var {my[gp2][current]}	{%8};
 	#var {my[ae][current]}	{%9};
 	#var {my[ae][reset]}	{%10};
-	#var {my[cf]}		{%11}
+	#var {my[cf]}		{%11};
+	
+	update_status;
 }
 
 
