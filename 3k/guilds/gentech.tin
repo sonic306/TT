@@ -38,7 +38,7 @@
 	#var {gentech[reset]}		{%9};
 	#math {gentech[gxp][last]}	{$gentech[gxp][num] - $gentech[gxp][prev]};
 	#math {gentech[rc][last]}	{$gentech[rc][num] - $gentech[rc][prev]};
-	#math {gentech[gxp][per]}	{100.00 - $gentech[gxp][tnl][per]}
+	#math {gentech[gxp][per]}	{100.00 - $gentech[gxp][tnl][per]};
 	#line gag;
 }
 
