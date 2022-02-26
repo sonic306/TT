@@ -27,7 +27,7 @@
 	#read .tt/3k/terrain.tin;
 	#read .tt/3k/rabyss.tin;
 	#read .tt/numpad.tin;
-	#read .tt/3k/craft/miner.tin;
+	#NOP #read .tt/3k/craft/miner.tin;
 	#read .tt/3k/rej_rotate.tin;
 	#read .tt/3k/secz_pause.tin;
 	#read .tt/diagonal.tin;
