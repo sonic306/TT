@@ -210,11 +210,11 @@
 	#var currentsmuggle 0
 }
 
-#act {You attack} {
+#NOP #act {You attack} {
 	genscan;
 }
 
-#act {[Accuracy:  %d%][%s%w][%s%w]} {
+#NOP #act {[Accuracy:  %d%][%s%w][%s%w]} {
     #var {accper}           {%1};
     #format {atktype} {%l} {%3};
     #format {deftype} {%l} {%5};
