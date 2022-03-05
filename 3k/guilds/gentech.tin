@@ -23,8 +23,10 @@
 	#var ehealth					 {%12};
 	#line gag;
 }
+
+#NOP {G:%d/%d(%d\%) RC:%d Bias:{\(|\[} %d\% | %d\% {\)|\]} TS:%d/%d(%d\%)}
+
 #act {{G:(\d+)\/-?(\d+)\((\d+)\%\) RC:(\d+) Bias:[([] (\d+)% \| (\d+)% [])] TS:(\d+)\/(\d+)\((\d+)%\)}} {
-#NOP #act {G:%d/%d(%d\%) RC:%d Bias:{\(|\[} %d\% | %d\% {\)|\]} TS:%d/%d(%d\%)} {
 	#var {gentech[gxp][prev]}	{$gentech[gxp][num]};
 	#var {gentech[rc][prev]}	{$gentech[rc][num]};
 	#var {gentech[gxp][num]}	{%2};
