@@ -236,6 +236,6 @@
 
 #act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
 
-#act {{Taleast attacks .*}} {#send =call} {2}
+#act {{\w+ attacks .*}} {#send =call} {2}
 
 #class {gentech} {close}
