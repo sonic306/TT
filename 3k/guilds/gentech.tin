@@ -23,19 +23,19 @@
 	#var ehealth					 {%12};
 	#line gag;
 }
-
-#act {G:%d/%d(%d\%) RC:%d Bias:{\(|\[} %d\% | %d\% {\)|\]} TS:%d/%d(%d\%)} {
+#act {{G:(\d+)\/-?(\d+)\((\d+)\%\) RC:(\d+) Bias:[([] (\d+)% \| (\d+)% [])] TS:(\d+)\/(\d+)\((\d+)%\)}} {
+#NOP #act {G:%d/%d(%d\%) RC:%d Bias:{\(|\[} %d\% | %d\% {\)|\]} TS:%d/%d(%d\%)} {
 	#var {gentech[gxp][prev]}	{$gentech[gxp][num]};
 	#var {gentech[rc][prev]}	{$gentech[rc][num]};
-	#var {gentech[gxp][num]}	{%1};
-	#var {gentech[gxp][tnlamt]}	{%2};
-	#var {gentech[gxp][tnlper]}	{%3};
-	#var {gentech[rc][num]}		{%4};
-	#var {gentech[bias][atk]}	{%5};
-	#var {gentech[bias][def]}	{%6};
-	#var {gentech[ts][current]}	{%7};
-	#var {gentech[ts][max]}		{%8};
-	#var {gentech[reset]}		{%9};
+	#var {gentech[gxp][num]}	{%2};
+	#var {gentech[gxp][tnlamt]}	{%3};
+	#var {gentech[gxp][tnlper]}	{%4};
+	#var {gentech[rc][num]}		{%5};
+	#var {gentech[bias][atk]}	{%6};
+	#var {gentech[bias][def]}	{%7};
+	#var {gentech[ts][current]}	{%8};
+	#var {gentech[ts][max]}		{%9};
+	#var {gentech[reset]}		{%10};
 	#math {gentech[gxp][last]}	{$gentech[gxp][num] - $gentech[gxp][prev]};
 	#math {gentech[rc][last]}	{$gentech[rc][num] - $gentech[rc][prev]};
 	#math {gentech[gxp][per]}	{100.00 - $gentech[gxp][tnlper]};
