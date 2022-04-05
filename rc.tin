@@ -94,7 +94,7 @@
                 #var {mud} {3k}
         };
         #regex {%0} {primanova} {
-                #ses {mikefury} {3k.org} {3000};
+                #ses {primanova} {3k.org} {3000};
                 #var {ses_name} {primanova};
                 #var {mud} {3k}
         };
