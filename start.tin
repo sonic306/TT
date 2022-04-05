@@ -31,7 +31,7 @@
 	#read .tt/3k/rej_rotate.tin;
 	#read .tt/3k/secz_pause.tin;
 	#read .tt/diagonal.tin;
-	#read .tt/3k/damage.rin
+	#read .tt/3k/damage.tin
 }
 #if {"$world" != ""} {
 	#regex {$world} {AW} {
