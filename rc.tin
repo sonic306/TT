@@ -88,6 +88,11 @@
                 #var {ses_name} {stormer};
                 #var {mud} {3k}
         };
+        #regex {%0} {mental} {
+                #ses {stormermental} {3k.org} {3000};
+                #var {ses_name} {stormer};
+                #var {mud} {3k}
+        };
         #regex {%0} {mikefury} {
                 #ses {mikefury} {3k.org} {3000};
                 #var {ses_name} {mikefury};
@@ -100,7 +105,7 @@
         };
         
         $ses_name;
-        #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight" || "$world" == "stormergentech" || "$world" == "stormerjugg"} {
+        #if {"$world" == "stormernec" || "$world" == "stormerjedi" || "$world" == "stormerpriest" || "$world" == "stormerknight" || "$world" == "stormergentech" || "$world" == "stormerjugg" || "$world" == "stormermental"} {
                 #textin .tt/.pass
         };
         #elseif {"$world" == "stormer3s"} {

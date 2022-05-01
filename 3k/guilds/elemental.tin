@@ -91,9 +91,6 @@
 
 /* Corpse Trigger */
 #alias {corpsetrig} {
-	slab;
-	wrap;
-	evoke mental depletion corpse;
 	evoke corpse drain;
 	get coins
 }
