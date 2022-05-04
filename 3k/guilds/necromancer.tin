@@ -100,8 +100,6 @@
 	#if {$solo} {
 		corpseme;
 		#var idle 0;
-		dmg;
-		dmgreset;
 		#if {$bot == 1 && $mask == 0} {
 			.bot;
 		}
