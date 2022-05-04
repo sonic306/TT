@@ -24,6 +24,8 @@
 	#var my[g2n][mod]		{%13};
 	#var enemy[name]		{%15};
 	#var enemy[hp]			{%16}
+
+	#line gag
 }
 
 
