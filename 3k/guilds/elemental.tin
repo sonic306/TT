@@ -92,6 +92,7 @@
 
 #act {^You have become size %d!} {escore}
 
+#act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
 
 /* Corpse Trigger */
 #alias {corpsetrig} {
