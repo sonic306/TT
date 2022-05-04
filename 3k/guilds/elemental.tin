@@ -97,7 +97,7 @@
 /* Corpse Trigger */
 #alias {corpsetrig} {
 	#if {$solo} {
-		warp all;
+		wrap all;
 		evoke corpse drain;
 		get gold;
 		#var idle 0;
