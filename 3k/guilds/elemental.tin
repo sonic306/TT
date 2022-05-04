@@ -25,6 +25,8 @@
 	#var enemy[name]		{%15};
 	#var enemy[hp]			{%16};
 
+	evoke energy drain;
+
 	#line gag;
 }
 

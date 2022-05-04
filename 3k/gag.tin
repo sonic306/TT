@@ -15,6 +15,10 @@
 
 #NOP Jedi
 
+#NOP Elemental
+#gag {Grasping a %* tightly, you draw from %w a %w amount of the}
+#gag {elements that you use to bolster your own internal stores.}
+
 #NOP Priests
 #gag { screams in agony!$}
 #gag { soul to a foray of crippling mind subversion!$}
