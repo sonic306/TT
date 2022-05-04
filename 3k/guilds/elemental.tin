@@ -96,11 +96,12 @@
 /* Corpse Trigger */
 #alias {corpsetrig} {
 	#if {$solo} {
-	warp all;
-	get gold;
-	#var idle 0;
-	#if {$bot == 1 && $mask == 0} {
-		.bot;
+		warp all;
+		evoke corpse drain;
+		get gold;
+		#var idle 0;
+		#if {$bot == 1 && $mask == 0} {
+			.bot;
 		}
 	} 
 	{
