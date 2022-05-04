@@ -23,7 +23,7 @@
 	#var my[g2n][num]		{%12};
 	#var my[g2n][mod]		{%13};
 	#var enemy[name]		{%15};
-	#var enemy[hp]			{%16}
+	#var enemy[hp]			{%16};
 
 	#line gag
 }
@@ -96,8 +96,8 @@
 /* Corpse Trigger */
 #alias {corpsetrig} {
 	#if {$solo} {
-	warp all
-	get gold
+	warp all;
+	get gold;
 	#var idle 0;
 	#if {$bot == 1 && $mask == 0} {
 		.bot;
