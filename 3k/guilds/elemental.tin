@@ -62,7 +62,7 @@
 	#var {my[sp][graph]}		{@graph{$my[sp][current];$my[sp][max]}};
 	#var {my[gp1][graph]}		{@graph{$my[gp1][current];$my[gp1][max]}};
 	#var {my[gxp][graph]}		{@graph{$my[gxp][cur];$my[gxp][lev]}};
-	#var {enemy[graph]}		{@graph{$enemy[hp];100}};
+	#var {enemy[graph]}		{@graph{$mip[FFF][L][data];100}};
 	#format {hp}			{%+5s} {@colscale{$my[hp][current];$my[hp][max]}};
 	#format {hp_max}		{%+5s} {<128>$my[hp][max]<088>};
 	#format {sp}			{%+4s} {@colscale{$my[sp][current];$my[sp][max]}};
@@ -71,7 +71,7 @@
 	#format {nrg_max}		{%+4s} {<128>$my[gp1][max]<088>};
 	#format {gxp}			{%+8s} {@colscale{$my[gxp][per];100}};
 	#format {gxp_time}		{%+6s} {$my[gxp][time][str]};
-	#format {ehealth}		{%+3s} {@colscale{$enemy[hp];100}};
+	#format {ehealth}		{%+3s} {@colscale{$mip[FFF][L][data];100}};
 	#format {corpses[inventory]}    {%+2s} {$corpses[inventory]};
 	#format {corpses[coffin]}       {%+2s} {$corpses[coffin]};
 	#if {"$draw[hpbar]" == "on"} {
