@@ -108,7 +108,7 @@
 		}
 	} 
 	{
-		look;
+		glance;
 		#var idle 0
 	}
 	

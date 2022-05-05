@@ -16,7 +16,7 @@
 #NOP Jedi
 
 #NOP Elemental
-#gag {Grasping a %* tightly, you draw from %w a %w amount of the}
+#gag {Grasping a %* tightly, you draw from %w a %w amount}
 #gag {elements that you use to bolster your own internal stores.}
 
 #NOP Priests
