@@ -19,6 +19,8 @@
 	#var {stance}		{%11};
 	#var {method}		{%12};
 	#var knight[staunch]	{0};
+
+	#line gag;
 }
 
 #act {PPD(%w) End(%w) Cry(%p) Dfl(%w) Study(%w) Dodge(%w) Brawl(%w) Shield(%w) Parry(%w)} {
@@ -32,6 +34,7 @@
 	#var {kskills[shieldblock]}	{%8};
 	#var {kskills[parry]}		{%9};
 	#if {"$kskills[prepare]" != "Y"} {#send !prepare on}
+	#line gag;
 }
 
 #act {GXP: %d(%p) Joust:%p Last:%d E:%p} {
@@ -40,6 +43,7 @@
 	#var {gxn}	{%2};
 	#var {joust}	{%3};
 	#var {ehealth}	{%5};
+	#line gag;
 	update_status
 }
 
