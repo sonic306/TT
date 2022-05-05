@@ -33,7 +33,7 @@
 	#var {kskills[brawl]}		{%7};
 	#var {kskills[shieldblock]}	{%8};
 	#var {kskills[parry]}		{%9};
-	#if {"$kskills[prepare]" != "Y"} {#send !prepare on}
+	#if {"$kskills[prepare]" != "Y"} {#send !prepare on};
 	#line gag;
 }
 
