@@ -2,6 +2,8 @@
 
 #var guild priest
 
+#NOP hpbar config: hp#sp#mana#pty#pgxl#NL#coffin#mend#spells#prot#haste#vest#elem#power#bark#mh
+
 #act {{HP: (\d+)/(\d+) SP: (\d+)/(\d+) MANA: (\d+)/(\d+) PTY: \((\d+)\%\) E: \[([\w\s\-\~\,\(\)\']+)(?: : )?(\w+)?\]}} {
 	#var {my[hp][current]}	{%2};
 	#var {my[hp][max]}	{%3};
@@ -17,18 +19,18 @@
 }
 
 #act {{GXP\%: \[(\d+.\d+)\%\] PROT: (ON|OFF) VEST: (ON|OFF) BARK: (ON|OFF)}} {
-        #if {"$cooler" == "on" || $corpses[cooler] > 0} {
-                #format {sb1_cooler} {%+2s} {$corpses[cooler]};
-                #var {sb1_cooler} { CL:<139>$sb1_cooler<088>}
-        } {
-                #var {sb1_cooler} {}
-        };
-        #if {"$freezer" == "on" || $corpses[freezer] > 0} {
-                #format {sb2_freezer} {%+2s} {$corpses[freezer]};
-                #var {sb2_freezer} { FZ:<139>$sb2_freezer<088>}
-        } {
-                #var {sb2_freezer} {}
-        };
+	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
+			#format {sb1_cooler} {%+2s} {$corpses[cooler]};
+			#var {sb1_cooler} { CL:<139>$sb1_cooler<088>}
+	} {
+			#var {sb1_cooler} {}
+	};
+	#if {"$freezer" == "on" || $corpses[freezer] > 0} {
+			#format {sb2_freezer} {%+2s} {$corpses[freezer]};
+			#var {sb2_freezer} { FZ:<139>$sb2_freezer<088>}
+	} {
+			#var {sb2_freezer} {}
+	};
 	#var {gxp}	{%2};
 	#var {prot}	{%3};
 	#var {vest}	{%4};

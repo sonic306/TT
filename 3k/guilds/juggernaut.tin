@@ -6,6 +6,8 @@
 #var nukes 0
 #var reset 0
 #var rod 0
+#var mask 0
+#var solo 1
 
 #NOP Set ROLM rune count
 #act {^Warming in your grasp, fifty-six twinkling points of turquoise light come into} {
@@ -226,13 +228,16 @@
 
 /* Aliases */
 #alias corpsetrig {
-	look;
+	wrap all;
 }
 
 #act {dealt the killing blow} {
    	#if {$solo} {
 		#var idle 0;
-		corpsetrig;		
+		corpsetrig;
+		#if {$bot == 1 && $mask == 0} {
+			.bot;
+		}
 	} 
 	{
 		look;

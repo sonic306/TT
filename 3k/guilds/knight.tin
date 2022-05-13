@@ -2,6 +2,9 @@
 
 #var guild knight
 #var gxn_last 0
+#var mask 0
+#var solo 1
+
 
 /* Knight hpconfig setting */
 #NOP hpconfig HP:#CHP#/#MHP# SP:#CSP#/#MSP# STM:#CST#/#MST# STN:#STN#% (#STL#) SW:#SEC#% | #SSN# #MTH##NLN#PPD(#PRE#) End(#END#) Cry(#CRY#) Dfl(#DFL#) Study(#STD#) Dodge(#DDG#) Brawl(#BRL#) Shield(#SHB#) Parry(#PRY#)#NLN#GXP: #GXP#(#G2N#) Joust:#JST# Last:#LFR# E:#MOB#
@@ -37,14 +40,15 @@
 	#line gag;
 }
 
-#act {GXP: %d(%p) Joust:%p Last:%d E:%p} {
+#act {GXP: %d(%d) Joust:%p Last:%d E:%p} {
 	#math {gxn_last} {%1 - $gxp};
 	#var {gxp}	{%1};
 	#var {gxn}	{%2};
 	#var {joust}	{%3};
 	#var {ehealth}	{%5};
+	update_status;
 	#line gag;
-	update_status
+
 }
 
 #alias {update_status} {
@@ -129,15 +133,25 @@
 
 #act {^%+ dealt the killing blow to} {corpsetrig} {5}
 #alias corpsetrig {
-	#if {$my[gp1][current] < $my[gp1][max]*.25 || $my[gp2][current] > 25} {
-		.pause
-	};
-	#send !rest;
-	#send !wrap;
-	#NOP #send !bury corpse;
-	#send !get coins;
-	#send !get component;
-	#NOP #send !pet bela
+	#if {$solo} {
+		#if {$my[gp1][current] < $my[gp1][max]*.25 || $my[gp2][current] > 25} {
+			.pause
+		};
+		#send !rest;
+		#send !wrap;
+		#send !bury corpse;
+		#send !get coins;
+		#NOP #send !get component;
+		#NOP #send !pet bela;
+		#var idle 0;
+		#if {$bot == 1 && $mask == 0} {
+			.bot;
+		}
+	} 
+	{
+		glance;
+		#var idle 0
+	}
 }
 
 

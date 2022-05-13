@@ -177,7 +177,7 @@
 };
 
 #alias setcont {
-		#SEND !cast perform as cast mind warp;
+		#SEND !cast perform as cast implosion;
 		#SEND !cast activate combat;
 		#SEND !study spellbook;
 		#SEND !cast mindblank;
@@ -202,10 +202,7 @@
 							#DELAY {15} {
 								#SEND !cast contingency as protection from evil#cast protection from evil;
 								#SEND !cast protection from evil;
-									#DELAY {15} {
-									#SEND !cast greater contingency as mantle#400#cast mantle;
-									#SEND !cast mantle;
-							};
+
 						};
 					};
 				};
