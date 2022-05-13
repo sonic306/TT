@@ -77,7 +77,7 @@
 	#format {corpses[inventory]}    {%+2s} {$corpses[inventory]};
 	#format {corpses[coffin]}       {%+2s} {$corpses[coffin]};
 	#if {"$draw[hpbar]" == "on"} {
-		#showme {H:${hp}/${hp_max}  S:${sp}/${sp_max}  N:${nrg}/${nrg_max}  G:${gxp_time}     E:   ${ehealth}%    IC:<130>${corpses[inventory]}<088>${sb1_cooler}} {-4};
+		#showme {H:${hp}/${hp_max}  S:${sp}/${sp_max}  N:${nrg}/${nrg_max}  G:${gxp_time}    E:   ${ehealth}%    IC:<130>${corpses[inventory]}<088>${sb1_cooler}} {-4};
 		#showme {H:${my[hp][graph]}   S:${my[sp][graph]} N:${my[gp1][graph]} G:${my[gxp][graph]} E:${enemy[graph]} CF:<130>${corpses[coffin]}<088>${sb2_freezer}} {-3}
 	};
 	#if {"$draw[gline]" == "on"} {
