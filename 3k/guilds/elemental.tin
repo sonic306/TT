@@ -72,7 +72,7 @@
 	#format {nrg}			{%+4s} {@colscale{$my[gp1][current];$my[gp1][max]}};
 	#format {nrg_max}		{%+4s} {<128>$my[gp1][max]<088>};
 	#format {gxp}			{%+8s} {@colscale{$my[gxp][per];100}};
-	#format {gxp_time}		{%+6s} {$my[gxp][time][str]};
+	#format {gxp_time}		{%+7s} {$my[gxp][time][str]};
 	#format {ehealth}		{%+3s} {@colscale{$mip[FFF][L][data];100}};
 	#format {corpses[inventory]}    {%+2s} {$corpses[inventory]};
 	#format {corpses[coffin]}       {%+2s} {$corpses[coffin]};

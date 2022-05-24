@@ -6,7 +6,7 @@
 #macro {\eOr} {s}
 #macro {\eOs} {se}
 #macro {\eOt} {w}
-#macro {\eOu} {look;search}
+#macro {\eOu} {look}
 #macro {\eOv} {e}
 #macro {\eOw} {nw}
 #macro {\eOx} {n}

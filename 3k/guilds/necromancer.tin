@@ -3,6 +3,7 @@
 #read .tt/3k/gear.tin;
 #read .tt/3k/TierTracker.tin;
 
+#NOP --- NECROMANCER VARRS ---
 #var guild necromancer
 #var mask 0
 #var solo 1
@@ -11,6 +12,13 @@
 #var smugglemax 20
 #var currentsmuggle 0
 #var psibleedOn 0
+#var corrodeOn 0
+#var scytheOn 0
+#var rabiesOn 0
+#var convokeOn 0
+#var incombat 0
+#var illumeOn 0
+#var canLoot 0
 
 /* HP Bar */
 #act {{HSN\[(\d+)\|(\d+)(?:\((\d+)\)|)\|(\d+)\|(\d+)\|((\d+)\%|\w+\!?)\]\s\w+\[(\d+)\%\/(\d+)c\/(\d+)c\]\s\w+\[(\d+)\|(\d+)(?:\/(\d+)\%|)\]}} {
@@ -28,7 +36,27 @@
 	#var {my[hpbar][glamores_burn]}	  	{%14};
 
 	#if {$my[hpbar][np] < 20000 && $my[hpbar][coffin_corpses] >= 10}	 {
-		qtrance unwrap/get corpse/absorb>10
+		qtrance unwrap/get corpse/absorb>15
+	};
+
+	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
+		sra;
+		wrap all
+	};
+
+	#if {$incombat && !$rabiesOn} {
+		rabies;
+		#var rabiesOn 1;
+	};
+
+	#if {$incombat && !$scytheOn} {
+		scythe;
+		#var scytheOn 1;
+	};
+
+	#if {$incombat && !$corrodeOn} {
+		corrode;
+		#var corrodeOn 1;
 	};
 
 	#if {$my[hpbar][sp] < $my[sp][max] && !$psibleedOn} {
@@ -36,11 +64,18 @@
 		#var psibleedOn 1;
 	};
 
-	#if {$my[hpbar][coffin_corpses] < 10 && $currentsmuggle > 0 && $my[hpbar][inv_corpses] < 10} {
-		sra;
-		wrap all
+	#if {$incombat && !$convokeOn} {
+		convoke ravens;
 	};
-}
+
+	#if {$my[hpbar][np] < 70000 && $my[hpbar][glamores] > 1} {
+		illume prime;
+		#var illumeOn 1;
+	};
+
+	#if {$my[hpbar][sp] < 500} {
+		dream 11;
+	};
 
 #act {{Status\[\w(\d+)\%\|\w(\w+)\|\w(\w+)\|\w(\d+)\%\]}} {
 	#var {my[hpbar][worth]}               {%2};
@@ -49,7 +84,7 @@
 	#var {my[hpbar][power_reset]}         {%5};
 	
 	#if {$my[hpbar][worth] < 125} {
-		con 100
+		con 50
 	};
 
 	#if {"$my[hpbar][protection_status]"  == "OFF"} {
@@ -97,8 +132,13 @@
 }
 
 #alias {corpsetrig} {
+	resetpowers;
 	#if {$solo} {
 		corpseme;
+		get gold;
+		#if {$canLoot} {cga};
+		con 10;
+		reinforce all;
 		#var idle 0;
 		#if {$bot == 1 && $mask == 0} {
 			.bot;
@@ -111,27 +151,48 @@
 
 }
 
-#act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
 
-#act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
+#act {{The psibleed upon .* has dissipated}} {
+	#var psibleedOn 0;
+};
 
-#act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
+#act {{.* has overcome the effects of your rabies}} {
+	#var rabiesOn 0;
+};
 
-#act {{The psibleed upon (.*) has dissipated}} {
-		psibleed;
-		#var psibleedOn 0;
-}
+#act {{The corrosion upon .* has faded}} {
+	#var corrodeOn 0;
+};
 
-#act {{The power of the sun answers your call, sending a ray of awesome light}} {
-	corrode;
-	psibleed;
-	rabies;
-}
+#act {The magical illumination fades from your body} {
+	#var illumeOn 0;
+};
 
+#act {The power of the sun answers your call, sending a ray of awesome light} {
+	#var incombat 1;
+};
+
+#act {{The scythe attacking .* has withdrawn}} {
+	scythe;
+	#var scytheOn 0;
+};
+
+#act {Stormer's eyes burn with a crimson fire} {
+	#var convokeOn 1;
+};
+
+#act {{The ravens peck and rend viciously upon .* one last time}} {
+	#var convokeOn 0;
+};
+
+#NOP Anti Guyahi Mechanic
+#act {Guyahi chants a few words and suddenly} {
+	dispell queen;
+};
 
 #act {{^Coffin\s+\[\s+\d+\/\s+(\d+)\|.*}} {
 	#var {coffinmax} {%2}
-}
+};
 
 /* Preserve all */
 #var preserving 0
@@ -177,35 +238,34 @@
 
 #alias corpseme {
 	#if {$my[hpbar][coffin_corpses] < $coffinmax && $mask == 1} {
-		qtrance preserve remains/wrap>2;get gold;cga
+		qtrance preserve remains/wrap>2;
 	}
 	{
 		#if {$my[hpbar][coffin_corpses] < $coffinmax} {
-			qtrance preserve remains/wrap;get gold;cga
+			qtrance preserve remains/wrap;
 		}
 	};
 	#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax && $mask == 1} {
-		qtrance preserve remains/=get corpse>2;get gold;cga
-	}
-	{
+		qtrance preserve remains/=get corpse>2;
+	}	{
 		#if {$my[hpbar][follower_corpses] < $followermax && $my[hpbar][coffin_corpses] == $coffinmax} {
-			qtrance preserve remains/=get corpse;get gold;cga
+			qtrance preserve remains/=get corpse;
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask == 1 && $currentsmuggle < $smugglemax} {
-		qtrance preserve remains/smuggle corpse>2;get gold;cga
+		qtrance preserve remains/smuggle corpse>2;
 	}
 	{
 		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle < $smugglemax} {
-			qtrance preserve remains/smuggle corpse;get gold;cga
+			qtrance preserve remains/smuggle corpse;
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask == 1} {
-		qtrance preserve remains/get corpse>2;get gold;cga
+		qtrance preserve remains/get corpse>2;
 	}
 	{
 		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax} {
-			qtrance preserve remains/get corpse;get gold;cga
+			qtrance preserve remains/get corpse;
 		}		
 	}
 }
@@ -262,6 +322,19 @@
 	#delay {3} {#unact {^%s%*$}}
 };
 
-#NOP Stormer has quit the party.
+#alias resetpowers {
+	#var psibleedOn 0
+	#var corrodeOn 0
+	#var rabiesOn 0
+	#var convokeOn 0
+	#var scytheOn 0
+	#var incombat 0
+};
+
+#act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
+
+#act {Stormer's eyes glow bright green} {corpsetrig;.bot;} {1}
+
+#act {Stormer's eyes glow a sickly green} {corpsetrig;.bot;} {1}
 
 #class {necromancer} {close}
