@@ -323,12 +323,12 @@
 };
 
 #alias resetpowers {
-	#var psibleedOn 0
-	#var corrodeOn 0
-	#var rabiesOn 0
-	#var convokeOn 0
-	#var scytheOn 0
-	#var incombat 0
+	#var psibleedOn 0;
+	#var corrodeOn 0;
+	#var rabiesOn 0;
+	#var convokeOn 0;
+	#var scytheOn 0;
+	#var incombat 0;
 };
 
 #act {dealt the killing blow} {#if {$mask} {#NOP} {corpsetrig}} {2}
