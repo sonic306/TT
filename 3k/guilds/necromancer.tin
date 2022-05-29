@@ -253,11 +253,11 @@
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask == 1 && $currentsmuggle < $smugglemax} {
-		qtrance preserve remains/smuggle corpse>2;
+		qtrance preserve remains/get corpse/smuggle corpse>2;
 	}
 	{
 		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle < $smugglemax} {
-			qtrance preserve remains/smuggle corpse;
+			qtrance preserve remains/get corpse/smuggle corpse;
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask == 1} {
