@@ -68,7 +68,7 @@
 		convoke ravens;
 	};
 
-	#if {$my[hpbar][np] < 70000 && $my[hpbar][glamores] > 1} {
+	#if {$my[hpbar][np] < 70000 && $my[hpbar][glamores] > 1 && !$illume} {
 		illume prime;
 		#var illumeOn 1;
 	};
