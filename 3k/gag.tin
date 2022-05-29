@@ -9,8 +9,8 @@
 #gag {Your feral rage allows you to shrug off some of the blow.}
 
 #NOP Necromancers
-#gag {C:/\/\/\/\/*}
-#gag {B:/\/\/\/\/*}
+#gag {C:/\/\/\/\/}
+#gag {B:/\/\/\/\/}
 #gag {HSN}
 #gag {Status}
 
