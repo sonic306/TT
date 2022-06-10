@@ -12,8 +12,6 @@
 #gag {HSN}
 #gag {Status}
 
-#NOP Jedi
-
 #NOP Elemental
 #gag {Grasping %* tightly, you draw from %w a %w amount}
 #gag {elements that you use to bolster your own internal stores.}
