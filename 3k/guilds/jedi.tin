@@ -63,8 +63,10 @@
 
 #NOP melted mess you'll find inside the casing when you repair it.
 
-#act {dealt the killing blow} {corpsetrig} {2};
 
+
+#act {dealt the killing blow} {corpsetrig} {2};
+#act {Sparks fly from your lightsaber's handle as the circuitry fuses} {killbot}
 #act {You are fully rejuvenated and thus exit your trance} {med};
 
 #act {You draw your weapon from the sheath in your belt} {guide};
