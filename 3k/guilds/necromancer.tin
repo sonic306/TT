@@ -68,7 +68,7 @@
 		convoke ravens;
 	};
 
-	#if {$my[hpbar][np] < 70000 && $my[hpbar][glamores] > 1} {
+	#if {$my[hpbar][np] < 70000 && $my[hpbar][glamores] > 1 && !$illumeOn} {
 		illume prime;
 		#var illumeOn 1;
 	};
@@ -76,7 +76,7 @@
 	#if {$my[hpbar][sp] < 500} {
 		dream 11;
 	};
-
+}
 #act {{Status\[\w(\d+)\%\|\w(\w+)\|\w(\w+)\|\w(\d+)\%\]}} {
 	#var {my[hpbar][worth]}               {%2};
 	#var {my[hpbar][protection_status]}   {%3};
@@ -92,7 +92,7 @@
 	};
 	
 	update_status;
-}
+};
 
 #alias {update_status} {
 	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
@@ -128,8 +128,8 @@
 
 	#showme {<088>HP:$hp/$hp_max SP:$sp($sp_inf)/$sp_max NP:$np/$np_max  E:$ehealth    IC:<138>${corpses[inventory]}<088>${sb1_cooler} SC:$curmuggle } {-4};
 	#showme {H:$my[hp][graph] SP:$my[sp][graph]     NP:$my[gp1][graph]   E:$enemy[graph] CF:<138>$my[hpbar][coffin_corpses]<088>${sb2_freezer} FC:$follower_corpses} {-3};
-	#showme {$mip[gline][1]  $mip[gline][2] Repower:$powerreset} {-6}
-}
+	#showme {$mip[gline][1]  $mip[gline][2] Repower:$powerreset} {-6};
+};
 
 #alias {corpsetrig} {
 	resetpowers;
@@ -149,7 +149,7 @@
 		#var idle 0
 	}
 
-}
+};
 
 
 #act {{The psibleed upon .* has dissipated}} {
@@ -202,23 +202,23 @@
 	#var preserve_np 0;
 	#var preserve_done 0;
 	qtrance preserve remains>20
-}
+};
 
 #act {You only have %d/%d necromantic points for that.} {
 	#if {$preserving} {
 		#var preserve_np 1
 	}
-}
+};
 #act {That corpse is already preserved master.} {
 	#if {$preserving} {
 		#var preserve_done 1
 	}
-}
+};
 #act {There is no corpse in this room master.} {
 	#if {$preserving} {
 		#var preserve_done 1
 	}
-}
+};
 #act {You recover your senses} {
 	#if {$preserving} {
 		#if {$preserve_np} {
@@ -230,7 +230,7 @@
 			mpp
 		}
 	}
-}
+};
 
 #act {Receiving room} {mapgo tp}
 
@@ -253,11 +253,11 @@
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $mask == 1 && $currentsmuggle < $smugglemax} {
-		qtrance preserve remains/smuggle corpse>2;
+		qtrance preserve remains/get corpse/smuggle corpse>2;
 	}
 	{
 		#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle < $smugglemax} {
-			qtrance preserve remains/smuggle corpse;
+			qtrance preserve remains/get corpse/smuggle corpse;
 		}
 	};
 	#if {$my[hpbar][coffin_corpses] == $coffinmax && $my[hpbar][follower_corpses] == $followermax && $currentsmuggle == $smugglemax && $mask == 1} {
@@ -268,7 +268,7 @@
 			qtrance preserve remains/get corpse;
 		}		
 	}
-}
+};
 
 #alias dca {
 	n;
@@ -279,24 +279,24 @@
 	donate all;
 	close chest;
 	deliver
-}
+};
 
 #act {{You are currently smuggling (\d+)/20 items}} {
 	#var currentsmuggle %2
-}
+};
 
 #act {{^\w+ slaps you!!!$}} {
 	qtrance preserve remains>50
-}
+};
 
 #alias pyre {
 	qtrance unwrap biggest/funeral pyre>2
-}
+};
 
 #alias sra {
 	smuggle remove all;
 	#var currentsmuggle 0
-}
+};
 
 #alias movecorpses {
 	#var _temp[follower] {};
