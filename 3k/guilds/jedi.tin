@@ -18,6 +18,11 @@
 	#var {my[hpbar][charge]}					{%11};
 	#var {my[hpbar][gxp][current]}				{%12};
 	#var {my[hpbar][enemy][current]}			{%13};
+	
+	#if {$my[hpbar][sp][current] < 200} {
+		focus clear mind;
+	}
+
 	update_status;
 	#line gag;
 }
@@ -100,6 +105,8 @@
 #alias abt {focus abilities /trainable};
 #alias abs {focus abilities /short}
 #alias med {focus meditation};
+#alias aabs {focus ancient teachings /short};
+#alias aabt {focus ancient teachings /trainable};
 
 #alias drc {focus control droid on}
 
