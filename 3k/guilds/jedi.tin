@@ -18,14 +18,13 @@
 	#var {my[hpbar][charge]}					{%11};
 	#var {my[hpbar][gxp][current]}				{%12};
 	#var {my[hpbar][enemy][current]}			{%13};
-	
-	#if {$my[hpbar][sp][current] < 200} {
-		focus clear mind;
-	}
 
 	update_status;
 	#line gag;
-}
+	
+};
+
+
 
 #alias {update_status} {
 	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
