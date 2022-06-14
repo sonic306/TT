@@ -4,11 +4,25 @@
 #var solo 1
 
 #NOP Based on the default fremen hp bar
-#action {{HP: (\d+\/(\d+)) SP: (\d+\/(\d+)) \w: (\d+\/(\d+))\((\d+)\) L: (\d+)% P:(\d+)\/(\d+)% T: (\w+) G: (\d+) LT: (\w+)}} {
+#action {{HP: (\d+)\/(\d+) SP: (\d+)\/(\d+) W: (\d+)\/(\d+)\((\d+)\) L:(\d+)% P:(\d+)\/(\d+)% T: (\w+) G:(\d+) GA:(.*) LT: (\w+)}} {
+    #var {my[hpbar][hp][current]}			{%2};
+	#var {my[hpbar][hp][max]}	    		{%3};
+	#var {my[hpbar][sp][current]}			{%4};
+	#var {my[hpbar][sp][max]}	    		{%5};
+	#var {my[hpbar][water][current]}	    {%6};
+	#var {my[hpbar][water][max]}			{%7};
+	#var {my[hpbar][limberness]}			{%8};
+	#var {my[hpbar][poison][count]}			{%9};
+	#var {my[hpbar][poison][reset]}		    {%10};
+	#var {my[hpbar][enemy][current]}		{%11};
+	#var {my[hpbar][gxp][current]}			{%12};
+	#var {my[hpbar][gxp][totalspendable]}	{%13};
+    #var {my[hpbar][mindstate]}			    {%14};
 
-}
+    #line gag;
+};
 
-#action {Having regained your mental focus completely} {.bot}
+#action {Having regained your mental focus completely} {.bot};
 
 #alias {corpsetrig} {
 	#if {$solo} {
@@ -21,6 +35,6 @@
 		look;
 		#var idle 0
 	}
-}
+};
 
 #class {fremen} {close}
