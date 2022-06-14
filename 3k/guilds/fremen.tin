@@ -12,7 +12,8 @@
 
 #alias {corpsetrig} {
 	#if {$solo} {
-		reclaim;
+		#var idle 0;
+        reclaim;
         get gold;
         suspend;
     } 
