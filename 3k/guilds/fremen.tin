@@ -11,13 +11,14 @@
 	#var {my[hpbar][sp][max]}	    		{%5};
 	#var {my[hpbar][water][current]}	    {%6};
 	#var {my[hpbar][water][max]}			{%7};
-	#var {my[hpbar][limberness]}			{%8};
-	#var {my[hpbar][poison][count]}			{%9};
-	#var {my[hpbar][poison][reset]}		    {%10};
-	#var {my[hpbar][enemy][current]}		{%11};
-	#var {my[hpbar][gxp][current]}			{%12};
-	#var {my[hpbar][gxp][totalspendable]}	{%13};
-    #var {my[hpbar][mindstate]}			    {%14};
+    #var {my[hpbar][water][stillsuit]}		{%8};
+	#var {my[hpbar][limberness]}			{%9};
+	#var {my[hpbar][poison][count]}			{%10};
+	#var {my[hpbar][poison][reset]}		    {%11};
+	#var {my[hpbar][enemy][current]}		{%12};
+	#var {my[hpbar][gxp][current]}			{%13};
+	#var {my[hpbar][gxp][totalspendable]}	{%14};
+    #var {my[hpbar][mindstate]}			    {%15};
 
     #line gag;
 };
