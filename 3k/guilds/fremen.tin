@@ -1,8 +1,25 @@
 #class {fremen} {open}
 
-#NOP Based on the default fremen hp bar
-#act {{HP: (\d+\/(\d+)) SP: (\d+\/(\d+)) \w: (\d+\/(\d+))\((\d+)\) L: (\d+)% P:(\d+)\/(\d+)% T: (\w+) G: (\d+) LT: (\w+)}} {
+#var mask 0
+#var solo 1
 
+#NOP Based on the default fremen hp bar
+#action {{HP: (\d+\/(\d+)) SP: (\d+\/(\d+)) \w: (\d+\/(\d+))\((\d+)\) L: (\d+)% P:(\d+)\/(\d+)% T: (\w+) G: (\d+) LT: (\w+)}} {
+
+}
+
+#action {you emerge from the Bindu Suspension state} {.bot}
+
+#alias {corpsetrig} {
+	#if {$solo} {
+		reclaim;
+        get gold;
+        suspend;
+    } 
+	{
+		look;
+		#var idle 0
+	}
 }
 
 #class {fremen} {close}

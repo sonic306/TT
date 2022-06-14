@@ -63,8 +63,6 @@
 
 #NOP melted mess you'll find inside the casing when you repair it.
 
-
-
 #act {dealt the killing blow} {corpsetrig} {2};
 #act {Sparks fly from your lightsaber's handle as the circuitry fuses} {killbot}
 #act {You are fully rejuvenated and thus exit your trance} {med};
@@ -85,7 +83,7 @@
 		get coins;
 		#var idle 0;
 		#if {$my[gp1][current] < 25 || $my[gp2][current] > 75} {.stop;hb};
-		#else {..}
+		#else {#if {$bot} {..}}
 	} 
 	{
 		look;
@@ -100,7 +98,10 @@
 #alias wdraw {draw lightsaber};
 #alias hb {focus hibernation trance};
 #alias abt {focus abilities /trainable};
+#alias abs {focus abilities /short}
 #alias med {focus meditation};
+
+#alias drc {focus control droid on}
 
 #alias dissipate {
 	#switch {"%1"} {
