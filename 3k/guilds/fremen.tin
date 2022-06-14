@@ -8,7 +8,7 @@
 
 }
 
-#action {you emerge from the Bindu Suspension state} {.bot}
+#action {Having regained your mental focus completely} {.bot}
 
 #alias {corpsetrig} {
 	#if {$solo} {
