@@ -81,6 +81,14 @@
 	guide
 };
 
+#ACTION {Your lightsaber's blade crackles and fades to nothing} {
+	killbot;
+	go jedis;
+	nw;
+	repair azure$lightsaber;
+	thisarea;
+};
+
 #alias {corpsetrig} {
 	#if {$solo} {
 		focus absorb energy;
