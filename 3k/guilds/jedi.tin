@@ -112,6 +112,7 @@
 	retrieve %1 flat;
 	retrieve %1 triangular;
 	retrieve %1 hexagonal;
+	focus assemble on %1;
 };
 
 #alias lstats {focus login stats};
