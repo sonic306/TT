@@ -115,7 +115,22 @@
 #alias aabs {focus ancient teachings /short};
 #alias aabt {focus ancient teachings /trainable};
 
-#alias drc {focus control droid on}
+#alias drc {
+	#SWITCH {"%1"} {
+	 #CASE {"dismiss"} {focus control droid on dismiss};
+	 #CASE {"drop"} {focus control droid on drop};
+	 #CASE {"exa"} {focus control droid on exa};
+	 #CASE {"follow"} {focus control droid on follow};
+	 #CASE {"i"} {focus control droid on i};
+	 #CASE {"glance"} {focus control droid on glance};
+	 #CASE {"look"} {focus control droid on look};
+	 #CASE {"name"} {focus control droid on name};
+	 #CASE {"put"} {focus control droid on put};
+	 #CASE {"status"} {focus control droid on status};
+	 #CASE {"stay"} {focus control droid on stay};
+	 #CASE {"watch"} {focus control droid on watch};
+	};
+};
 
 #alias dissipate {
 	#switch {"%1"} {
@@ -124,7 +139,7 @@
 		#case {"cpain"} {focus dissipate on cpain};
 		#case {"regen"} {focus dissipate on regen};
 		#case {"shield"} {focus dissipate on shield};
-	}
-}
+	};
+};
 
 #class {jedi} {close}
