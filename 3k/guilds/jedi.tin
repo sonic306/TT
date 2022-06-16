@@ -106,6 +106,14 @@
 	}
 }
 
+#ALIAS {getholo} {
+	retrieve %1 round;
+	retrieve %1 square;
+	retrieve %1 flat;
+	retrieve %1 triangular;
+	retrieve %1 hexagonal;
+};
+
 #alias lstats {focus login stats};
 #alias gs {focus guild score};
 #alias rcost {focus check /cost};
