@@ -67,25 +67,28 @@
 
 #NOP melted mess you'll find inside the casing when you repair it.
 
-#act {dealt the killing blow} {corpsetrig} {2};
-#act {Sparks fly from your lightsaber's handle as the circuitry fuses} {killbot}
-#act {You are fully rejuvenated and thus exit your trance} {med};
+#action {dealt the killing blow} {corpsetrig} {2};
 
-#act {You draw your weapon from the sheath in your belt} {guide};
-
-#act {You stop your meditation exercises and prepare for things} {..}
-
-#act {Your lightsaber has run out of charge} {
+#action {You are fully rejuvenated and thus exit your trance} {med};
+#action {You draw your weapon from the sheath in your belt} {guide};
+#action {You stop your meditation exercises and prepare for things} {..}
+#action {Your lightsaber has run out of charge} {
 	get cell from pack;
 	recharge;
 	guide
 };
 
-#ACTION {Your lightsaber's blade crackles and fades to nothing} {
+#NOP Run repairs
+#ACTION {Your lightsaber shuts down, and the heat in your hand warns you} {goreps};
+#action {Sparks fly from your lightsaber's handle as the circuitry fuses} {goreps};
+#ACTION {Your lightsaber's blade crackles and fades to nothing} {goreps};
+
+#ALIAS {goreps} {
 	killbot;
 	go jedis;
 	nw;
 	repair azure$lightsaber;
+	wdraw;
 	thisarea;
 };
 
