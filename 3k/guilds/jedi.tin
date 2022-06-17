@@ -5,26 +5,22 @@
 #var solo 1
 
 #NOP #hp/#mhp | SP:#sp/#msp | C:#c | F:#f | D: #dn | NRG: #ng | -#sm- | #%c | #gxp | #es  
-#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:\s+?([\d\.]+)\%\s\|\sF:\s+([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:\s(\d+)\%|)}} {
+#act {{HP:(\d+)\/(\d+)\s\|\sSP:(\d+)\/(\d+)\s\|\sC:(?:(\s+)|)([\d\.]+)\%\s\|\sF:(?:(\s+)|)([\d\.]+)\%\s\|\sD:\s(\d+)\s\|\sNRG:\s(\d+)\s\|\s.(\w+).\s\|\s+([\d\.]+)\%\s\|\s+([\d.]+)\%\s\|(?:(\s+)|)(\w+)}} {
 	#var {my[hpbar][hp][current]}				{%2};
 	#var {my[hpbar][hp][max]}	    			{%3};
 	#var {my[hpbar][sp][current]}				{%4};
 	#var {my[hpbar][sp][max]}	    			{%5};
-	#var {my[hpbar][concentration][current]}	{%6};
-	#var {my[hpbar][force][current]}			{%7};
-	#var {my[hpbar][dissipate][cnt]}			{%8};
-	#var {my[hpbar][nrgStore]}					{%9};
-	#var {my[hpbar][mode]}		    			{%10};
-	#var {my[hpbar][charge]}					{%11};
-	#var {my[hpbar][gxp][current]}				{%12};
-	#var {my[hpbar][enemy][current]}			{%13};
-
+	#var {my[hpbar][concentration][current]}	{%7};
+	#var {my[hpbar][force][current]}			{%9};
+	#var {my[hpbar][dissipate][cnt]}			{%10};
+	#var {my[hpbar][nrgStore]}					{%11};
+	#var {my[hpbar][mode]}		    			{%12};
+	#var {my[hpbar][charge]}					{%13};
+	#var {my[hpbar][gxp][current]}				{%14};
+	#var {my[hpbar][enemy][current]}			{%16};
 	update_status;
 	#line gag;
-	
 };
-
-
 
 #alias {update_status} {
 	#if {"$cooler" == "on" || $corpses[cooler] > 0} {
