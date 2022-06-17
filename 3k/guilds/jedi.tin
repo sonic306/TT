@@ -78,6 +78,7 @@
 #ACTION {Your lightsaber shuts down, and the heat in your hand warns you} {goreps};
 #action {Sparks fly from your lightsaber's handle as the circuitry fuses} {goreps};
 #ACTION {Your lightsaber's blade crackles and fades to nothing} {goreps};
+#ACTION {Your lightsaber's casing flares nearly white hot as the battery melts} {goreps};
 
 #ALIAS {goreps} {
 	killbot;
@@ -85,6 +86,7 @@
 	nw;
 	repair azure$lightsaber;
 	wdraw;
+	guide;
 	thisarea;
 };
 
