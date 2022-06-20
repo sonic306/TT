@@ -86,7 +86,6 @@
 	nw;
 	repair azure$lightsaber;
 	wdraw;
-	guide;
 	thisarea;
 };
 
@@ -139,6 +138,7 @@
 	 #CASE {"status"} {focus control droid on status};
 	 #CASE {"stay"} {focus control droid on stay};
 	 #CASE {"watch"} {focus control droid on watch};
+	 #CASE {"get"} {focus control droid on get};
 	};
 };
 
