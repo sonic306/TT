@@ -185,7 +185,7 @@
 	#var convokeOn 0;
 };
 
-#NOP Anti Guyahi Mechanic
+#NOP Anti Guyahi Mechanic ##
 #act {Guyahi chants a few words and suddenly} {
 	dispell queen;
 };
