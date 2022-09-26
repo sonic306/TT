@@ -1,4 +1,4 @@
-.pass*
+.*pass*
 deploy_rsa
 deploy_rsa.pub
 notes
