@@ -7,8 +7,8 @@
 	#map read .tt/map/3k.map
 }
 
-#var map[height] 17
-#var map[width] 42
+#var map[height] 25
+#var map[width] 65
 #NOP #var map[position] top
 
 #if {"$map[$world][position]" == ""} {
