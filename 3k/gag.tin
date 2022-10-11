@@ -24,6 +24,9 @@
 #NOP Jedi
 #gag {You reach out with the Force and deflect}
 
+#NOP Gentech
+#gag {[> Attacks <]}
+
 /* Item Gags */
 #NOP CMC
 #gag {The armour infuses you with chemicals, augmenting your abilities.}
