@@ -8,7 +8,7 @@
 #var mask 0
 #var solo 1
 #var coffinmax 30
-#var followermax 33
+#var followermax 34
 #var smugglemax 20
 #var currentsmuggle 0
 #var psibleedOn 0
